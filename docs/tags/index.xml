@@ -6,7 +6,20 @@
     <description>Recent content in Tags on 小小的大肥的主页</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Dec 2021 20:47:37 +0800</lastBuildDate><atom:link href="https://NYH-Dolphin.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Mar 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://NYH-Dolphin.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>game</title>
+      <link>https://NYH-Dolphin.github.io/tags/game/</link>
+      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/tags/game/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>blog</title>
       <link>https://NYH-Dolphin.github.io/tags/blog/</link>

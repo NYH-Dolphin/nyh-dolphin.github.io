@@ -31,21 +31,27 @@ enableRobotsTXT = true
     weight = 1
 
   [[menu.main]]
+    identifier = "games"
+    name = "Games"
+    url = "/games/"
+    weight = 2
+
+  [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 3
+    weight = 4
     
   [[menu.main]]
     identifier = "github"
     url = "https://github.com/NYH-Dolphin"
-    weight = 4
+    weight = 5
     
     # We use feather-icons: https://feathericons.com/
     pre = "<span data-feather='github'></span>"
@@ -58,7 +64,7 @@ enableRobotsTXT = true
   avatarSize = "size-m"
 
   # Description to display on homepage
-  description = "想象力可以改变一切!"
+  description = "Imagination Can Change Anything!"
 
   # Accent color is displayed when you hover over <a> tags
   accentColor = "#FF4D4D"
@@ -73,4 +79,4 @@ enableRobotsTXT = true
   showPostsOnHomePage = "recent"
 
   # Footer text
-  footer = "nyh-dolphin"
+  footer = "NYH-Dolphin"
