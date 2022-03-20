@@ -80,3 +80,6 @@ enableRobotsTXT = true
 
   # Footer text
   footer = "NYH-Dolphin"
+
+[markup.goldmark.renderer]
+  unsafe = true # Allow HTML in md files
