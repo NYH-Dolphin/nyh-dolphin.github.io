@@ -57,7 +57,7 @@ This is a 2D online Pokémon-Like mobile game. Quickly select your Pokémon and 
 - Adventure System
 - PVP/PVE Battle System
 
-![image-20220320230010660](_index.assets/image-20220320230010660.png)
+![image-20220320230010660](_index/image-20220320230010660.png)
 
 ### Mind Diary (Main Developer)
 
