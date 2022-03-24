@@ -53,11 +53,11 @@ This is a 2D online Pokémon-Like mobile game. Quickly select your Pokémon and 
 
 - Draw Card System
 - Pokémon Development System
-- Shop System
+- Shop SystemS
 - Adventure System
 - PVP/PVE Battle System
 
-![image-20220320230010660](_index/image-20220320230010660.png)
+![image-20220320230010660](/images/image-20220320230010660.png)
 
 ### Mind Diary (Main Developer)
 
