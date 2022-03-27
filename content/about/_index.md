@@ -4,6 +4,22 @@ type: page
 
 # <center>Curriculum Vitae</center>
 
+## 😊About Me
+
+| <img src="/images/image-20220327210827277.png" alt="image-20220327210827277" style="zoom: 25%;" /> | <img src="/images/image-20220327210848837.png" alt="image-20220327210848837" style="zoom: 44%;" /> |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+
+​	
+
+- My name is Nie Yuhe. I am from ShenZhen, China. You can also call me Dolphin!
+- I like watching animation and painting. What interests me the most is to develop fascinating games! I love game, and I am hoping to become a game developer!
+
+### Contact Me
+
+- QQ: 1362097989
+- Email: 11911839@mail.sustech.edu.cn
+- Github: https://github.com/NYH-Dolphin
+
 ## 🏫Education
 
 |                  University                   |   Education   |      Time       | GPA  |
@@ -125,4 +141,32 @@ Participate in development of three games. Use Rhino-X to develop FPS game, incl
 | Department of Computer Science, Shude College, Grade 2019 | Monitor                           |
 | Publicity Centre of Shude College                         | Director of Design Department     |
 | Class 1918, Shude College                                 | Commissary in Charge of Publicity |
+
+## 🎥 Animation that I recommend
+
+As an anime lover for decades. I would like to recommend you some cartoons that are very worth watching!
+
+### From the New World
+
+<img src="https://tva3.sinaimg.cn/large/007nw8bygy1gscse8huf9j30qd0gfju6.jpg"    >
+
+An Utopia World describes thousands years later of human society. A very profound science fiction animation centered on children's education, racial conflicts, and psychological growth.
+
+### Clannad (2nd After story)
+
+<img src="https://assets.nintendo.com/image/upload/ar_16:9,b_auto,c_pad,dpr_3.0,f_auto,q_auto,w_500/b_rgb:ffffff/v1/ncom/en_US/games/switch/c/clannad-switch/hero">
+
+This is a slow story. It describes a story that can be experienced by everyone in this society. A animation about love, family, responsibility and growth. It brought me great inspiration!
+
+### Yojouhan Shinwa Taikei
+
+<img src="https://oss.yuuiki.cn/usr/uploads/2020/01/1282572603.jpg">
+
+An eerie animation. It describes the protagonist, who is about to step into the rosy campus of college life, and who is at a loss and confusion in the face of various associations and life choices. This cartoon is suitable for every college student to see before entering school!
+
+### Attack on Titan
+
+<img src="http://m.niusnews.com/upload/posts/posts_image3_106231_1620041095.jpg">
+
+This anime is very famous, but that doesn't stop everyone from watching it. Its profound plot conflict, superb animation performance, shocking music have left an indelible position in the animation industry.
 
