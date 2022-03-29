@@ -43,3 +43,4 @@ tags: ["Unity-Utils"]
 使用时，在创建了 TMP GameObject 的地方，把生成的 Font Asset 拖入到指定位置即可使用
 
 <img src="/images/Unity TMP 设置中文字体/image-20220329103427405.png" alt="image-20220329103427405" style="zoom:67%;" />
+
