@@ -6,10 +6,25 @@
     <description>Recent content in Games on 小小的大肥的主页</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Mar 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://NYH-Dolphin.github.io/games/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 29 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://NYH-Dolphin.github.io/games/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity TMP 设置中文字体</title>
+      <link>https://NYH-Dolphin.github.io/games/unity-tmp-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/</link>
+      <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/games/unity-tmp-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/</guid>
+      <description>为了解决 TMP 不支持中文字体的情况，采取以下方式
+1. 找到一个中文常见汉字的文档 这里给出一个链接：中文7000常用文字
+2. 找到一个Font素材 在网上可以找到一些丰富的字体素材
+或者本地可以下载一些字体文件，一般在 C:/Windows/Fonts 存放了一些常见字体
+将想要使用的素材拖入 Unity 即可
+3. 使用 TMP 创建字体 asset 打开 Window/TextMeshPro/Font Asset Creator
+将字体文件拖入 Source Font File，将下载的中文常见汉字文档拖入 Character File
+注意设置 Atlas Resolution，复杂的汉字需要最高的分辨率，也就是 8192 x 8192，如果选择了小的分辨率，最后可能无法显示，其它的设置可以参考截图下面的示例，也可以自行修改
+配置完成后，点击 Generate Font Atlas，由于文字个数很多，可能需要相当长的一段时间才能完成生成
+完成好后，旁边有一个 Save 按钮，将导出的 Font Asset 存放在指定位置即可
+4. 使用 Font Asset 使用时，在创建了 TMP GameObject 的地方，把生成的 Font Asset 拖入到指定位置即可使用</description>
+    </item>
     
     <item>
       <title>Test Doc</title>
@@ -17,7 +32,8 @@
       <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://NYH-Dolphin.github.io/games/test/</guid>
-      <description>我是小小的大肥!</description>
+      <description>我是小小的大肥!
+  </description>
     </item>
     
   </channel>

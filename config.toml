@@ -67,7 +67,7 @@ enableRobotsTXT = true
   description = "Imagination Can Change Anything!"
 
   # Accent color is displayed when you hover over <a> tags
-  accentColor = "#FF4D4D"
+  accentColor = "#4682B4"
 
   # You can use this to inject any HTML in the <head> tag.
   # Ideal usecase for this is to import custom js/css or add your analytics snippet
