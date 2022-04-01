@@ -6,7 +6,16 @@
     <description>Recent content on 小小的大肥的主页</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 29 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://NYH-Dolphin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 01 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://NYH-Dolphin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Unity 行走与鼠标视角移动</title>
+      <link>https://NYH-Dolphin.github.io/games/unity-%E8%A1%8C%E8%B5%B0%E4%B8%8E%E9%BC%A0%E6%A0%87%E8%A7%86%E8%A7%92%E7%A7%BB%E5%8A%A8/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/games/unity-%E8%A1%8C%E8%B5%B0%E4%B8%8E%E9%BC%A0%E6%A0%87%E8%A7%86%E8%A7%92%E7%A7%BB%E5%8A%A8/</guid>
+      <description>1. 行走部分 WASD 控制行走 public float fMoveSpeed = 10f; // WASD移动速度  void Update(){  KeyBoardControl(); }  private void KeyBoardControl() {  if (Input.GetKey(KeyCode.W))  {  transform.Translate(Vector3.forward * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.S))  {  transform.Translate(Vector3.back * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.A))  {  transform.Translate(Vector3.up * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.D))  {  transform.</description>
+    </item>
+    
     <item>
       <title>Unity TMP 设置中文字体</title>
       <link>https://NYH-Dolphin.github.io/games/unity-tmp-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/</link>
@@ -24,16 +33,6 @@
 配置完成后，点击 Generate Font Atlas，由于文字个数很多，可能需要相当长的一段时间才能完成生成
 完成好后，旁边有一个 Save 按钮，将导出的 Font Asset 存放在指定位置即可
 4. 使用 Font Asset 使用时，在创建了 TMP GameObject 的地方，把生成的 Font Asset 拖入到指定位置即可使用</description>
-    </item>
-    
-    <item>
-      <title>Test Doc</title>
-      <link>https://NYH-Dolphin.github.io/games/test/</link>
-      <pubDate>Wed, 09 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://NYH-Dolphin.github.io/games/test/</guid>
-      <description>我是小小的大肥!
-  </description>
     </item>
     
     <item>

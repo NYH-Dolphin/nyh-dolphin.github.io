@@ -3,7 +3,7 @@ title: "Unity TMP 设置中文字体"
 date: 2022-03-29
 draft: false
 type: "post"
-tags: ["Unity-Utils"]
+tags: ["Unity"]
 ---
 
 为了解决 TMP 不支持中文字体的情况，采取以下方式
