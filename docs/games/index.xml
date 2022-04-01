@@ -8,6 +8,15 @@
     <language>en</language>
     <lastBuildDate>Fri, 01 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://NYH-Dolphin.github.io/games/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Unity AssetBundle</title>
+      <link>https://NYH-Dolphin.github.io/games/unity-assetbundle/</link>
+      <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/games/unity-assetbundle/</guid>
+      <description>参考链接：AssetBundle详解 - 知乎 (zhihu.com)  1. AssetBundle 介绍  AssetBundle 是将资源使用 Unity 提供的一种用于存储资源的压缩格式打包后的集合 它可以存储任何一种 Unity 可以识别的资源，如模型，纹理图，音频，场景等资源，也可以加载开发者自定义的二进制文件 文件类型是 .assetbundle/.unity3d 它们先前被设计好，很容易就下载到我们的游戏或者场景当中  AssetBundle 开发流程  创建 Asset bundle，开发者在 unity 编辑器中通过脚本将所需要的资源打包成 AssetBundle 文件 上传服务器，开发者将打包好的 AssetBundle 文件上传至服务器中，使得游戏客户端能够获取当前的资源，进行游戏的更新 下载 AssetBundle，首先将其下载到本地设备中，然后再通过 AssetBudle 的加载模块将资源加到游戏之中 加载，通过 Unity 提供的 API 可以加载资源里面包含的模型、纹理图、音频、动画、场景等来更新游戏客户端 卸载 AssetBundle，卸载之后可以节省内存资源，并且要保证资源的正常更新  2. AssetBundle 多平台打包 创建 AssetBundle  只有在 Asset 窗口中的资源才可以打包，先以 Prefab 的形式保存 单击要打包的 Prefab，在 Inspector 窗口右下角属性窗口底部会有一个 AssetBundle 的创建工具，直接创建  名称固定为小写，如果使用了大写字母之后，系统会自动转换为小写格式    打包 AssetBundle AssetBundle 创建之后需要导出，这一个过程就需要编写相应的代码实现</description>
+    </item>
+    
+    <item>
       <title>Unity 行走与鼠标视角移动</title>
       <link>https://NYH-Dolphin.github.io/games/unity-%E8%A1%8C%E8%B5%B0%E4%B8%8E%E9%BC%A0%E6%A0%87%E8%A7%86%E8%A7%92%E7%A7%BB%E5%8A%A8/</link>
       <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>

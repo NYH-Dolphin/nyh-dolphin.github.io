@@ -76,10 +76,10 @@ private void MouseControl()
         fLastPosX = Input.mousePosition.x;
     }
             
-            // 上下转动相机
+    // 上下转动相机
     if (Input.mousePosition.y > fLastPosY + fRange)
     {
-                // Vector3.right 根据不同的游戏视角会有调整
+    // Vector3.right 根据不同的游戏视角会有调整
         transform.Find("Main Camera").Rotate(Vector3.right, -RotaSpeed);
         fLastPosY = Input.mousePosition.y;
     }
@@ -88,6 +88,6 @@ private void MouseControl()
         transform.Find("Main Camera").Rotate(Vector3.left, -RotaSpeed);          
         fLastPosY = Input.mousePosition.y;
     }
-        }
+}
 ```
 

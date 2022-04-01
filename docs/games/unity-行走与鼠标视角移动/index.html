@@ -229,10 +229,10 @@
 </span></span><span style="display:flex;"><span>        fLastPosX = Input.mousePosition.x;
 </span></span><span style="display:flex;"><span>    }
 </span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// 上下转动相机</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 上下转动相机</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Input.mousePosition.y &gt; fLastPosY + fRange)
 </span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>                <span style="color:#75715e">// Vector3.right 根据不同的游戏视角会有调整</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Vector3.right 根据不同的游戏视角会有调整</span>
 </span></span><span style="display:flex;"><span>        transform.Find(<span style="color:#e6db74">&#34;Main Camera&#34;</span>).Rotate(Vector3.right, -RotaSpeed);
 </span></span><span style="display:flex;"><span>        fLastPosY = Input.mousePosition.y;
 </span></span><span style="display:flex;"><span>    }
@@ -241,7 +241,7 @@
 </span></span><span style="display:flex;"><span>        transform.Find(<span style="color:#e6db74">&#34;Main Camera&#34;</span>).Rotate(Vector3.left, -RotaSpeed);          
 </span></span><span style="display:flex;"><span>        fLastPosY = Input.mousePosition.y;
 </span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
         </p>
     </div>
