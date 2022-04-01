@@ -31,27 +31,33 @@ enableRobotsTXT = true
     weight = 1
 
   [[menu.main]]
+    identifer = "notes"
+    name = "Notes"
+    url = "/notes/"
+    weight = 2
+  
+  [[menu.main]]
     identifier = "games"
     name = "Games"
     url = "/games/"
-    weight = 2
+    weight = 3
 
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
-    weight = 3
+    weight = 4
 
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 4
+    weight = 5
     
   [[menu.main]]
     identifier = "github"
     url = "https://github.com/NYH-Dolphin"
-    weight = 5
+    weight = 6
     
     # We use feather-icons: https://feathericons.com/
     pre = "<span data-feather='github'></span>"
