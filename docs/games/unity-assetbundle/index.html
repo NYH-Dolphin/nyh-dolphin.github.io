@@ -48,6 +48,7 @@
     
     
     
+
     <!-- Support Letax Equation -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
 
@@ -228,15 +229,15 @@
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEditor;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExportAssets</span> : MonoBehaviour {
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">	[@MenuItem(&#34;Test/Build Asset Bundles&#34;)]</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> BuildAssetBundles(){
-</span></span><span style="display:flex;"><span>        BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath,BuildAssetBundleOptions.UncompressedAssetBundle,BuildTarget.StandaloneOSXUniversal);
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> UnityEditor;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExportAssets</span> : MonoBehaviour {
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">	[@MenuItem(&#34;Test/Build Asset Bundles&#34;)]</span>
+	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> BuildAssetBundles(){
+        BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath,BuildAssetBundleOptions.UncompressedAssetBundle,BuildTarget.StandaloneOSXUniversal);
+	}
+}
+</code></pre></div><ul>
 <li>所有的 AssetBundle 已经被导出，此时每一个 AssetBundle 资源会有一个和文件相关的 Mainfest 的文本类型的文件，该文件提供了所打包资源的 CRC 和资源依赖的信息
 <img src="https://pic1.zhimg.com/80/v2-bf24cf1fcbca6bd185e0b4c330021eb4_720w.jpg" alt="img">
 <img src="https://pic3.zhimg.com/80/v2-1bd3b4c3790ab8f2b8aef3493ed4ca2e_720w.jpg" alt="img" style="zoom:101%;" /></li>
@@ -258,31 +259,31 @@
 <li>使用 LZ4 格式的好处在于解压缩的时间相对要短</li>
 </ul>
 <p>要使用 LZ4，在打包的时候开启 <code>BuildAssetBundleOptions.ChunkBasedCompression</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEditor;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExportAssets</span> : MonoBehaviour {
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">	[@MenuItem(&#34;Test/Build Asset Bundles&#34;)]</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> BuildAssetBundles(){
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath,BuildAssetBundleOptions.ChunkBasedCompression,BuildTarget.StandaloneOSXUniversal);
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="不压缩">不压缩</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> UnityEditor;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExportAssets</span> : MonoBehaviour {
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">	[@MenuItem(&#34;Test/Build Asset Bundles&#34;)]</span>
+	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> BuildAssetBundles(){
+
+BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath,BuildAssetBundleOptions.ChunkBasedCompression,BuildTarget.StandaloneOSXUniversal);
+	}
+}
+</code></pre></div><h4 id="不压缩">不压缩</h4>
 <ul>
 <li>当然，也可以不对 AssetBundle 进行压缩</li>
 <li>没有经过压缩的包体积最大，但是访问速度最快</li>
 </ul>
 <p>要使用 LZ4，在打包的时候开启 <code>BuildAssetBundleOptions.UncompressedAssetBundle</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEditor;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExportAssets</span> : MonoBehaviour {
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">
-</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">	[@MenuItem(&#34;Test/Build Asset Bundles&#34;)]</span>
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> BuildAssetBundles(){
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath,BuildAssetBundleOptions.UncompressedAssetBundle,BuildTarget.StandaloneOSXUniversal);
-</span></span><span style="display:flex;"><span>	}
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h2 id="3-assetbundle-资源加载与卸载">3. AssetBundle 资源加载与卸载</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> UnityEditor;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ExportAssets</span> : MonoBehaviour {
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">	[@MenuItem(&#34;Test/Build Asset Bundles&#34;)]</span>
+	<span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> BuildAssetBundles(){
+
+BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath,BuildAssetBundleOptions.UncompressedAssetBundle,BuildTarget.StandaloneOSXUniversal);
+	}
+}
+</code></pre></div><h2 id="3-assetbundle-资源加载与卸载">3. AssetBundle 资源加载与卸载</h2>
 <h3 id="assetbundle-加载">AssetBundle 加载</h3>
 <h4 id="获取-assetbundle-对象">获取 AssetBundle 对象</h4>
 <p>使用 AssetBundle 动态加载资源首先要获取 AssetBundle 对象</p>
@@ -296,42 +297,42 @@
 直接调用 WWW 类的构造函数，目标 AssetBundle 所在的路径作为其参数
 构造 WWW 对象的过程中会加载 Bundle 文件并返回一个 WWW 对象，完成后会在内存中创建较大的WebStream（解压后的内容，通常为原 Bundle 文件的 4~5 倍大小，纹理资源比例可能更大）
 因此后续的 AssetBundle.LoadAsset <strong>可以直接在内存中进行</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// [优点]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 后续的 Load 操作在内存中进行，相比 IO 操作开销更小</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 不形成缓存文件，不需要额外的磁盘空间存放缓存</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 能通过 WWW.texture，WWW.bytes，WWW.audioClip 等接口直接加载外部资源</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// [缺点]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 每次加载都涉及到解压操作</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 在内存中会有较大的 WebStream</span>
-</span></span><span style="display:flex;"><span>IEnumerator GetData(){
-</span></span><span style="display:flex;"><span>    WWW data = <span style="color:#66d9ef">new</span> WWW (<span style="color:#e6db74">&#34;file://&#34;</span>+Application.streamingAssetsPath + <span style="color:#e6db74">&#34;/cube.assetbundle&#34;</span>);
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> data;
-</span></span><span style="display:flex;"><span>    Material mat = (Material)data.assetBundle.LoadAsset (<span style="color:#e6db74">&#34;Red&#34;</span>);
-</span></span><span style="display:flex;"><span>    GetComponent&lt;MeshRenderer&gt; ().material = mat;	
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// [优点]
+</span><span style="color:#75715e">// 后续的 Load 操作在内存中进行，相比 IO 操作开销更小
+</span><span style="color:#75715e">// 不形成缓存文件，不需要额外的磁盘空间存放缓存
+</span><span style="color:#75715e">// 能通过 WWW.texture，WWW.bytes，WWW.audioClip 等接口直接加载外部资源
+</span><span style="color:#75715e"></span>    
+<span style="color:#75715e">// [缺点]
+</span><span style="color:#75715e">// 每次加载都涉及到解压操作
+</span><span style="color:#75715e">// 在内存中会有较大的 WebStream
+</span><span style="color:#75715e"></span>IEnumerator GetData(){
+    WWW data = <span style="color:#66d9ef">new</span> WWW (<span style="color:#e6db74">&#34;file://&#34;</span>+Application.streamingAssetsPath + <span style="color:#e6db74">&#34;/cube.assetbundle&#34;</span>);
+    <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> data;
+    Material mat = (Material)data.assetBundle.LoadAsset (<span style="color:#e6db74">&#34;Red&#34;</span>);
+    GetComponent&lt;MeshRenderer&gt; ().material = mat;	
+}
+</code></pre></div></li>
 <li>
 <p><code>public satic WWW LoadFromCacheOrDownload(string url, int version, unit crc=0)</code>
 WWW 类的一个静态方法，调用该方法同样会加载 Bundle 文件同时返回一个 WWW 对象
 该方法会将解压形式的 Bundle 内容<strong>存入磁盘</strong>中作为缓存（如果该Bundle已在缓存中，则省去这一步）
 完成后只会在内存中创建较小的 SerializedFile，而后续的 AssetBundle.LoadAsset <strong>需要通过 IO 从磁盘中的缓存获取</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#75715e">// [优点]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 第二次加载时就省去了解压的开销</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 一般情况下，内存中只有通常较小的 SerializedFile</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// [缺点]</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// IO 操作开销大</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 需要额外的磁盘空间存放缓存</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">// 只能加载 AssetBundle</span>
-</span></span><span style="display:flex;"><span>IEnumerator GetData(){
-</span></span><span style="display:flex;"><span>    Hash128 hash = <span style="color:#66d9ef">new</span> Hash128 ();
-</span></span><span style="display:flex;"><span>    WWW data=WWW.LoadFromCacheOrDownload(<span style="color:#e6db74">&#34;file://&#34;</span>+Application.streamingAssetsPath+ <span style="color:#e6db74">&#34;/cube.assetbundle&#34;</span>,<span style="color:#66d9ef">new</span> Hash128(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>));
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> data;
-</span></span><span style="display:flex;"><span>	Material mat = (Material)data.assetBundle.LoadAsset (<span style="color:#e6db74">&#34;Red&#34;</span>);
-</span></span><span style="display:flex;"><span>	GetComponent&lt;MeshRenderer&gt; ().material = mat;
-</span></span><span style="display:flex;"><span>}	
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#75715e">// [优点]
+</span><span style="color:#75715e">// 第二次加载时就省去了解压的开销
+</span><span style="color:#75715e">// 一般情况下，内存中只有通常较小的 SerializedFile
+</span><span style="color:#75715e"></span>    
+<span style="color:#75715e">// [缺点]
+</span><span style="color:#75715e">// IO 操作开销大
+</span><span style="color:#75715e">// 需要额外的磁盘空间存放缓存
+</span><span style="color:#75715e">// 只能加载 AssetBundle
+</span><span style="color:#75715e"></span>IEnumerator GetData(){
+    Hash128 hash = <span style="color:#66d9ef">new</span> Hash128 ();
+    WWW data=WWW.LoadFromCacheOrDownload(<span style="color:#e6db74">&#34;file://&#34;</span>+Application.streamingAssetsPath+ <span style="color:#e6db74">&#34;/cube.assetbundle&#34;</span>,<span style="color:#66d9ef">new</span> Hash128(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>));
+    <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> data;
+    Material mat = (Material)data.assetBundle.LoadAsset (<span style="color:#e6db74">&#34;Red&#34;</span>);
+    GetComponent&lt;MeshRenderer&gt; ().material = mat;
+}	
+</code></pre></div></li>
 </ul>
 </li>
 </ul>
@@ -357,37 +358,37 @@ WWW 类的一个静态方法，调用该方法同样会加载 Bundle 文件同�
 </ul>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>IEnumerator GetData(<span style="color:#66d9ef">string</span> url){
-</span></span><span style="display:flex;"><span>    WWW data = <span style="color:#66d9ef">new</span> WWW (url);
-</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> data;
-</span></span><span style="display:flex;"><span>    AssetBundle bundle = AssetBundle.CreateFromMemoryImmediate(data.bytes);
-</span></span><span style="display:flex;"><span>	sphere.GetComponent&lt;Renderer&gt; ().material.mainTexture = (Texture)bundle.LoadAsset (<span style="color:#e6db74">&#34;01&#34;</span>);
-</span></span><span style="display:flex;"><span>    bundle.Unload (<span style="color:#66d9ef">false</span>);
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><h4 id="assetbundle-内部资源加载">AssetBundle 内部资源加载</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">IEnumerator GetData(<span style="color:#66d9ef">string</span> url){
+    WWW data = <span style="color:#66d9ef">new</span> WWW (url);
+	<span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> data;
+    AssetBundle bundle = AssetBundle.CreateFromMemoryImmediate(data.bytes);
+	sphere.GetComponent&lt;Renderer&gt; ().material.mainTexture = (Texture)bundle.LoadAsset (<span style="color:#e6db74">&#34;01&#34;</span>);
+    bundle.Unload (<span style="color:#66d9ef">false</span>);
+}
+</code></pre></div><h4 id="assetbundle-内部资源加载">AssetBundle 内部资源加载</h4>
 <ul>
 <li>
 <p><strong>LoadAsset：同步方法，根据名称进行加载</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>Texture mat = (Texture)data.assetBundle.LoadAsset (<span style="color:#e6db74">&#34;1&#34;</span>);
-</span></span><span style="display:flex;"><span>GetComponent&lt;MeshRenderer&gt; ().material.mainTexture = mat;
-</span></span><span style="display:flex;"><span>data.assetBundle.Unload (<span style="color:#66d9ef">false</span>);
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">Texture mat = (Texture)data.assetBundle.LoadAsset (<span style="color:#e6db74">&#34;1&#34;</span>);
+GetComponent&lt;MeshRenderer&gt; ().material.mainTexture = mat;
+data.assetBundle.Unload (<span style="color:#66d9ef">false</span>);
+</code></pre></div></li>
 <li>
 <p><strong>LoadAllAsset：同步方法，加载所有的 GameObject 类型</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>GameObject[] obj = data.assetBundle.LoadAllAssets&lt;GameObject&gt; ();
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">GameObject[] obj = data.assetBundle.LoadAllAssets&lt;GameObject&gt; ();
+</code></pre></div></li>
 <li>
 <p><strong>LoadAssetAsync：异步方法，根据名称进行加载</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>AssetBundleRequest req = data.assetBundle.LoadAssetAsync(<span style="color:#e6db74">&#34;1&#34;</span>);
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> req;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> (req.isDone) {
-</span></span><span style="display:flex;"><span>	Texture tex = (Texture)req.asset;
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">AssetBundleRequest req = data.assetBundle.LoadAssetAsync(<span style="color:#e6db74">&#34;1&#34;</span>);
+<span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> req;
+<span style="color:#66d9ef">if</span> (req.isDone) {
+  Texture tex = (Texture)req.asset;
+}
+</code></pre></div></li>
 <li>
 <p><strong>LoadAllAssetsAsync ：异步方法，加载所有的 GameObject 类型</strong></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>AssetBundleRequest req = data.assetBundle.LoadAllAssetsAsync&lt;GameObject&gt;();
-</span></span></code></pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#">AssetBundleRequest req = data.assetBundle.LoadAllAssetsAsync&lt;GameObject&gt;();
+</code></pre></div></li>
 </ul>
 <h3 id="assetbundle-卸载">AssetBundle 卸载</h3>
 <p>待补充</p>
