@@ -6,11 +6,7 @@
     <description>Recent content in Unity on 小小的大肥的主页</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 01 Apr 2022 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://NYH-Dolphin.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 01 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://NYH-Dolphin.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Unity AssetBundle</title>
       <link>https://NYH-Dolphin.github.io/games/unity-assetbundle/</link>
@@ -26,9 +22,7 @@
       <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://NYH-Dolphin.github.io/games/unity-%E8%A1%8C%E8%B5%B0%E4%B8%8E%E9%BC%A0%E6%A0%87%E8%A7%86%E8%A7%92%E7%A7%BB%E5%8A%A8/</guid>
-      <description>1. 行走部分 WASD 控制行走 public float fMoveSpeed = 10f; // WASD移动速度  void Update(){ KeyBoardControl(); } private void KeyBoardControl() { if (Input.GetKey(KeyCode.W)) { transform.Translate(Vector3.forward * fMoveSpeed * Time.deltaTime); } if (Input.GetKey(KeyCode.S)) { transform.Translate(Vector3.back * fMoveSpeed * Time.deltaTime); } if (Input.GetKey(KeyCode.A)) { transform.Translate(Vector3.up * fMoveSpeed * Time.deltaTime); } if (Input.GetKey(KeyCode.D)) { transform.Translate(-1 * Vector3.up * fMoveSpeed * Time.deltaTime); } } 鼠标点击移动到指定位置 待补充
-2. 鼠标移动视角部分 左右移动转动物体，上下移动转动摄像机 注意的问题是，上下移动不能转动物体，不然视角会转飞
-public float fRotateSpeed = 200; // 视角移动速度 private float fLastPosX; // 上一次鼠标的位置 x private float fLastPosY; // 上一次鼠标的位置 y private float fRange = 0.</description>
+      <description>1. 行走部分 WASD 控制行走 public float fMoveSpeed = 10f; // WASD移动速度  void Update(){  KeyBoardControl(); }  private void KeyBoardControl() {  if (Input.GetKey(KeyCode.W))  {  transform.Translate(Vector3.forward * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.S))  {  transform.Translate(Vector3.back * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.A))  {  transform.Translate(Vector3.up * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.D))  {  transform.</description>
     </item>
     
     <item>

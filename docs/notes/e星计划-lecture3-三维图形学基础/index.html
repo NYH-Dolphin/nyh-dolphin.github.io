@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #4682B4;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>E星计划-Lecture3 三维图形学基础</title>
+    <meta name="description" content="Imagination Can Change Anything!">
+    <meta name="keywords" content='E星计划'>
+
+    <meta property="og:url" content="https://NYH-Dolphin.github.io/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture3-%E4%B8%89%E7%BB%B4%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="E星计划-Lecture3 三维图形学基础">
+    <meta property="og:description" content="Imagination Can Change Anything!">
+    <meta property="og:image" content="/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="E星计划-Lecture3 三维图形学基础">
+    <meta name="twitter:description" content="Imagination Can Change Anything!">
+    <meta property="twitter:domain" content="https://NYH-Dolphin.github.io/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture3-%E4%B8%89%E7%BB%B4%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+    <meta property="twitter:url" content="https://NYH-Dolphin.github.io/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture3-%E4%B8%89%E7%BB%B4%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+    <meta name="twitter:image" content="/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://NYH-Dolphin.github.io/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture3-%E4%B8%89%E7%BB%B4%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/svg-injector.min.js"></script>
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+    
+    <!-- Support Letax Equation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+
+
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://NYH-Dolphin.github.io">
+                <img src="/images/avatar.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://NYH-Dolphin.github.io">小小的大肥的主页</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/notes/"> Notes </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/games/"> Games </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/about/"> About </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/notes/"> Notes </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/games/"> Games </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/about/"> About </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>E星计划-Lecture3 三维图形学基础</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            April 4, 2022
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/e%E6%98%9F%E8%AE%A1%E5%88%92">E星计划</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h2 id="1-变换">1. 变换</h2>
+<h3 id="变换简介">变换简介</h3>
+<h4 id="什么是变换">什么是变换</h4>
+<ul>
+<li>将一个坐标的点 (x, y) 映射到另一个坐标系中的点 (x&rsquo;, y')</li>
+</ul>
+<h4 id="为什么是顶点变换">为什么是顶点变换</h4>
+<ul>
+<li>行业规范
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404131918611.png" alt="image-20220404131918611" style="zoom:50%;" />
+<ul>
+<li>三角形网格模型作为美术制作的基础</li>
+<li>三角形作为 GPU 绘制基础图元</li>
+<li>顶点变换可以简化表示三角形的网格变换，属性插值表示三角形</li>
+</ul>
+</li>
+</ul>
+<h4 id="顶点变换在游戏中的应用">顶点变换在游戏中的应用</h4>
+<ul>
+<li>成为游戏行业的基准
+<ul>
+<li>场景摆放</li>
+<li>模型动作</li>
+<li>渲染管线</li>
+<li>美术建模</li>
+</ul>
+</li>
+</ul>
+<h4 id="二维变换">二维变换</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404132717155.png" alt="image-20220404132717155" style="zoom:50%;" /></p>
+<ul>
+<li>可以任意组合</li>
+<li>可以变换回去（可逆）</li>
+</ul>
+<h4 id="三维变换">三维变换</h4>
+<p>三维变换可以用于</p>
+<ul>
+<li>几何建模</li>
+<li>在场景中摆放物体
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404132848677.png" alt="image-20220404132848677" style="zoom:50%;" /></li>
+<li>骨骼动画
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404132920572.png" alt="image-20220404132920572" style="zoom:50%;" /></li>
+<li>基于投影渲染管线</li>
+</ul>
+<h4 id="其它的模型">其它的模型</h4>
+<p>其实，除了顶点变换，还有其它的模型</p>
+<ul>
+<li>贝塞尔曲面</li>
+<li>体素</li>
+<li>点云</li>
+<li>隐式表面</li>
+<li>SDF</li>
+</ul>
+<h3 id="变换的分类">变换的分类</h3>
+<h4 id="刚体变换-rigid-body-transform">刚体变换 Rigid Body Transform</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404133614744.png" alt="image-20220404133614744" style="zoom:50%;" /></p>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404133240997.png" style="zoom:50%;" ></p>
+<ul>
+<li>保距变换：线段经过变换后，距离不变</li>
+<li>保角变换：夹角经过变换后，角度不变</li>
+</ul>
+<h4 id="相似变换-similarity-transform">相似变换 Similarity Transform</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404133548841.png" alt="image-20220404133548841" style="zoom:50%;" /></p>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404133757153.png" alt="image-20220404133757153" style="zoom: 50%;" /></p>
+<ul>
+<li>保形变换</li>
+<li>保角变换</li>
+</ul>
+<h4 id="线性变换-linear-transform">线性变换 Linear Transform</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404133658184.png" alt="image-20220404133658184" style="zoom: 50%;" /></p>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404133720618.png" alt="image-20220404133720618" style="zoom: 50%;" /></p>
+<ul>
+<li>L(p + q) = L(p) + L(q)</li>
+<li>L(ap) = a L(p)</li>
+</ul>
+<h4 id="仿射变换-affine-transform">仿射变换 Affine Transform</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404133922300.png" alt="image-20220404133922300" style="zoom:50%;" /></p>
+<ul>
+<li>保平行</li>
+<li>保线段的比例关系</li>
+</ul>
+<h4 id="投影变换-projection-transform">投影变换 Projection Transform</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404134005704.png" alt="image-20220404134005704" style="zoom:50%;" /></p>
+<ul>
+<li>保共线</li>
+<li>可以反应不同平面直接的变换</li>
+</ul>
+<h4 id="自由变换-free-transform">自由变换 Free Transform</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404134149996.png" alt="image-20220404134149996" style="zoom:50%;" /></p>
+<ul>
+<li>不保共线</li>
+<li>更加复杂</li>
+<li>eg：鱼眼相机</li>
+</ul>
+<h3 id="变换的数学表示">变换的数学表示</h3>
+<h4 id="仿射变换">仿射变换</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>二维</th>
+<th>三维</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>公式</strong></td>
+<td><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404135735314.png" alt="image-20220404135735314"  /></td>
+<td><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404141305015.png" alt="image-20220404141305015"  /></td>
+</tr>
+<tr>
+<td><strong>矩阵</strong></td>
+<td><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404135750235.png" alt="image-20220404135750235"  /></td>
+<td><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404141701239.png" alt="image-20220404141701239"  /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="齐次变换">齐次变换</h4>
+<p>使用齐次变换矩阵，拓展一个位图，可以更加简洁的表示</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>二维</th>
+<th>三维</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>齐次变换</strong></td>
+<td><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404135758386.png" alt="image-20220404135758386"  /></td>
+<td><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404141902162.png" alt="image-20220404141902162" style="zoom:100%;" /></td>
+</tr>
+</tbody>
+</table>
+<h4 id="齐次坐标与欧式坐标的转换">齐次坐标与欧式坐标的转换</h4>
+<p>![image-20220404135805645](/images/E星计划-Lecture3 三维图形学基础/image-20220404135805645.png)</p>
+<ul>
+<li>x,y,w：齐次坐标下的三维向量</li>
+<li>x&rsquo;,y&rsquo;：欧式坐标下的二维向量</li>
+</ul>
+<h4 id="齐次坐标与平行线">齐次坐标与平行线</h4>
+<ul>
+<li>欧式坐标：平行线没有解（c ≠ d）
+![image-20220404140654843](/images/E星计划-Lecture3 三维图形学基础/image-20220404140654843.png)</li>
+<li>齐次坐标：平行线（c ≠ d）存在解 w = 0
+![image-20220404140806645](/images/E星计划-Lecture3 三维图形学基础/image-20220404140806645.png)</li>
+<li>(x, y, 0) 在齐次坐标下面表示无限远（只有方向的向量）</li>
+</ul>
+<h4 id="齐次坐标变换">齐次坐标变换</h4>
+<ul>
+<li>
+<p>仿射变换（不涉及到投影变换） w 不会发送变换
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404142106036.png" alt="image-20220404142106036" style="zoom: 33%;" /></p>
+</li>
+<li>
+<p>平移变换可以表示在 4 x 4 的矩阵里面</p>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404142137400.png" alt="image-20220404142137400" style="zoom:33%;" /></p>
+</li>
+<li>
+<p>等比缩放
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404142235031.png" alt="image-20220404142235031" style="zoom:33%;" /></p>
+</li>
+<li>
+<p>非等比缩放
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404142305231.png" alt="image-20220404142305231" style="zoom:33%;" /></p>
+</li>
+<li>
+<p>旋转</p>
+<ul>
+<li>绕 z 轴旋转
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404142402823.png" alt="image-20220404142402823" style="zoom:33%;" /></li>
+<li>绕 x 轴旋转
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404142518262.png" alt="image-20220404142518262" style="zoom:33%;" /></li>
+<li>绕 y 周旋转
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404142447160.png" alt="image-20220404142447160" style="zoom:33%;" /></li>
+</ul>
+</li>
+</ul>
+<h4 id="齐次坐标的存储">齐次坐标的存储</h4>
+<ul>
+<li>压缩存储空间，齐次坐标按欧式坐标存储</li>
+<li>在处理向量、点的时候需要特别小心
+<ul>
+<li>向量 w = 0</li>
+<li>点 w = 1</li>
+</ul>
+</li>
+</ul>
+<h4 id="3d-旋转表示方法">3D 旋转表示方法</h4>
+<ul>
+<li><strong>欧拉角</strong>
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404143216398.png" alt="image-20220404143216398" style="zoom: 67%;" />
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404143339242.png" alt="image-20220404143339242" style="zoom: 50%;" />
+<ul>
+<li>Roll - Pitch - Yaw = (x, y, z)</li>
+<li>三个数，按照顺序进行主轴旋转，不能连续绕同一个主轴旋转，一共有 12 种顺序</li>
+<li>和矩阵一样，顺序不能第哦啊换，游戏引擎中旋转轴都是世界空间的主轴</li>
+<li>常用于给美术编辑建模</li>
+</ul>
+</li>
+<li><strong>四元数</strong>
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404143407187.png" alt="image-20220404143407187" style="zoom:50%;" />
+<ul>
+<li>动力学计算</li>
+<li>球面线性插值</li>
+</ul>
+</li>
+<li><strong>矩阵</strong>
+<ul>
+<li>顶点变换表示</li>
+</ul>
+</li>
+</ul>
+<h4 id="连续变换">连续变换</h4>
+<ul>
+<li>变换<strong>不满足交换律</strong>
+<ul>
+<li>放缩后移动：p&rsquo; = T(S(p))
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404143703917.png" alt="image-20220404143703917" style="zoom:50%;" />
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404143739896.png" alt="image-20220404143739896" style="zoom:50%;" /></li>
+<li>移动后放缩：p&rsquo; = S(T(p))
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404143717608.png" alt="image-20220404143717608" style="zoom:50%;" />
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404143803594.png" alt="image-20220404143803594" style="zoom:50%;" /></li>
+</ul>
+</li>
+</ul>
+<h3 id="游戏中的变换">游戏中的变换</h3>
+<h4 id="场景表示">场景表示</h4>
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404144032893.png" alt="image-20220404144032893" style="zoom:50%;" />
+<h4 id="场景描述">场景描述</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404144121773.png" alt="image-20220404144121773" style="zoom:50%;" /></p>
+<h4 id="节点层级表示">节点层级表示</h4>
+<ul>
+<li>场景表示
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404144344168.png" alt="image-20220404144344168" style="zoom: 33%;" /></li>
+<li>骨骼表示
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404144507652.png" alt="image-20220404144507652" style="zoom:50%;" /></li>
+</ul>
+<h2 id="2-顶点变换流水线">2. 顶点变换流水线</h2>
+<h3 id="介绍">介绍</h3>
+<h4 id="基于投影变换的-3d-顶点变换流水线">基于投影变换的 3D 顶点变换流水线</h4>
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404150429421.png" alt="image-20220404150429421" style="zoom:50%;" />
+<h3 id="相机模型">相机模型</h3>
+<h4 id="真实的相机绘制">真实的相机绘制</h4>
+<ul>
+<li>
+<p>焦点、景深
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404150850930.png" alt="image-20220404150850930" style="zoom:33%;" /></p>
+</li>
+<li>
+<p>移动模糊
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404150901198.png" alt="image-20220404150901198" style="zoom:50%;" /></p>
+</li>
+</ul>
+<h3 id="投影变换">投影变换</h3>
+<h4 id="模型空间">模型空间</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404151132750.png" alt="image-20220404151132750" style="zoom:50%;" /></p>
+<ul>
+<li>由美术定义，没有标准答案</li>
+<li>一般是由物体的中心、边界为原点</li>
+</ul>
+<h4 id="世界空间">世界空间</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404151150379.png" alt="image-20220404151150379" style="zoom:50%;" /></p>
+<ul>
+<li>场景中所有的物体放在一个公共的参考系</li>
+<li>选定没有通用标准，使用即可</li>
+</ul>
+<h4 id="世界空间---相机空间视空间视图变换-view-transformation">世界空间 -&gt; 相机空间/视空间（视图变换 view transformation）</h4>
+<p>相机矩阵
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404151450662.png" alt="image-20220404151450662" style="zoom:50%;" /></p>
+<ul>
+<li>
+<p><code>mtxLookAt(view, eye, d, up)</code></p>
+<ul>
+<li>eye：投影中心</li>
+<li>d：观察位置</li>
+<li>up：上方向</li>
+</ul>
+</li>
+<li>
+<p>z 轴
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404151755020.png" alt="image-20220404151755020" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>x 轴</p>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404151817250.png" alt="image-20220404151817250" style="zoom: 25%;" /></p>
+</li>
+<li>
+<p>y 轴</p>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404151843290.png" alt="image-20220404151843290" style="zoom: 25%;" /></p>
+</li>
+</ul>
+<h4 id="相机空间视空间">相机空间/视空间</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404151325182.png" alt="image-20220404151325182" style="zoom:50%;" /></p>
+<ul>
+<li>场景的观察者</li>
+<li>投影整个世界场景到相机所在的空间
+<ul>
+<li>相机坐标系</li>
+<li>XY 平面与图像平面平行</li>
+<li>Z 轴垂直于图像平面</li>
+</ul>
+</li>
+</ul>
+<h4 id="相机空间视空间---投影裁剪空间投影变换-projection-transformation">相机空间/视空间 -&gt; 投影/裁剪空间（投影变换 projection transformation）</h4>
+<p>给定视空间上的一个点，求在相机平面上的位置坐标</p>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404152209128.png" alt="image-20220404152209128" style="zoom:50%;" /></p>
+<ul>
+<li>
+<p>垂直投影 orthonormal projection
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404152327660.png" alt="image-20220404152327660" style="zoom: 33%;" /></p>
+<ul>
+<li>忽略 z 值</li>
+<li>使用相机坐标作为图形屏幕坐标</li>
+<li>按照平行线投影到 xy 平面</li>
+</ul>
+</li>
+<li>
+<p>透视投影 perspective projection
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404152539545.png" alt="image-20220404152539545" style="zoom:50%;" /></p>
+<ul>
+<li>
+<p>游戏中最常用的投影方式（近大远小）</p>
+</li>
+<li>
+<p>人眼模型的简化，小孔相机模型</p>
+</li>
+<li>
+<p>透视投影矩阵</p>
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404152709816.png" alt="image-20220404152709816" style="zoom:67%;" />
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404152737425.png" alt="image-20220404152737425" style="zoom:50%;" /></p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="投影裁剪空间">投影/裁剪空间</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404153106407.png" alt="image-20220404153106407" style="zoom:50%;" /></p>
+<h4 id="投影裁剪空间---归一化空间">投影/裁剪空间 -&gt; 归一化空间</h4>
+<ul>
+<li>除以齐次坐标系中的 w，完成归一化</li>
+<li>剔除视锥外的三角形</li>
+</ul>
+<h4 id="归一化空间">归一化空间</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404153429718.png" alt="image-20220404153429718" style="zoom:50%;" /></p>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404153257482.png" alt="image-20220404153257482" style="zoom: 33%;" /></p>
+<ul>
+<li>将视锥体之外的东西删除</li>
+<li>一般可以和投影/裁剪空间合为一个，做一个隐式的归一化</li>
+</ul>
+<h4 id="归一化空间---设备空间">归一化空间 -&gt; 设备空间</h4>
+<ul>
+<li>需要映射到图像（像素）空间</li>
+<li>使用平移或缩放</li>
+<li><code>bgfx::setViewRect(vireid,x0,y0,x1,y1)</code></li>
+<li>
+<img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404153603015.png" alt="image-20220404153603015"  />
+</li>
+</ul>
+<h4 id="设备空间">设备空间</h4>
+<ul>
+<li>具体的设备屏幕上的显示</li>
+</ul>
+<h4 id="总结">总结</h4>
+<p><img src="/images/E星计划-Lecture3 三维图形学基础/image-20220404154251522.png" alt="image-20220404154251522" style="zoom:50%;" />·</p>
+<ul>
+<li>从模型空间到设备空间的转换与 3D 场景独立</li>
+<li>可编程管线表达</li>
+<li>现在，PVW 可以被合并成一个矩阵</li>
+</ul>
+
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2022 NYH-Dolphin</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
