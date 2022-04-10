@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #4682B4;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Unity iTween 动画插件</title>
+    <meta name="description" content="Imagination Can Change Anything!">
+    <meta name="keywords" content='Unity'>
+
+    <meta property="og:url" content="https://NYH-Dolphin.github.io/games/unity-itween-%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Unity iTween 动画插件">
+    <meta property="og:description" content="Imagination Can Change Anything!">
+    <meta property="og:image" content="/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Unity iTween 动画插件">
+    <meta name="twitter:description" content="Imagination Can Change Anything!">
+    <meta property="twitter:domain" content="https://NYH-Dolphin.github.io/games/unity-itween-%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6/">
+    <meta property="twitter:url" content="https://NYH-Dolphin.github.io/games/unity-itween-%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6/">
+    <meta name="twitter:image" content="/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://NYH-Dolphin.github.io/games/unity-itween-%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/svg-injector.min.js"></script>
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+    
+    <!-- Support Letax Equation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+
+
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://NYH-Dolphin.github.io">
+                <img src="/images/avatar.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://NYH-Dolphin.github.io">小小的大肥的主页</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/notes/"> Notes </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/games/"> Games </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/about/"> About </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/notes/"> Notes </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/games/"> Games </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/about/"> About </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>Unity iTween 动画插件</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            March 29, 2022
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/unity">Unity</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <blockquote>
+<p>iTween 插件 API 全解析：https://www.bilibili.com/video/BV1T4411t7RS</p>
+</blockquote>
+<h2 id="1-itween-的下载和安装">1. iTween 的下载和安装</h2>
+<ul>
+<li>在 Unity 的 AssetStore 中可以下载，可以直接免费入手</li>
+<li>官网链接：<a href="http://www.pixelplacement.com/itween/index.php">iTween for Unity by Bob Berkebile (pixelplacement)</a></li>
+</ul>
+<h2 id="2-itween-的使用方式">2. iTween 的使用方式</h2>
+<h3 id="静态方法">静态方法</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Start()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    iTween.MoveAdd(gameObject, <span style="color:#66d9ef">new</span> Vector3(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>), <span style="color:#ae81ff">3f</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
+<li>直接调用 iTween 的静态方法，传入需要的参数即可</li>
+</ul>
+<h3 id="hashtable-方法">Hashtable 方法</h3>
+<ul>
+<li>可以参考文档：<a href="http://www.pixelplacement.com/itween/documentation.php">iTween for Unity by Bob Berkebile (pixelplacement)</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Start()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    Hashtable hash = <span style="color:#66d9ef">new</span> Hashtable();
+</span></span><span style="display:flex;"><span>    hash.Add(<span style="color:#e6db74">&#34;amount&#34;</span>, <span style="color:#66d9ef">new</span> Vector3(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>    hash.Add(<span style="color:#e6db74">&#34;time&#34;</span>, <span style="color:#ae81ff">2f</span>);
+</span></span><span style="display:flex;"><span>    iTween.MoveAdd(gameObject, hash);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="使用-itween-提供的-hash">使用 iTween 提供的 Hash</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Start()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    iTween.MoveAdd(gameObject, iTween.Hash(<span style="color:#e6db74">&#34;amount&#34;</span>, <span style="color:#66d9ef">new</span> Vector3(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>), <span style="color:#e6db74">&#34;time&#34;</span>, <span style="color:#ae81ff">2f</span>));
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="3-itween-中的枚举">3. iTween 中的枚举</h2>
+<h3 id="itweeneasetype">iTween.EaseType</h3>
+<ul>
+<li>指的是动画过程中的运动曲线的效果</li>
+<li>参考网站：<a href="https://easings.net/">Easing Functions Cheat Sheet (easings.net)</a></li>
+</ul>
+<h3 id="itweenlooptype">iTween.LoopType</h3>
+<ul>
+<li><code>none</code>：不循环</li>
+<li><code>loop</code>：完全重复轨迹</li>
+<li><code>pingPong</code>：往返重复</li>
+</ul>
+<h3 id="itweennamedvaluecolor">iTween.NamedValueColor</h3>
+<p>在 Shader 中改变颜色的动画</p>
+<ul>
+<li><code>_Color</code>：材质的主颜色</li>
+<li><code>_SpecColor</code>：材质的镜面颜色（用于镜面/光滑/顶点着色）</li>
+<li><code>_Emission</code>：一种材料的发射颜色（用于顶点着色器）</li>
+<li><code>_ReflectColor</code>：材质的反射颜色（用于反射着色器）</li>
+</ul>
+<h2 id="4-itween-hashtable-传入的通用参数">4. iTween Hashtable 传入的通用参数</h2>
+<ul>
+<li>可以参考文档中的参数 <a href="http://www.pixelplacement.com/itween/documentation.php">iTween for Unity by Bob Berkebile (pixelplacement)</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>标志性名字，用于停止动画时的指定名字</td>
+</tr>
+<tr>
+<td>time</td>
+<td>float/double</td>
+<td>动画的时长，单位为秒</td>
+</tr>
+<tr>
+<td>speed</td>
+<td>float/double</td>
+<td>可代替 time 属性，使动画基于速度参数</td>
+</tr>
+<tr>
+<td>delay</td>
+<td>float/double</td>
+<td>动画播放延迟的时间，单位为秒</td>
+</tr>
+<tr>
+<td>easetype</td>
+<td>EaseType/string</td>
+<td>动画播放时间变换曲线样式</td>
+</tr>
+<tr>
+<td>looptype</td>
+<td>LoopType/string</td>
+<td>动画的循环方式</td>
+</tr>
+<tr>
+<td>onstart</td>
+<td>string</td>
+<td>动画开始时的回调函数名</td>
+</tr>
+<tr>
+<td>onstarttarget</td>
+<td>GameObject</td>
+<td>指定 ‘onstart’ 的回调方法所在的脚本挂载在哪个游戏物体上</td>
+</tr>
+<tr>
+<td>onstartparams</td>
+<td>Object</td>
+<td>传递给 ‘onstart’ 方法的参数</td>
+</tr>
+<tr>
+<td>onupdate</td>
+<td>string</td>
+<td>动画执行过程中每步执行时的回调函数名</td>
+</tr>
+<tr>
+<td>onupdatetarget</td>
+<td>GameObject</td>
+<td>指定 ‘onupdate’ 的回调方法所在的脚本挂载在哪个游戏物体上</td>
+</tr>
+<tr>
+<td>onupdateparams</td>
+<td>Object</td>
+<td>传递给 ‘onupdate’ 方法的参数</td>
+</tr>
+<tr>
+<td>oncomplete</td>
+<td>string</td>
+<td>动画结束时的回调函数名</td>
+</tr>
+<tr>
+<td>oncompletetarget</td>
+<td>GameObject</td>
+<td>指定 ‘oncomplete’ 的回调方法所在的脚本挂载在哪个游戏物体上</td>
+</tr>
+<tr>
+<td>oncompleteparams</td>
+<td>Object</td>
+<td>传递给 ‘oncomplete’ 方法的参数</td>
+</tr>
+<tr>
+<td>ignoretimescale</td>
+<td>boolean</td>
+<td>忽略时间缩放，设置为 true，则动画独立于时间缩放参数进行</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-audio-相关动画">5. Audio 相关动画</h2>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audiosource</td>
+<td>AudioSource</td>
+<td>动画指定使用 AudioSource</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>float/double</td>
+<td>指定的 volume 音量改变到的值</td>
+</tr>
+<tr>
+<td>pitch</td>
+<td>float/double</td>
+<td>指定的 pitch 音高改变到的值</td>
+</tr>
+</tbody>
+</table>
+<h3 id="audiofrom">AudioFrom</h3>
+<p>渐变的修改 AudioSource 的音量和音高，在指定时间内从指定值逐渐恢复到初始值</p>
+<p>如果 AudioSource 未指定，则默认使用 GameObject 上关联的 AudioSource</p>
+<h3 id="audioto">AudioTo</h3>
+<p>渐变的修改 AudioSource 的音量和音高到达指定目标值</p>
+<p>如果 AudioSource 未指定，则默认使用 GameObject 上关联的 AudioSource</p>
+<h3 id="audioupdate">AudioUpdate</h3>
+<p>类似于 AudioTo，但是是在 Update 方法或者循环反复中调用</p>
+<p>使用可以减小开销，一般使用一组变化的值，所以不应用 EaseType</p>
+<h3 id="stab">Stab</h3>
+<p>根据所提供的音量和音高播放一次音频，并应用任何延迟</p>
+<p>AudioSource 是可选的，因为 iTween 将提供一个</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audioclip</td>
+<td>AudioClip</td>
+<td>动画指定播放的 AudioClip 音频片段</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-material-相关动画">6. Material 相关动画</h2>
+<h2 id="7-look-相关动画">7. Look 相关动画</h2>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>looktarget</td>
+<td>Transform/Vector3</td>
+<td>动画的游戏物体的朝向目标</td>
+</tr>
+<tr>
+<td>axis</td>
+<td>string</td>
+<td>约束动画只再指定的该轴上旋转</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lookfrom">LookFrom</h3>
+<p>旋转游戏物体使其朝向指定的位置，然后再指定的时间内逐渐恢复到初始旋转</p>
+<h3 id="lookto">LookTo</h3>
+<p>旋转游戏物体使之在一定时间内逐渐朝向指定目标</p>
+<h3 id="lookupdate">LookUpdate</h3>
+<p>类似于 LookTo，但是是在 Update 方法或者循环反复中调用</p>
+<h2 id="8-path-相关动画">8. Path 相关动画</h2>
+
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2022 NYH-Dolphin</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

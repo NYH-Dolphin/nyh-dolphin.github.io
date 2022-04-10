@@ -45,6 +45,16 @@ public class GameManager : MonoBehaviour  {  private static GameManager instance
     </item>
     
     <item>
+      <title>Unity iTween 动画插件</title>
+      <link>https://NYH-Dolphin.github.io/games/unity-itween-%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/games/unity-itween-%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6/</guid>
+      <description>iTween 插件 API 全解析：https://www.bilibili.com/video/BV1T4411t7RS
+ 1. iTween 的下载和安装  在 Unity 的 AssetStore 中可以下载，可以直接免费入手 官网链接：iTween for Unity by Bob Berkebile (pixelplacement)  2. iTween 的使用方式 静态方法 void Start() {  iTween.MoveAdd(gameObject, new Vector3(0,1,0), 3f); }  直接调用 iTween 的静态方法，传入需要的参数即可  Hashtable 方法  可以参考文档：iTween for Unity by Bob Berkebile (pixelplacement)  void Start() {  Hashtable hash = new Hashtable();  hash.Add(&amp;#34;amount&amp;#34;, new Vector3(0,1,0));  hash.Add(&amp;#34;time&amp;#34;, 2f);  iTween.MoveAdd(gameObject, hash); } 使用 iTween 提供的 Hash void Start() {  iTween.</description>
+    </item>
+    
+    <item>
       <title>Unity TMP 设置中文字体</title>
       <link>https://NYH-Dolphin.github.io/games/unity-tmp-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/</link>
       <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>

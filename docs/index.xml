@@ -6,7 +6,16 @@
     <description>Recent content on 小小的大肥的主页</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 06 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://NYH-Dolphin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://NYH-Dolphin.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>游戏笔试题目</title>
+      <link>https://NYH-Dolphin.github.io/games/%E6%B8%B8%E6%88%8F%E7%AC%94%E8%AF%95%E9%A2%98%E7%9B%AE/</link>
+      <pubDate>Fri, 08 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/games/%E6%B8%B8%E6%88%8F%E7%AC%94%E8%AF%95%E9%A2%98%E7%9B%AE/</guid>
+      <description>1. 游戏基本概念 计算机游戏有哪些种类 类型缩写  ACT (ACTion)(动作) ARPG (Action Role-Playing Game)(动作角色扮演) AVG (AdVenture Game)(冒险游戏) AAVG (Action AdVenture Game)(动作冒险) CAG (Card Game)(卡牌游戏) FTG (FighTing Game)(格斗游戏) RPG (Role-Playing Game)(角色扮演) RTS (Real-Time Strategy)(即时战略) TBS (Turn-Based Strategy)(回合制战略游戏) MMORPG (Massively Multiplayer Online Role-Playing Game)(大型多人在线角色扮演游戏) MUD (Multi-User Dungeon/Dimension/Domain)(多人即时虚拟世界) SLG (SimuLation Game)(模拟游戏) SRPG (Simulation Role-Playing Game)(模拟角色扮演) STG (ShooTing Game)(射击) FPS (First-Person Shooter)(第一人称射击游戏) IF (Interactive fiction)(文字冒险) TPS (Third-Person Shooter)(第三人称射击游戏） SPG (SPorts Game)(运动) TBG (Tabletop Board Game)(牌桌游戏) PZG (PuZzle Game)(益智解谜) RCG (RaCing Game)(赛车游戏) VR (虚拟现实) AR (增强现实) MR (混合实境) MOBA (Multiplayer Online Battle Arena)(多人在线战术擂台) MUG (Music Game)(音乐游戏) ETC(其他) QTE(快速反应事件)  游戏类型 电子游戏类型 - 维基百科，自由的百科全书 (wikipedia.</description>
+    </item>
+    
     <item>
       <title>Unity 单例</title>
       <link>https://NYH-Dolphin.github.io/games/unity-%E5%8D%95%E4%BE%8B/</link>
@@ -73,6 +82,16 @@ public class GameManager : MonoBehaviour  {  private static GameManager instance
       
       <guid>https://NYH-Dolphin.github.io/games/unity-%E8%A1%8C%E8%B5%B0%E4%B8%8E%E9%BC%A0%E6%A0%87%E8%A7%86%E8%A7%92%E7%A7%BB%E5%8A%A8/</guid>
       <description>1. 行走部分 WASD 控制行走 public float fMoveSpeed = 10f; // WASD移动速度  void Update(){  KeyBoardControl(); }  private void KeyBoardControl() {  if (Input.GetKey(KeyCode.W))  {  transform.Translate(Vector3.forward * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.S))  {  transform.Translate(Vector3.back * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.A))  {  transform.Translate(Vector3.up * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.D))  {  transform.</description>
+    </item>
+    
+    <item>
+      <title>Unity iTween 动画插件</title>
+      <link>https://NYH-Dolphin.github.io/games/unity-itween-%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Tue, 29 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/games/unity-itween-%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6/</guid>
+      <description>iTween 插件 API 全解析：https://www.bilibili.com/video/BV1T4411t7RS
+ 1. iTween 的下载和安装  在 Unity 的 AssetStore 中可以下载，可以直接免费入手 官网链接：iTween for Unity by Bob Berkebile (pixelplacement)  2. iTween 的使用方式 静态方法 void Start() {  iTween.MoveAdd(gameObject, new Vector3(0,1,0), 3f); }  直接调用 iTween 的静态方法，传入需要的参数即可  Hashtable 方法  可以参考文档：iTween for Unity by Bob Berkebile (pixelplacement)  void Start() {  Hashtable hash = new Hashtable();  hash.Add(&amp;#34;amount&amp;#34;, new Vector3(0,1,0));  hash.Add(&amp;#34;time&amp;#34;, 2f);  iTween.MoveAdd(gameObject, hash); } 使用 iTween 提供的 Hash void Start() {  iTween.</description>
     </item>
     
     <item>
