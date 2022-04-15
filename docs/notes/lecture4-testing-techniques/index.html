@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #4682B4;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Lecture4 Testing Techniques</title>
+    <meta name="description" content="Imagination Can Change Anything!">
+    <meta name="keywords" content='Game Testing'>
+
+    <meta property="og:url" content="https://NYH-Dolphin.github.io/notes/lecture4-testing-techniques/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lecture4 Testing Techniques">
+    <meta property="og:description" content="Imagination Can Change Anything!">
+    <meta property="og:image" content="/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lecture4 Testing Techniques">
+    <meta name="twitter:description" content="Imagination Can Change Anything!">
+    <meta property="twitter:domain" content="https://NYH-Dolphin.github.io/notes/lecture4-testing-techniques/">
+    <meta property="twitter:url" content="https://NYH-Dolphin.github.io/notes/lecture4-testing-techniques/">
+    <meta name="twitter:image" content="/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://NYH-Dolphin.github.io/notes/lecture4-testing-techniques/" />
+
+    <link rel="stylesheet" type="text/css" href="/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="/css/dark.css">
+
+    <script src="/js/svg-injector.min.js"></script>
+    <script src="/js/feather-icons.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    
+    
+    
+
+    <!-- Support Letax Equation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+
+
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://NYH-Dolphin.github.io">
+                <img src="/images/avatar.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://NYH-Dolphin.github.io">Â∞èÂ∞èÁöÑÂ§ßËÇ•ÁöÑ‰∏ªÈ°µ</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="/posts/"> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/notes/"> Notes </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/games/"> Games </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/tags/"> Tags </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="/about/"> About </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="/posts/"> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/notes/"> Notes </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/games/"> Games </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/tags/"> Tags </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="/about/"> About </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+
+    <div class="post-header-section">
+        <h1>Lecture4 Testing Techniques</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            April 15, 2022
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="/tags/game-testing">Game Testing</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="lecture4-testing-techniques">Lecture4 Testing Techniques</h1>
+<h2 id="1-combinatorial-testing">1. Combinatorial Testing</h2>
+<p>Pairwise combinatorial testing is a way to find defects and gain confidence in the game software while keeping the test sets small relative to the amount of functionality they cover</p>
+<ul>
+<li>that each value you use for testing needs to be combined at least once with each other value of the remaining parameters</li>
+</ul>
+<h3 id="parameters">Parameters</h3>
+<p>Parameters are the individual elements of the game that you want to include in your combinatorial tests</p>
+<ul>
+<li>Game events</li>
+<li>Game settings</li>
+<li>Gameplay options</li>
+<li>Hardware configurations</li>
+<li>Character attributes</li>
+<li>Customization choices</li>
+</ul>
+<h3 id="values">Values</h3>
+<p>Values are the individual choices that are possible for each parameter</p>
+<ul>
+<li>number</li>
+<li>text</li>
+<li>list</li>
+<li>‚Ä¶</li>
+</ul>
+<h3 id="defaults">Defaults</h3>
+<p>Consider whether or not default values should be used in your tests.</p>
+<h3 id="enumerations">Enumerations</h3>
+<p>Many choices in a game are made from a set of distinct values or options that do not have any particular numerical or sequential relationship to one another.</p>
+<p>Regardless of the number of unique choices (team, car, fighter, weapon, song, hairstyle, and so on), <strong>each one should be represented somewhere in your tests</strong>.</p>
+<h3 id="ranges">Ranges</h3>
+<p>Three particular values tend to have special defect-revealing properties</p>
+<ul>
+<li><strong>Zero</strong>
+<ul>
+<li>A loop may prematurely exit or may always do something once before checking for zero</li>
+<li>Confusion between starting loop counts at 0 or 1</li>
+<li>Confusion with arrays or lists starting at index 0 or 1</li>
+<li>0 is often used to represent special meaning, such as to indicate an infinite timer or that an error has occurred</li>
+<li>0 is the same value as the string termination (NULL) character in C</li>
+<li>0 is the same value as the logical (Boolean) False value in C</li>
+</ul>
+</li>
+<li><strong>Minimum &amp; Maximum</strong>
+<ul>
+<li>Time</li>
+<li>Distance</li>
+<li>Speed</li>
+<li>Quantity</li>
+<li>Size</li>
+<li>Bet amount</li>
+</ul>
+</li>
+</ul>
+<h3 id="boundaries">Boundaries</h3>
+<p>Some of the boundaries to test may be physically rendered in the game space</p>
+<p>Dig deep into the rules of the game to identify hidden or implied boundaries</p>
+<ul>
+<li>Town, realm, or city borders</li>
+<li>Goal lines, sidelines, foul lines, and end lines on a sports field or court</li>
+<li>Mission or race waypoints</li>
+<li>Start and finish lines</li>
+<li>Portal entrances and exit</li>
+<li>Mission, game, or match timers</li>
+<li>The speed that a character or vehicle can achieve</li>
+<li>The distance a projectile can travel</li>
+<li>The distance at which graphic elements become visible, transparent, or invisible</li>
+</ul>
+<h3 id="constructing-tables">Constructing Tables</h3>
+<p>For a <strong>pairwise combinatorial table</strong>, itís only necessary to <strong>combine each value of every parameter with each value of every other parameter at least once somewhere in the table</strong>.</p>
+<p>Create pairwise tables of any size for your game tests using the following short and simple process. These steps may not always produce the optimum (smallest possible) size table, but you will still get an efficient table</p>
+<ol>
+<li>Choose the parameter with the highest dimension</li>
+<li>Create the first column by listing each test value for the first parameter N times, where N is the dimension of the next-highest dimension parameter</li>
+<li>Start populating the next column by listing the test values for the next  parameter</li>
+<li>For each remaining row in the table, enter the parameter value in the new column that provides the greatest number of new pairs with respect to all  of the preceding parameters entered in the table. If no such value can be found, alter one of the values previously entered for this column and resume this step</li>
+<li>If there are unsatisfied pairs in the table, create new rows and fill in the  values necessary to create one of the required pairs. If all pairs are satisfied, then go back to step 3</li>
+<li>Add more unsatisfied pairs using empty spots in the table to create the most new pairs. Go back to step 5</li>
+<li>Fill in empty cells with any one of the values for the corresponding column (parameter)</li>
+</ol>
+<h3 id="combinatorial-tools">Combinatorial Tools</h3>
+<p>James Bach has made a tool available to the public at <a href="http://www.satisfice.com/tools.shtml">www.satisfice.com/tools.shtml</a> that handles Combinatorial Testing</p>
+<p><img src="/images/Lecture4 Testing Techniques.assets/image-20220411210913214.png" alt="image-20220411210913214" style="zoom:67%;" /></p>
+<h2 id="2-test-flow-diagrams">2. Test Flow Diagrams</h2>
+<p><strong>Test flow diagrams (TFDs)</strong> are <strong>graphical models</strong> representing game behaviors from the playerís perspective.</p>
+<h3 id="tfd-elements">TFD Elements</h3>
+<ul>
+<li>A TFD is created by assembling various drawing components called elements</li>
+<li>These elements are drawn, labeled, and interconnected according to certain rules</li>
+</ul>
+<h4 id="flows">Flows</h4>
+<p>Flows are drawn as <strong>a line connecting one game state to another</strong>, with <strong>an arrowhead indicating the direction</strong> of flow</p>
+<p><img src="/images/Lecture4 Testing Techniques.assets/image-20220411212235330.png" alt="image-20220411212235330" style="zoom:50%;" /></p>
+<ul>
+<li>During testing, you do <strong>what is specified by the event</strong> and then check for <strong>the behavior specified by both the action and the flowís destination state</strong></li>
+</ul>
+<h4 id="events">Events</h4>
+<p>Events are <strong>operations initiated by the user, peripherals, multiplayer network, or internal game mechanisms</strong></p>
+<ul>
+<li>Picking up an item, selecting a spell to cast, sending a chat message to another player, and an expiring game timer are all examples of events</li>
+<li>Three factors should be considered for including a new event
+<ul>
+<li>Possible interactions with other events</li>
+<li>Unique or important behaviors associated with the event</li>
+<li>Unique or important game states that are a consequence of the event</li>
+</ul>
+</li>
+<li><strong>Only one event can be specified on a flow</strong>, but <strong>multiple operations can be represented by a single event</strong></li>
+<li>Events may or may not cause a transition to a new game state</li>
+</ul>
+<h4 id="actions">Actions</h4>
+<p>An action exhibits <strong>temporary or transitional behavior</strong> in response to an event</p>
+<ul>
+<li>Actions can be perceived through human senses and gaming platform facilities, including sounds, visual effects, game controller feedback, and information sent over a multiplayer game network</li>
+<li><strong>Only one action can be specified on a flow</strong>, but <strong>multiple operations can be represented by a single action</strong></li>
+</ul>
+<h4 id="states">States</h4>
+<p>States represent persistent game behavior and are re-entrant</p>
+<ul>
+<li>As long as you donít exit the state you will continue to observe the <strong>same behavior</strong>, and each time you <strong>return to the state you should detect the exact same behavior</strong></li>
+<li>A state is drawn as a ìbubbleî with a unique name inside</li>
+<li>Each state must have <strong>at least one flow entering and one flow exiting</strong></li>
+</ul>
+<h4 id="primitives">Primitives</h4>
+<p><strong>Events</strong>, <strong>actions</strong>, and <strong>states</strong> are also referred to as primitives</p>
+<h4 id="terminators">Terminators</h4>
+<p>Terminators are special boxes placed on the TFD that indicate <strong>where testing starts and where it ends</strong></p>
+<ul>
+<li>two terminators should appear on each TFD
+<ul>
+<li>IN box</li>
+<li>OUT box</li>
+</ul>
+</li>
+</ul>
+<h3 id="tfd-design-activities">TFD Design Activities</h3>
+<p>Go through three stages of activities: <strong>preparation</strong>, <strong>allocation</strong>, and <strong>construction</strong></p>
+<h4 id="preparation">Preparation</h4>
+<p>Collect sources of game feature requirements</p>
+<ul>
+<li>Identify the requirements that fall within the scope of the planned testing, based on your individual project assignment or the gameís test plan</li>
+</ul>
+<h4 id="allocation">Allocation</h4>
+<p>Estimate the number of TFDs required and map game elements to each</p>
+<p>Separate large sets of requirements into smaller chunks, try to cover related requirements in the same design</p>
+<ul>
+<li>test various abilities provided in the game</li>
+<li>map situations or scenarios to individual TFDs with a focus on specific achievements</li>
+</ul>
+<h4 id="construction">Construction</h4>
+<p>Model game elements on their assigned TFDs using a <strong>ìplayerís perspective.î</strong></p>
+<h3 id="tfd-example">TFD Example</h3>
+<h4 id="preparation-1">Preparation</h4>
+<p>The ability to <strong>pick up a weapon and its ammo</strong> while the game properly <strong>keeps track of your ammo count and performs the correct audible and visual effects</strong></p>
+<h4 id="allocation-1">Allocation</h4>
+<p>This is a simple feature test, and it&rsquo;s only need one TFD</p>
+<h4 id="construction-1">Construction</h4>
+<table>
+<thead>
+<tr>
+<th>Diagram</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="/images/Lecture4 Testing Techniques.assets/image-20220411214138198.png" alt="image-20220411214138198" style="zoom:80%;" /></td>
+<td>Start with an <strong>IN box</strong>, followed by a flow to the <strong>first state<br /></strong>Jump right to the point in the game where you want to start doing things</td>
+</tr>
+<tr>
+<td><img src="/images/Lecture4 Testing Techniques.assets/image-20220411214303317.png" alt="image-20220411214303317" style="zoom:80%;" /></td>
+<td>Model what happens when the player does something in this situation<br /><strong>Event</strong>: Find a gun and pick it up<br /><strong>Action</strong>: <br />A gun appears in your inventory<br />your character is shown holding the gun<br />a crosshair now appears at the center of the screen<br />playing the sound of a weapon being picked up<br />identifying the weapon the display</td>
+</tr>
+<tr>
+<td><img src="/images/Lecture4 Testing Techniques.assets/image-20220411214456186.png" alt="image-20220411214456186" style="zoom:80%;" /></td>
+<td>Event: Get some Ammo and pick them up<br />Action: Ammo related effects</td>
+</tr>
+<tr>
+<td><img src="/images/Lecture4 Testing Techniques.assets/image-20220411214510563.png" alt="image-20220411214510563" style="zoom:80%;" /></td>
+<td>Ö</td>
+</tr>
+<tr>
+<td><img src="/images/Lecture4 Testing Techniques.assets/image-20220411214520824.png" alt="image-20220411214520824" style="zoom:80%;" /></td>
+<td>Ö</td>
+</tr>
+<tr>
+<td><img src="/images/Lecture4 Testing Techniques.assets/image-20220411214538713.png" alt="image-20220411214538713" style="zoom:80%;" /></td>
+<td>Ö</td>
+</tr>
+<tr>
+<td><img src="/images/Lecture4 Testing Techniques.assets/image-20220411214603921.png" alt="image-20220411214603921" style="zoom:80%;" /></td>
+<td>Ö</td>
+</tr>
+<tr>
+<td><img src="/images/Lecture4 Testing Techniques.assets/image-20220411214703326.png" alt="image-20220411214703326" style="zoom:80%;" /></td>
+<td>Ö</td>
+</tr>
+<tr>
+<td><img src="/images/Lecture4 Testing Techniques.assets/image-20220411214728836.png" alt="image-20220411214728836" style="zoom:80%;" /></td>
+<td>Ö</td>
+</tr>
+</tbody>
+</table>
+<h3 id="data-dictionary">Data Dictionary</h3>
+<p>The <strong>data dictionary</strong> provides <strong>detailed descriptions for each of the uniquely named primitive elements</strong> in your TFD collection</p>
+<h3 id="tfd-path">TFD Path</h3>
+<p>A test path is a series of flows, specified by the flow numbers in the sequence in which they are to be traversed. Paths begin at the IN state and end at the OUT state</p>
+<ul>
+<li>A path defines an individual test case that can be ìexecutedî to explore the gameís behavior</li>
+<li>Many paths are possible for a single TFD</li>
+</ul>
+<h4 id="minimum-path-generation">Minimum Path Generation</h4>
+<p>This strategy is designed to produce the <strong>smallest number of paths that will end up covering all of the flows in the diagram</strong> (Graph Problem)</p>
+<h4 id="baseline-path-generation">Baseline Path Generation</h4>
+<p>Baseline path generation begins by establishing as direct a path as possible from the IN Terminator to the OUT Terminator that travels through as many states without repeating or looping back (Graph Problem)</p>
+<h4 id="expert-constructed-paths">Expert Constructed Paths</h4>
+<p>Expert constructed paths are simply paths that a test or feature <strong>ìexpertî traces based on her knowledge of how the feature is likely to fail</strong> or where she needs to establish confidence in a particular set of behaviors</p>
+<ul>
+<li>Repeat a certain flow or sequence of flows in combination with other path variations</li>
+<li>Create paths that emphasize unusual or infrequent events</li>
+<li>Create paths that emphasize critical or complex states</li>
+<li>Create extremely long paths, repeating flows if necessary</li>
+<li>Model paths after the most common ways the feature will be used</li>
+</ul>
+<h3 id="to-tfd-or-combinatorial-table">To TFD or Combinatorial table?</h3>
+<p><img src="/images/Lecture4 Testing Techniques.assets/image-20220411215504543.png" alt="image-20220411215504543" style="zoom:80%;" /></p>
+<h2 id="3-cleanroom-testing">3. Cleanroom Testing</h2>
+<p>Cleanroom testing is applied to the problem of why customers find problems in games after they have been through thousands of hours of testing before being released.</p>
+<p><strong>Cleanroom test produces tests that play the game the way players will play it.</strong></p>
+<h3 id="usage-probabilities">Usage Probabilities</h3>
+<p>Usage probabilities, also referred to as usage frequencies, tell testers how often game functions should be used in order to realistically mimic the way customers will use the game.</p>
+<h4 id="mode-based-usage">Mode-Based Usage</h4>
+<p>Game usage can change based on which mode the player is using such as single player, campaign, multiplayer, or online</p>
+<h4 id="player-type-usage">Player-Type Usage</h4>
+<p>Another factor that influences game usage is the classification of four multi-user player categories described</p>
+<ul>
+<li><strong>Achiever</strong>: complete game goals, missions, and quests</li>
+<li><strong>Explorers</strong>: finding out what the game has to offer</li>
+<li><strong>Socializer</strong>: use the game as a means to role play and get to know other players</li>
+<li><strong>Killer</strong>: getting the best of other players</li>
+<li><strong>Casual gamer</strong>: Sticks mostly to functions described in the tutorial, user manual, and on-screen user interface</li>
+<li><strong>Hard-core gamer</strong>: Uses function keys, macros, turbo buttons, and special input devices such as joysticks and steering wheels</li>
+<li><strong>Button Masher</strong>: Values speed and repetition over caution and defense</li>
+<li><strong>Customizer</strong>: Uses all of the gameís customization features and plays the game with custom elements</li>
+<li><strong>Exploiter</strong>: Always looking for a shortcut</li>
+</ul>
+<h3 id="inverted-usage">Inverted Usage</h3>
+<p>Inverted usage can be applied when you want to emphasize the less frequently used functions and behaviors in the game</p>
+<ul>
+<li>This creates a usage model that might reflect how the game would be used by people trying to find ways to exploit or intentionally crash the game for their own benefit</li>
+</ul>
+<h4 id="calculating-inverted-usage">Calculating Inverted Usage</h4>
+<ol>
+<li>Calculate the reciprocal of each usage probability for a test parameter (combinatorial) or for all paths exiting a state (TFDs).</li>
+<li>Sum the reciprocals.</li>
+<li>Divide each reciprocal from step 1 by the sum of the reciprocals calculated in step 2. The result is the inverted probability for each individual usage value.</li>
+</ol>
+<h2 id="4-test-trees">4. Test Trees</h2>
+<h2 id="5-play-testing-and-ad-hoc-testing">5. Play Testing and Ad Hoc Testing</h2>
+<p>Focuses on a more chaotic, unstructuredóyet no less crucialóapproach to game testing</p>
+<h3 id="ad-hoc-testing">Ad hoc Testing</h3>
+<p>Ad hoc testing, sometimes referred to as ìgeneralî testing, describes <strong>searching for defects in a less structured way</strong></p>
+<h4 id="free-testing">Free Testing</h4>
+<p>Allows the professional game tester to ìdepart from the scriptî and improvise tests on-the-fly</p>
+<p>This method can include the following</p>
+<ul>
+<li>Assigning members of the multiplayer team to play through the single-player campaign</li>
+<li>Assigning campaign testers to skirmish (or multiplayer) mode</li>
+<li>Assigning the config/compatibility/install tester to the multiplayer team</li>
+<li>Assigning testers from another project entirely to spend a day (or part of a day) on your game</li>
+<li>Asking non-testers from other parts of the company to play the game (see the section ìPlay Testingî later in this chapter)</li>
+<li>Performing ad hoc testing early will quickly help to reveal any lingering  deficiencies in your test plans, combinatorial tables, and test flow diagrams  (see the following sidebar)</li>
+</ul>
+<p>Before you begin, <strong>you should have a goal</strong>. This goal can be very simple, but it must be explicit.</p>
+<ul>
+<li>How far can I play in story mode?</li>
+<li>Can I play a full game by making only three-point shots?</li>
+<li>Is there a limit to the number of turrets I can build in my base?</li>
+<li>Can I deviate from the strategy suggested in the mission briefing and still win the battle?</li>
+<li>Is there anywhere in the level I can get my character stuck in the geometry?</li>
+</ul>
+<p>The following are but a few of the common pitfalls you should <strong>avoid</strong> when free testing</p>
+<ul>
+<li>Competing with other testers in multiplayer games</li>
+<li>Competing against the AI (or yourself) in single-player games</li>
+<li>Spending a lot of time testing features that may be cut</li>
+<li>Frequently testing the most popular features of the game</li>
+<li>Spending a disproportionate amount of time testing features that are infrequently used</li>
+</ul>
+<h4 id="directed-testing">Directed Testing</h4>
+<p>Intended to solve a specific problem or find a specific solution</p>
+<p>The simplest form of directed testing answers a very specific question, such as</p>
+<ul>
+<li>Does the new compile work?</li>
+<li>Can you access all the characters?</li>
+<li>Are the cut-scenes interruptible?</li>
+<li>Is saving still broken?</li>
+</ul>
+<p>The Scientific Method</p>
+<ol>
+<li>Observe some phenomenon</li>
+<li>Develop a theoryóa hypothesisóas to what caused the phenomenon</li>
+<li>Use the hypothesis to make a prediction; for example, if I do this, it will happen again</li>
+<li>Test that prediction by retracing the steps in your hypothesis</li>
+<li>Repeat steps 3 and 4 until you are reasonably certain your hypothesis is true</li>
+</ol>
+<p>Find a crash</p>
+<ol>
+<li>Review your notes: Quickly jot down any information about what you were doing when the defect occurred, while itís still fresh in your mind</li>
+<li>Process all this information and make your best educated guess as to what specific combination and order of inputs may have caused the crash</li>
+<li>Read over the steps in your path until you are satisfied with them</li>
+<li>Reboot your computer, restart the game, and retrace your steps, find whether you recurrence the crash</li>
+</ol>
+<h3 id="play-testing">Play testing</h3>
+<p>Play testing describes playing the game to test for such <strong>subjective qualities as balance, difficulty, and the often-elusive ìfun factor.î</strong></p>
+<p>Does the game work well?</p>
+<ul>
+<li>Is the game too easy?</li>
+<li>Is the game to hard?</li>
+<li>Is the game easy to learn?</li>
+<li>Are the controls intuitive?</li>
+<li>Is the interface clear and easy to navigate?</li>
+<li>Is the game fun?</li>
+</ul>
+<h4 id="a-balancing-act">A Balancing Act</h4>
+<p>Balance can also refer to a state of rough equality between different competing units in a game</p>
+<ul>
+<li>Orcs vs. humans</li>
+<li>Melee fighters vs. ranged fighters</li>
+<li>The NFC vs. the AFC</li>
+<li>The Serpent Clan vs. the Lotus Clan</li>
+<li>Sniper rifles vs. rocket launchers</li>
+<li>Rogues vs. warlocks</li>
+<li>Purple triangles vs. red squares</li>
+</ul>
+
+        </p>
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2022 NYH-Dolphin</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
