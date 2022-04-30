@@ -48,7 +48,6 @@
     
     
     
-
     <!-- Support Letax Equation -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
 
@@ -181,77 +180,77 @@
         <p>
             <h2 id="1-行走部分">1. 行走部分</h2>
 <h3 id="wasd-控制行走">WASD 控制行走</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> fMoveSpeed = <span style="color:#ae81ff">10f</span>; <span style="color:#75715e">// WASD移动速度
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">void</span> Update(){
-    KeyBoardControl();
-}
-
-<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> KeyBoardControl()
-{
-    <span style="color:#66d9ef">if</span> (Input.GetKey(KeyCode.W))
-    {
-        transform.Translate(Vector3.forward * fMoveSpeed * Time.deltaTime);
-    }
-
-    <span style="color:#66d9ef">if</span> (Input.GetKey(KeyCode.S))
-    {
-        transform.Translate(Vector3.back * fMoveSpeed * Time.deltaTime);
-    }
-
-    <span style="color:#66d9ef">if</span> (Input.GetKey(KeyCode.A))
-    {
-        transform.Translate(Vector3.up * fMoveSpeed * Time.deltaTime);
-    }
-
-    <span style="color:#66d9ef">if</span> (Input.GetKey(KeyCode.D))
-    {
-        transform.Translate(-<span style="color:#ae81ff">1</span> * Vector3.up * fMoveSpeed * Time.deltaTime);
-    }
-}
-</code></pre></div><h3 id="鼠标点击移动到指定位置">鼠标点击移动到指定位置</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> fMoveSpeed = <span style="color:#ae81ff">10f</span>; <span style="color:#75715e">// WASD移动速度</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Update(){
+</span></span><span style="display:flex;"><span>    KeyBoardControl();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> KeyBoardControl()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Input.GetKey(KeyCode.W))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        transform.Translate(Vector3.forward * fMoveSpeed * Time.deltaTime);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Input.GetKey(KeyCode.S))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        transform.Translate(Vector3.back * fMoveSpeed * Time.deltaTime);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Input.GetKey(KeyCode.A))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        transform.Translate(Vector3.up * fMoveSpeed * Time.deltaTime);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Input.GetKey(KeyCode.D))
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        transform.Translate(-<span style="color:#ae81ff">1</span> * Vector3.up * fMoveSpeed * Time.deltaTime);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="鼠标点击移动到指定位置">鼠标点击移动到指定位置</h3>
 <p>待补充</p>
 <h2 id="2-鼠标移动视角部分">2. 鼠标移动视角部分</h2>
 <h3 id="左右移动转动物体上下移动转动摄像机">左右移动转动物体，上下移动转动摄像机</h3>
 <p>注意的问题是，上下移动不能转动物体，不然视角会转飞</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> fRotateSpeed = <span style="color:#ae81ff">200</span>; <span style="color:#75715e">// 视角移动速度
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">float</span> fLastPosX; <span style="color:#75715e">// 上一次鼠标的位置 x
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">float</span> fLastPosY; <span style="color:#75715e">// 上一次鼠标的位置 y
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">float</span> fRange = <span style="color:#ae81ff">0.01f</span>; <span style="color:#75715e">// 判定移动范围
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">void</span> Update(){
-    MouseControl();
-}
-
-<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> MouseControl()
-{
-    <span style="color:#66d9ef">float</span> RotaSpeed = fRotateSpeed * Time.deltaTime;
-    <span style="color:#75715e">// 左右转动物体
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (Input.mousePosition.x &gt; fLastPosX + fRange)
-    {
-        transform.Rotate(Vector3.right, RotaSpeed);
-        fLastPosX = Input.mousePosition.x;
-    }
-    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (Input.mousePosition.x &lt; fLastPosX - fRange)
-    {
-        transform.Rotate(Vector3.right, -RotaSpeed);
-        fLastPosX = Input.mousePosition.x;
-    }
-            
-    <span style="color:#75715e">// 上下转动相机
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> (Input.mousePosition.y &gt; fLastPosY + fRange)
-    {
-    <span style="color:#75715e">// Vector3.right 根据不同的游戏视角会有调整
-</span><span style="color:#75715e"></span>        transform.Find(<span style="color:#e6db74">&#34;Main Camera&#34;</span>).Rotate(Vector3.right, -RotaSpeed);
-        fLastPosY = Input.mousePosition.y;
-    }
-    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (Input.mousePosition.y &lt; fLastPosY - fRange)
-    {
-        transform.Find(<span style="color:#e6db74">&#34;Main Camera&#34;</span>).Rotate(Vector3.left, -RotaSpeed);          
-        fLastPosY = Input.mousePosition.y;
-    }
-}
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> fRotateSpeed = <span style="color:#ae81ff">200</span>; <span style="color:#75715e">// 视角移动速度</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">float</span> fLastPosX; <span style="color:#75715e">// 上一次鼠标的位置 x</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">float</span> fLastPosY; <span style="color:#75715e">// 上一次鼠标的位置 y</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">float</span> fRange = <span style="color:#ae81ff">0.01f</span>; <span style="color:#75715e">// 判定移动范围</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Update(){
+</span></span><span style="display:flex;"><span>    MouseControl();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> MouseControl()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">float</span> RotaSpeed = fRotateSpeed * Time.deltaTime;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 左右转动物体</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Input.mousePosition.x &gt; fLastPosX + fRange)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        transform.Rotate(Vector3.right, RotaSpeed);
+</span></span><span style="display:flex;"><span>        fLastPosX = Input.mousePosition.x;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (Input.mousePosition.x &lt; fLastPosX - fRange)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        transform.Rotate(Vector3.right, -RotaSpeed);
+</span></span><span style="display:flex;"><span>        fLastPosX = Input.mousePosition.x;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 上下转动相机</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (Input.mousePosition.y &gt; fLastPosY + fRange)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Vector3.right 根据不同的游戏视角会有调整</span>
+</span></span><span style="display:flex;"><span>        transform.Find(<span style="color:#e6db74">&#34;Main Camera&#34;</span>).Rotate(Vector3.right, -RotaSpeed);
+</span></span><span style="display:flex;"><span>        fLastPosY = Input.mousePosition.y;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (Input.mousePosition.y &lt; fLastPosY - fRange)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        transform.Find(<span style="color:#e6db74">&#34;Main Camera&#34;</span>).Rotate(Vector3.left, -RotaSpeed);          
+</span></span><span style="display:flex;"><span>        fLastPosY = Input.mousePosition.y;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
         </p>
     </div>
 </div>
@@ -262,6 +261,7 @@
 
         </main><footer class="footer">
     <span>&copy; 2022 NYH-Dolphin</span>
+    <span> <a id="busuanzi_value_site_pv"></a> Views | <a id="busuanzi_value_site_uv"></a> Visitors</span> 
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>
