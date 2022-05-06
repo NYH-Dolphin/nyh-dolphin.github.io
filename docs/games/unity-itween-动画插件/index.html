@@ -166,7 +166,7 @@
         <h1>Unity iTween 动画插件</h1>
         <small role="doc-subtitle"></small>
         <p class="post-date">
-            March 29, 2022
+            May 6, 2022
         </p>
 
         <ul class="post-tags">
@@ -381,8 +381,92 @@
 </tr>
 </tbody>
 </table>
-<h2 id="6-material-相关动画">6. Material 相关动画</h2>
-<h2 id="7-look-相关动画">7. Look 相关动画</h2>
+<h2 id="6-color-相关动画">6. Color 相关动画</h2>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>color</td>
+<td>Color</td>
+<td>动画指定给物体的颜色</td>
+</tr>
+<tr>
+<td>r</td>
+<td>float/double</td>
+<td>指定颜色的颜色 red 值，范围 0-1</td>
+</tr>
+<tr>
+<td>g</td>
+<td>float/double</td>
+<td>指定颜色的颜色 green 值，范围 0-1</td>
+</tr>
+<tr>
+<td>b</td>
+<td>float/double</td>
+<td>指定颜色的颜色 blue 值，范围 0-1</td>
+</tr>
+<tr>
+<td>a</td>
+<td>float/double</td>
+<td>指定颜色的颜色 alpha 值，范围 0-1</td>
+</tr>
+<tr>
+<td>namedColorValue</td>
+<td>iTween.NamedColorValue string</td>
+<td>shader 中使用 color 属性名，默认为 <code>_Color</code></td>
+</tr>
+<tr>
+<td>includechildren</td>
+<td>boolean</td>
+<td>是否包含游戏的子物体，默认为 true</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Renderer 材质球上的 shader 如果有 <code>_Color</code> 属性也可以执行动画，Shader 属性名只限 <code>_Color</code>、<code>_SpeColor</code>、<code>_Emission</code>、<code>_ReflectColor</code></li>
+<li>可以应用于 Shader 或者 Light</li>
+</ul>
+<h3 id="colorfrom">ColorFrom</h3>
+<p>改变一个 GameObject 的 color 颜色值，然后渐变地经过给定时间恢复到初始的颜色</p>
+<h3 id="colorto">ColorTo</h3>
+<p>改变一个 GameObject 的 color 颜色值，使其经过一段时间到达指定的值</p>
+<h3 id="colorupdate">ColorUpdate</h3>
+<p>效果类似 ColorTo，放在 Update 方法中使用一组动态改变的值进行设置，不应用 EaseType</p>
+<h2 id="7-fade-相关动画">7. Fade 相关动画</h2>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alpha</td>
+<td>float/double</td>
+<td>指定的透明度值，范围 0-1</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>float/double</td>
+<td>指定的透明度值，范围 0-1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fadefrom">FadeFrom</h3>
+<p>改变 GameObject 的 alpha 透明度到指定值，然后逐渐恢复到初始值，使用效果类似 ColorFrom 中属性 <code>a</code> 的设置</p>
+<h3 id="fadeto">FadeTo</h3>
+<p>改变 GameObject 的透明度到某个指定的目标值</p>
+<h3 id="fadeupdate">FadeUpdate</h3>
+<p>效果类似 FadeTo，放在 Update 方法中使用减小开销，参数用一组动态改变的值，不应用 <code>EaseType</code></p>
+<h2 id="8-look-相关动画">8. Look 相关动画</h2>
 <table>
 <thead>
 <tr>
@@ -410,7 +494,340 @@
 <p>旋转游戏物体使之在一定时间内逐渐朝向指定目标</p>
 <h3 id="lookupdate">LookUpdate</h3>
 <p>类似于 LookTo，但是是在 Update 方法或者循环反复中调用</p>
-<h2 id="8-path-相关动画">8. Path 相关动画</h2>
+<h2 id="9-move-相关动画">9. Move 相关动画</h2>
+<h3 id="moveadd">MoveAdd</h3>
+<p>在指定时间内逐渐移动游戏物体的位置，使用 Translate 实现，即再当前物体位置的基础上加上移动的值</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>Vector3</td>
+<td>物体动画移动到目标位置</td>
+</tr>
+<tr>
+<td>x</td>
+<td>float/double</td>
+<td>单独设置 x 轴的移动</td>
+</tr>
+<tr>
+<td>y</td>
+<td>float/double</td>
+<td>单独设置 y 轴的移动</td>
+</tr>
+<tr>
+<td>z</td>
+<td>float/double</td>
+<td>单独设置 z 轴的移动</td>
+</tr>
+<tr>
+<td>orienttopath</td>
+<td>boolean</td>
+<td>游戏物体是否会朝向它的运动方向，默认为 flalse</td>
+</tr>
+<tr>
+<td>looktaget</td>
+<td>Transform/Vector3</td>
+<td>指定动画过程中游戏物体朝向的目标</td>
+</tr>
+<tr>
+<td>looktime</td>
+<td>float/double</td>
+<td>使用 &ldquo;orienttopath&rdquo; 或者 &ldquo;looktaget&rdquo; 属性时，物体朝向动画的时长，单位为秒</td>
+</tr>
+<tr>
+<td>axis</td>
+<td>string</td>
+<td>约束动画只在指定的该轴上旋转</td>
+</tr>
+<tr>
+<td>space</td>
+<td>Space</td>
+<td>指定物体移动时的坐标空间（世界坐标或者自身坐标）默认自身坐标</td>
+</tr>
+</tbody>
+</table>
+<h3 id="movefrom">MoveFrom</h3>
+<p>将游戏物体的位置改变到指定的位置，然后在指定时间内逐渐恢复到初始位置</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>position</td>
+<td>Transform/Vector3</td>
+<td>动画指定的目标位置</td>
+</tr>
+<tr>
+<td>path</td>
+<td>Transform[] 或 Vector3[]</td>
+<td>为动画指定一组坐标位置绘制曲线路径</td>
+</tr>
+<tr>
+<td>movetopath</td>
+<td>boolean</td>
+<td>是否自动生成一条曲线从 GameObject 的当前位置到路径起点，默认为 true</td>
+</tr>
+<tr>
+<td>orienttopath</td>
+<td>boolean</td>
+<td>游戏物体是否会朝向它的运动方向，默认为 flalse</td>
+</tr>
+<tr>
+<td>lookahead</td>
+<td>float/double</td>
+<td>对 ”orienttopath“ 朝向目标看的百分比，范围 0-1</td>
+</tr>
+<tr>
+<td>islocal</td>
+<td>boolean</td>
+<td>是否是世界坐标或者本地坐标，默认为 false，即世界坐标</td>
+</tr>
+</tbody>
+</table>
+<h3 id="moveto">MoveTo</h3>
+<p>将游戏物体的位置移动到指定的目标位置，然后在指定时间内逐渐恢复到初始位置，参数与 MoveFrom 类似</p>
+<h3 id="moveupdate">MoveUpdate</h3>
+<p>效果类似 MoveTo，在 Update 方法中使用，或者在循环调用的方法中使用动态数据，不应用 EaseType</p>
+<h2 id="10-rotate-相关动画">10. Rotate 相关动画</h2>
+<h3 id="rotateadd">RotateAdd</h3>
+<p>在指定的时间内渐变地将提供的欧拉角角度添加到物体的旋转，即在当前旋转角度的基础上再进行旋转</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>Vector3</td>
+<td>物体的旋转添加的指定欧拉角度</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rotateby">RotateBy</h3>
+<p>将提供的值乘以 360，在给定时间内渐变地将计算的结果对物体进行旋转操作</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>Vector3</td>
+<td>将指定的值乘以 360° 对游戏物体进行旋转</td>
+</tr>
+</tbody>
+</table>
+<p>（即会转多很多圈）</p>
+<h3 id="rotatefrom">RotateFrom</h3>
+<p>改变游戏物体的欧拉角度到指定值，然后在指定时间内渐变地逐渐恢复到初始角度</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rotation</td>
+<td>Transform/Vector3</td>
+<td>游戏物体旋转到目标角度</td>
+</tr>
+<tr>
+<td>islocal</td>
+<td>boolean</td>
+<td>旋转的坐标空间是世界还是本地，默认是 false，即世界空间</td>
+</tr>
+</tbody>
+</table>
+<h3 id="rotateto">RotateTo</h3>
+<p>在指定时间内将游戏物体旋转到指定的目标欧拉角度，使用参数参考 RotateFrom</p>
+<h3 id="rotateupdate">RotateUpdate</h3>
+<p>效果类似于 RotateTo，在 Update 方法中使用一组动态变化的值，不应用 EaseType</p>
+<h2 id="11-scale-相关动画">11. Scale 相关动画</h2>
+<h3 id="scaleadd">ScaleAdd</h3>
+<p>再指定时间内将游戏物体的 scale 缩放添加给定的值</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>Vector3</td>
+<td>为游戏物体当前缩放加上指定的值作为目标</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scaleby">ScaleBy</h3>
+<p>在指定时间内将游戏物体的 scale 缩放乘以给定的值</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>Vector3</td>
+<td>为游戏物体当前缩放乘以指定的值作为目标</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scalefrom">ScaleFrom</h3>
+<p>改变游戏物体的缩放到指定的值，然后在指定时间内逐渐动画恢复到初始缩放值</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>scale</td>
+<td>Transform/Vector3</td>
+<td>指定的缩放值</td>
+</tr>
+</tbody>
+</table>
+<h3 id="scaleto">ScaleTo</h3>
+<p>在指定时间内将游戏物体缩放逐渐动画到给定的值，使用参数参考 ScaleFrom</p>
+<h3 id="scaleupdate">ScaleUpdate</h3>
+<p>效果类似 ScaleTo，在 Update 方法中或循环调用的方法中减小开销，使用一组动态变化的数据，不应用 EaseType</p>
+<h2 id="12-punch-相关动画">12. Punch 相关动画</h2>
+<h3 id="punchposition">PunchPosition</h3>
+<p>对游戏物体位置施加一个冲击力，并将其摇晃回初始位置</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>Vector3</td>
+<td>指定的目标点</td>
+</tr>
+</tbody>
+</table>
+<h3 id="punchrotation">PunchRotation</h3>
+<p>对游戏物体旋转施加一个冲击力，并将其摇晃回初始的旋转，参考 PunchPosition</p>
+<h3 id="punchscale">PunchScale</h3>
+<p>对游戏物体施加一个冲击力，使其摇晃回初始位置的缩放，参考 PunchPosition</p>
+<h2 id="13-shake-相关动画">13. Shake 相关动画</h2>
+<h3 id="shakeposition">ShakePosition</h3>
+<p>在指定时间内根据指定的幅度随机摇晃物体位置并逐渐衰减</p>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td>Vector3</td>
+<td>震动的幅度大小</td>
+</tr>
+</tbody>
+</table>
+<h3 id="shakerotation">ShakeRotation</h3>
+<p>在指定时间内根据指定的幅度随即摇晃游戏物体的旋转并逐渐衰减，参考 ShakePosition</p>
+<h3 id="shakescale">ShakeScale</h3>
+<p>在指定时间内根据指定的幅度随即摇晃游戏物体的缩放并逐渐衰减，参考 ShakePosition</p>
+<h2 id="14-动画控制方法">14. 动画控制方法</h2>
+<h3 id="init">Init</h3>
+<p>设置一个 GameObject，以避免在添加初始动画时出现问题</p>
+<p>当天你打算运行 iTween 的每个对象的 Start 或 Awake 时都使用这个方法</p>
+<h3 id="pause">Pause</h3>
+<p>用于暂停动画，如果动画标志了 ignoreTimeScale 则不起作用</p>
+<h3 id="resume">Resume</h3>
+<p>用于继续动画</p>
+<h3 id="stop">Stop</h3>
+<p>用于停止动画，且摧毁 GameObject 上面的 iTween 动画组件</p>
+<p>由于 Unity 线程的一些操作，你可能需要在调用 Stop 后插入一个任意的暂停（可以很短），调用 <code>WaitForSeconds()</code> ，然后添加一个新的动画</p>
+<p>如果你正在使用键盘/鼠标交互，建议<strong>在键盘或鼠标按下的时候调用 Stop，然后在按键或鼠标抬起的时候创建新的动画</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>iTween.Stop(obj);
+</span></span><span style="display:flex;"><span>WaitForSeconds(<span style="color:#ae81ff">0.001f</span>);
+</span></span><span style="display:flex;"><span>iTween.MoveTo(....);
+</span></span></code></pre></div><h3 id="stopbyname">StopByName</h3>
+<p>通过动画名字停止动画</p>
+<h3 id="count">Count</h3>
+<p>获取 iTween 动画的个数</p>
+<h2 id="15-update-数值系列方法">15. Update 数值系列方法</h2>
+<h3 id="floatupdate">FloatUpdate</h3>
+<p>返回一个 float 值，在给定值的当前值和目标值之间，基于给定的速度渐变</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Update(){
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// f: 当前值</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 5: 目标值</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// 1: 速度</span>
+</span></span><span style="display:flex;"><span>    f = iTween.FloatUpdate(f, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>    Debug.Log(f);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="rectupdate">RectUpdate</h3>
+<p>返回一个 Rect 值，该值通过提供的速度在当前值和目标值之间取值</p>
+<h3 id="vector2update">Vector2Update</h3>
+<p>返回一个 Vector2，该值通过提供的速度在当前值和目标值之间取值</p>
+<h3 id="vector3update">Vector3Update</h3>
+<p>返回一个 Vector3，该值通过提供的速度在当前值和目标值之间取值</p>
+<h2 id="16-path-相关方法">16. Path 相关方法</h2>
+<h3 id="drawline">DrawLine</h3>
+<p>在 <code>OnDrawGizmos()</code> 方法中通过提供的 <code>Vector3[]</code> 或者 <code>Transform[]</code> 画线</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>Vector3[] path = <span style="color:#66d9ef">new</span> Vector3[]{...};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnDrawGizmos(){
+</span></span><span style="display:flex;"><span>    iTween.DrawLine(path, Color.RED);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="drawpath">DrawPath</h3>
+<p>在 <code>OnDrawGizmos()</code> 方法中通过提供的 <code>Vector3[]</code> 或者 <code>Transform[]</code> 画一条曲线，区别于 DrawLine</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>Vector3[] path = <span style="color:#66d9ef">new</span> Vector3[]{...};
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> OnDrawGizmos(){
+</span></span><span style="display:flex;"><span>    iTween.DrawPath(path, Color.RED);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="pathlength">PathLength</h3>
+<p>返回一条通过提供的 <code>Vector3[]</code> 或 <code>Transform[]</code> 所化的<strong>曲线</strong>路径的长度，float 的长度值</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span>Vector3[] path = <span style="color:#66d9ef">new</span> Vector3[]{...};
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float</span> distance = iTween.PathLength(path);
+</span></span></code></pre></div><h3 id="putonpath">PutOnPath</h3>
+<p>将游戏物体放到提供路径的指定百分比的位置点</p>
+<h3 id="pointonpath">PointOnPath</h3>
+<p>根据提供的路径的指定百分比，返回一个 Vector3 的位置</p>
 
         </p>
     </div>
