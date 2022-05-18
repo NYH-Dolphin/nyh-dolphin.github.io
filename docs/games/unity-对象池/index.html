@@ -48,6 +48,7 @@
     
     
     
+
     <!-- Support Letax Equation -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
 
@@ -179,174 +180,174 @@
     <div class="post-content">
         <p>
             <h2 id="1-ilsimplepool">1. ILSimplePool</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">namespace</span> Util
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// 简易池</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ILSimplePool</span>&lt;T&gt;
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">protected</span> List&lt;T&gt; listActive = <span style="color:#66d9ef">new</span> List&lt;T&gt;(); <span style="color:#75715e">// 活跃的对象池</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">protected</span> List&lt;T&gt; listUnactive = <span style="color:#66d9ef">new</span> List&lt;T&gt;(); <span style="color:#75715e">// 不活跃的对象池</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> List&lt;T&gt; ActiveInfos =&gt; listActive;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> List&lt;T&gt; UnactiveInfos =&gt; listUnactive;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> ActiveCount =&gt; listActive.Count;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> UnactiveCount =&gt; listUnactive.Count;
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> T <span style="color:#66d9ef">this</span>[<span style="color:#66d9ef">int</span> nIndex] =&gt; listActive[nIndex];
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// 从活跃池子内拿出一个对象</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> T Pop()
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            T pRes = <span style="color:#66d9ef">default</span>(T);
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (listUnactive.Count &gt; <span style="color:#ae81ff">0</span>)
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                pRes = listUnactive[<span style="color:#ae81ff">0</span>];
-</span></span><span style="display:flex;"><span>                listUnactive.RemoveAt(<span style="color:#ae81ff">0</span>);
-</span></span><span style="display:flex;"><span>                AddActiveObj(pRes);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> pRes;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// 将对象添加到活跃池中</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;param name=&#34;pTarget&#34;&gt;&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> AddActiveObj(T pTarget)
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            listActive.Add(pTarget);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// 将活跃池中的指定对象放回不活跃池中</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;param name=&#34;pTarget&#34;&gt;&lt;/param&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> RecycleObj(T pTarget)
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">bool</span> isRemove = listActive.Remove(pTarget);
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (isRemove)
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                listUnactive.Add(pTarget);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// 刷新整个池子</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">/// &lt;/summary&gt;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Clear()
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            listActive.Clear();
-</span></span><span style="display:flex;"><span>            listUnactive.Clear();
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p>存放指定某个对象（包含多个副本）的池子</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">using</span> System.Collections.Generic;
+
+<span style="color:#66d9ef">namespace</span> Util
+{
+    <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// 简易池
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ILSimplePool</span>&lt;T&gt;
+    {
+        <span style="color:#66d9ef">protected</span> List&lt;T&gt; listActive = <span style="color:#66d9ef">new</span> List&lt;T&gt;(); <span style="color:#75715e">// 活跃的对象池
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">protected</span> List&lt;T&gt; listUnactive = <span style="color:#66d9ef">new</span> List&lt;T&gt;(); <span style="color:#75715e">// 不活跃的对象池
+</span><span style="color:#75715e"></span>
+        <span style="color:#66d9ef">public</span> List&lt;T&gt; ActiveInfos =&gt; listActive;
+        <span style="color:#66d9ef">public</span> List&lt;T&gt; UnactiveInfos =&gt; listUnactive;
+
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> ActiveCount =&gt; listActive.Count;
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> UnactiveCount =&gt; listUnactive.Count;
+        <span style="color:#66d9ef">public</span> T <span style="color:#66d9ef">this</span>[<span style="color:#66d9ef">int</span> nIndex] =&gt; listActive[nIndex];
+
+
+        <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// 从活跃池子内拿出一个对象
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;returns&gt;&lt;/returns&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> T Pop()
+        {
+            T pRes = <span style="color:#66d9ef">default</span>(T);
+            <span style="color:#66d9ef">if</span> (listUnactive.Count &gt; <span style="color:#ae81ff">0</span>)
+            {
+                pRes = listUnactive[<span style="color:#ae81ff">0</span>];
+                listUnactive.RemoveAt(<span style="color:#ae81ff">0</span>);
+                AddActiveObj(pRes);
+            }
+
+            <span style="color:#66d9ef">return</span> pRes;
+        }
+
+        <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// 将对象添加到活跃池中
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;param name=&#34;pTarget&#34;&gt;&lt;/param&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> AddActiveObj(T pTarget)
+        {
+            listActive.Add(pTarget);
+        }
+
+        <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// 将活跃池中的指定对象放回不活跃池中
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;param name=&#34;pTarget&#34;&gt;&lt;/param&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> RecycleObj(T pTarget)
+        {
+            <span style="color:#66d9ef">bool</span> isRemove = listActive.Remove(pTarget);
+            <span style="color:#66d9ef">if</span> (isRemove)
+            {
+                listUnactive.Add(pTarget);
+            }
+        }
+
+        <span style="color:#75715e">/// &lt;summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// 刷新整个池子
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">/// &lt;/summary&gt;
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Clear()
+        {
+            listActive.Clear();
+            listUnactive.Clear();
+        }
+    }
+}
+</code></pre></div><p>存放指定某个对象（包含多个副本）的池子</p>
 <ul>
 <li><code>listActive</code>：当前正在活跃的对象</li>
 <li><code>listUnactive</code>：当前不在活跃的对象</li>
 </ul>
 <h2 id="2-prefab-manager">2. Prefab Manager</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c#" data-lang="c#"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrefabManager</span> : MonoBehaviour
-</span></span><span style="display:flex;"><span>    {
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> PrefabManager instance;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> PrefabManager Instance
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">get</span>
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (instance == <span style="color:#66d9ef">null</span>)
-</span></span><span style="display:flex;"><span>                {
-</span></span><span style="display:flex;"><span>                    GameObject obj = <span style="color:#66d9ef">new</span> GameObject();
-</span></span><span style="display:flex;"><span>                    obj.name = <span style="color:#e6db74">&#34;PrefabManager&#34;</span>;
-</span></span><span style="display:flex;"><span>                    DontDestroyOnLoad(obj);
-</span></span><span style="display:flex;"><span>                    instance = obj.AddComponent&lt;PrefabManager&gt;();
-</span></span><span style="display:flex;"><span>                }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span> instance;
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 根据prefab地址字符串存放的object池</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">private</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, ILSimplePool&lt;GameObject&gt;&gt; objPool =
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, ILSimplePool&lt;GameObject&gt;&gt;();
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 获得对象</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> GameObject GetObj(<span style="color:#66d9ef">string</span> objStr)
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (!objPool.ContainsKey(objStr))
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                objPool.Add(objStr, <span style="color:#66d9ef">new</span> ILSimplePool&lt;GameObject&gt;());
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            GameObject obj = objPool[objStr].Pop();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (obj == <span style="color:#66d9ef">null</span>)
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                obj = Instantiate((GameObject) Resources.Load(objStr));
-</span></span><span style="display:flex;"><span>                objPool[objStr].AddActiveObj(obj);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                obj.SetActive(<span style="color:#66d9ef">true</span>);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> obj;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 获得对象 - 重构版本 从对象池子获得object的同时为其设置位置和方向</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> GameObject GetObj(<span style="color:#66d9ef">string</span> objStr, Vector3 position, Vector3 eulerAngles)
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (!objPool.ContainsKey(objStr))
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                objPool.Add(objStr, <span style="color:#66d9ef">new</span> ILSimplePool&lt;GameObject&gt;());
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            GameObject obj = objPool[objStr].Pop();
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (obj == <span style="color:#66d9ef">null</span>)
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                GameObject objI = (GameObject) Resources.Load(objStr);
-</span></span><span style="display:flex;"><span>                objI.transform.position = position;
-</span></span><span style="display:flex;"><span>                objI.transform.eulerAngles = eulerAngles;
-</span></span><span style="display:flex;"><span>                obj = Instantiate(objI);
-</span></span><span style="display:flex;"><span>                objPool[objStr].AddActiveObj(obj);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                obj.transform.position = position;
-</span></span><span style="display:flex;"><span>                obj.transform.eulerAngles = eulerAngles;
-</span></span><span style="display:flex;"><span>                obj.SetActive(<span style="color:#66d9ef">true</span>);
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> obj;
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// 回收不用的对象</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ReturnObj(<span style="color:#66d9ef">string</span> objStr, GameObject obj)
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">string</span>.IsNullOrEmpty(objStr))
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">return</span>;
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> (!objPool.ContainsKey(objStr))
-</span></span><span style="display:flex;"><span>            {
-</span></span><span style="display:flex;"><span>                objPool.Add(objStr, <span style="color:#66d9ef">new</span> ILSimplePool&lt;GameObject&gt;());
-</span></span><span style="display:flex;"><span>            }
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            obj.SetActive(<span style="color:#66d9ef">false</span>);
-</span></span><span style="display:flex;"><span>            objPool[objStr].RecycleObj(obj);
-</span></span><span style="display:flex;"><span>        }
-</span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">PrefabManager</span> : MonoBehaviour
+    {
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> PrefabManager instance;
+
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> PrefabManager Instance
+        {
+            <span style="color:#66d9ef">get</span>
+            {
+                <span style="color:#66d9ef">if</span> (instance == <span style="color:#66d9ef">null</span>)
+                {
+                    GameObject obj = <span style="color:#66d9ef">new</span> GameObject();
+                    obj.name = <span style="color:#e6db74">&#34;PrefabManager&#34;</span>;
+                    DontDestroyOnLoad(obj);
+                    instance = obj.AddComponent&lt;PrefabManager&gt;();
+                }
+
+                <span style="color:#66d9ef">return</span> instance;
+            }
+        }
+
+
+        <span style="color:#75715e">// 根据prefab地址字符串存放的object池
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">private</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, ILSimplePool&lt;GameObject&gt;&gt; objPool =
+            <span style="color:#66d9ef">new</span> Dictionary&lt;<span style="color:#66d9ef">string</span>, ILSimplePool&lt;GameObject&gt;&gt;();
+
+
+        <span style="color:#75715e">// 获得对象
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> GameObject GetObj(<span style="color:#66d9ef">string</span> objStr)
+        {
+            <span style="color:#66d9ef">if</span> (!objPool.ContainsKey(objStr))
+            {
+                objPool.Add(objStr, <span style="color:#66d9ef">new</span> ILSimplePool&lt;GameObject&gt;());
+            }
+
+            GameObject obj = objPool[objStr].Pop();
+            <span style="color:#66d9ef">if</span> (obj == <span style="color:#66d9ef">null</span>)
+            {
+                obj = Instantiate((GameObject) Resources.Load(objStr));
+                objPool[objStr].AddActiveObj(obj);
+            }
+            <span style="color:#66d9ef">else</span>
+            {
+                obj.SetActive(<span style="color:#66d9ef">true</span>);
+            }
+            <span style="color:#66d9ef">return</span> obj;
+        }
+
+
+        <span style="color:#75715e">// 获得对象 - 重构版本 从对象池子获得object的同时为其设置位置和方向
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> GameObject GetObj(<span style="color:#66d9ef">string</span> objStr, Vector3 position, Vector3 eulerAngles)
+        {
+            <span style="color:#66d9ef">if</span> (!objPool.ContainsKey(objStr))
+            {
+                objPool.Add(objStr, <span style="color:#66d9ef">new</span> ILSimplePool&lt;GameObject&gt;());
+            }
+
+            GameObject obj = objPool[objStr].Pop();
+            <span style="color:#66d9ef">if</span> (obj == <span style="color:#66d9ef">null</span>)
+            {
+                GameObject objI = (GameObject) Resources.Load(objStr);
+                objI.transform.position = position;
+                objI.transform.eulerAngles = eulerAngles;
+                obj = Instantiate(objI);
+                objPool[objStr].AddActiveObj(obj);
+            }
+            <span style="color:#66d9ef">else</span>
+            {
+                obj.transform.position = position;
+                obj.transform.eulerAngles = eulerAngles;
+                obj.SetActive(<span style="color:#66d9ef">true</span>);
+            }
+            <span style="color:#66d9ef">return</span> obj;
+        }
+
+
+        <span style="color:#75715e">// 回收不用的对象
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> ReturnObj(<span style="color:#66d9ef">string</span> objStr, GameObject obj)
+        {
+            <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">string</span>.IsNullOrEmpty(objStr))
+            {
+                <span style="color:#66d9ef">return</span>;
+            }
+
+            <span style="color:#66d9ef">if</span> (!objPool.ContainsKey(objStr))
+            {
+                objPool.Add(objStr, <span style="color:#66d9ef">new</span> ILSimplePool&lt;GameObject&gt;());
+            }
+
+            obj.SetActive(<span style="color:#66d9ef">false</span>);
+            objPool[objStr].RecycleObj(obj);
+        }
+    }
+</code></pre></div><ul>
 <li>当需要获取 object 的时候，以 object 的地址字符串传入即可获取</li>
 <li>当需要回收 object 的时候，以 object 的地址字符串及 object 自己传入即可回收</li>
 </ul>
@@ -361,7 +362,6 @@
 
         </main><footer class="footer">
     <span>&copy; 2022 NYH-Dolphin</span>
-    <span> <a id="busuanzi_value_site_pv"></a> Views | <a id="busuanzi_value_site_uv"></a> Visitors</span> 
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>

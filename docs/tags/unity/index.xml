@@ -6,7 +6,27 @@
     <description>Recent content in Unity on 小小的大肥的主页</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 06 May 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://NYH-Dolphin.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 13 May 2022 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://NYH-Dolphin.github.io/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Unity Mirror1</title>
+      <link>https://NYH-Dolphin.github.io/games/unity-mirror1/</link>
+      <pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/games/unity-mirror1/</guid>
+      <description>1. Mirror 介绍   Mirror 是完全免费的，它有很好的文档和说明
+  Github Link: https://github.com/vis2k/Mirror
+  文档：https://mirror-networking.gitbook.io/docs/
+  教程
+ https://www.bilibili.com/video/BV1q3411e7QV?spm_id_from=333.337.search-card.all.click https://www.youtube.com/watch?v=77vYKsXC4IE&amp;amp;list=PLXEG2omgKgCapAmGe20XBgd87rmxFdKhK&amp;amp;index=3    SDK：https://mirror-networking.com/docs/api/Mirror.html
+  先修
+ C# Unity 基础操作 网络相关知识    安装  通过 Assets Store 可以直接下载 Mirror  当安装好后，你会有一个 Mirror 文件夹和一个 ScriptTemplates 文件夹   在 Mirror/Examples 下面有一个 Pong 的文件夹，我们将以它为示例  2. Pong 游戏介绍 介绍 ![image-20220513092714779](/images/Unity Mirror.assets/image-20220513092714779.png)
+ 首先，打包一个文件出来，可以用来做 Server，Unity 内的用于 Client 运行 exe 文件，可以看到游戏内有一些按钮 !</description>
+    </item>
+    
     <item>
       <title>Unity iTween 动画插件</title>
       <link>https://NYH-Dolphin.github.io/games/unity-itween-%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6/</link>
@@ -14,7 +34,7 @@
       
       <guid>https://NYH-Dolphin.github.io/games/unity-itween-%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6/</guid>
       <description>iTween 插件 API 全解析：https://www.bilibili.com/video/BV1T4411t7RS
- 1. iTween 的下载和安装  在 Unity 的 AssetStore 中可以下载，可以直接免费入手 官网链接：iTween for Unity by Bob Berkebile (pixelplacement)  2. iTween 的使用方式 静态方法 void Start() {  iTween.MoveAdd(gameObject, new Vector3(0,1,0), 3f); }  直接调用 iTween 的静态方法，传入需要的参数即可  Hashtable 方法  可以参考文档：iTween for Unity by Bob Berkebile (pixelplacement)  void Start() {  Hashtable hash = new Hashtable();  hash.Add(&amp;#34;amount&amp;#34;, new Vector3(0,1,0));  hash.Add(&amp;#34;time&amp;#34;, 2f);  iTween.MoveAdd(gameObject, hash); } 使用 iTween 提供的 Hash void Start() {  iTween.</description>
+ 1. iTween 的下载和安装  在 Unity 的 AssetStore 中可以下载，可以直接免费入手 官网链接：iTween for Unity by Bob Berkebile (pixelplacement)  2. iTween 的使用方式 静态方法 void Start() { iTween.MoveAdd(gameObject, new Vector3(0,1,0), 3f); }  直接调用 iTween 的静态方法，传入需要的参数即可  Hashtable 方法  可以参考文档：iTween for Unity by Bob Berkebile (pixelplacement)  void Start() { Hashtable hash = new Hashtable(); hash.Add(&amp;#34;amount&amp;#34;, new Vector3(0,1,0)); hash.Add(&amp;#34;time&amp;#34;, 2f); iTween.MoveAdd(gameObject, hash); } 使用 iTween 提供的 Hash void Start() { iTween.</description>
     </item>
     
     <item>
@@ -24,7 +44,7 @@
       
       <guid>https://NYH-Dolphin.github.io/games/unity-%E5%8D%95%E4%BE%8B/</guid>
       <description>1. Manager 很多全局控制的 GameManager 可以采取如下的单例模式以控制全局唯一
-public class GameManager : MonoBehaviour  {  private static GameManager instance;   public static GameManager Instance  {  get  {  if (instance == null)  {  GameObject obj = new GameObject();  obj.name = &amp;#34;PrefabManager&amp;#34;;  DontDestroyOnLoad(obj);  instance = obj.AddComponent&amp;lt;PrefabManager&amp;gt;();  }   return instance;  }  } }  即，创建一个 GameObject 上面挂在指定的 Manager 的脚本代码，然后使用 DontDestoryOnLoad 控制其始终在 Scene 上  </description>
+public class GameManager : MonoBehaviour { private static GameManager instance; public static GameManager Instance { get { if (instance == null) { GameObject obj = new GameObject(); obj.name = &amp;#34;PrefabManager&amp;#34;; DontDestroyOnLoad(obj); instance = obj.AddComponent&amp;lt;PrefabManager&amp;gt;(); } return instance; } } }  即，创建一个 GameObject 上面挂在指定的 Manager 的脚本代码，然后使用 DontDestoryOnLoad 控制其始终在 Scene 上  </description>
     </item>
     
     <item>
@@ -33,7 +53,7 @@ public class GameManager : MonoBehaviour  {  private static GameManager instance
       <pubDate>Wed, 06 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://NYH-Dolphin.github.io/games/unity-%E5%AF%B9%E8%B1%A1%E6%B1%A0/</guid>
-      <description>1. ILSimplePool using System.Collections.Generic;  namespace Util {  /// &amp;lt;summary&amp;gt;  /// 简易池  /// &amp;lt;/summary&amp;gt;  public class ILSimplePool&amp;lt;T&amp;gt;  {  protected List&amp;lt;T&amp;gt; listActive = new List&amp;lt;T&amp;gt;(); // 活跃的对象池  protected List&amp;lt;T&amp;gt; listUnactive = new List&amp;lt;T&amp;gt;(); // 不活跃的对象池   public List&amp;lt;T&amp;gt; ActiveInfos =&amp;gt; listActive;  public List&amp;lt;T&amp;gt; UnactiveInfos =&amp;gt; listUnactive;   public int ActiveCount =&amp;gt; listActive.Count;  public int UnactiveCount =&amp;gt; listUnactive.Count;  public T this[int nIndex] =&amp;gt; listActive[nIndex];    /// &amp;lt;summary&amp;gt;  /// 从活跃池子内拿出一个对象  /// &amp;lt;/summary&amp;gt;  /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;  public T Pop()  {  T pRes = default(T);  if (listUnactive.</description>
+      <description>1. ILSimplePool using System.Collections.Generic; namespace Util { /// &amp;lt;summary&amp;gt;  /// 简易池  /// &amp;lt;/summary&amp;gt;  public class ILSimplePool&amp;lt;T&amp;gt; { protected List&amp;lt;T&amp;gt; listActive = new List&amp;lt;T&amp;gt;(); // 活跃的对象池  protected List&amp;lt;T&amp;gt; listUnactive = new List&amp;lt;T&amp;gt;(); // 不活跃的对象池  public List&amp;lt;T&amp;gt; ActiveInfos =&amp;gt; listActive; public List&amp;lt;T&amp;gt; UnactiveInfos =&amp;gt; listUnactive; public int ActiveCount =&amp;gt; listActive.Count; public int UnactiveCount =&amp;gt; listUnactive.Count; public T this[int nIndex] =&amp;gt; listActive[nIndex]; /// &amp;lt;summary&amp;gt;  /// 从活跃池子内拿出一个对象  /// &amp;lt;/summary&amp;gt;  /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;  public T Pop() { T pRes = default(T); if (listUnactive.</description>
     </item>
     
     <item>
@@ -51,7 +71,9 @@ public class GameManager : MonoBehaviour  {  private static GameManager instance
       <pubDate>Fri, 01 Apr 2022 00:00:00 +0000</pubDate>
       
       <guid>https://NYH-Dolphin.github.io/games/unity-%E8%A1%8C%E8%B5%B0%E4%B8%8E%E9%BC%A0%E6%A0%87%E8%A7%86%E8%A7%92%E7%A7%BB%E5%8A%A8/</guid>
-      <description>1. 行走部分 WASD 控制行走 public float fMoveSpeed = 10f; // WASD移动速度  void Update(){  KeyBoardControl(); }  private void KeyBoardControl() {  if (Input.GetKey(KeyCode.W))  {  transform.Translate(Vector3.forward * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.S))  {  transform.Translate(Vector3.back * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.A))  {  transform.Translate(Vector3.up * fMoveSpeed * Time.deltaTime);  }   if (Input.GetKey(KeyCode.D))  {  transform.</description>
+      <description>1. 行走部分 WASD 控制行走 public float fMoveSpeed = 10f; // WASD移动速度  void Update(){ KeyBoardControl(); } private void KeyBoardControl() { if (Input.GetKey(KeyCode.W)) { transform.Translate(Vector3.forward * fMoveSpeed * Time.deltaTime); } if (Input.GetKey(KeyCode.S)) { transform.Translate(Vector3.back * fMoveSpeed * Time.deltaTime); } if (Input.GetKey(KeyCode.A)) { transform.Translate(Vector3.up * fMoveSpeed * Time.deltaTime); } if (Input.GetKey(KeyCode.D)) { transform.Translate(-1 * Vector3.up * fMoveSpeed * Time.deltaTime); } } 鼠标点击移动到指定位置 待补充
+2. 鼠标移动视角部分 左右移动转动物体，上下移动转动摄像机 注意的问题是，上下移动不能转动物体，不然视角会转飞
+public float fRotateSpeed = 200; // 视角移动速度 private float fLastPosX; // 上一次鼠标的位置 x private float fLastPosY; // 上一次鼠标的位置 y private float fRange = 0.</description>
     </item>
     
     <item>
