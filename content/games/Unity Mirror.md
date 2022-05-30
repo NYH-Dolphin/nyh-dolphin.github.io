@@ -1,8 +1,9 @@
 ---
-title: "Unity Mirror1"
+title: "Unity Mirror"
 date: 2022-05-13
 draft: false
 type: "post"
+showTableOfContents: true
 tags: ["Unity"]
 ---
 
@@ -31,15 +32,18 @@ tags: ["Unity"]
 
 ### 介绍
 
-![image-20220513092714779](/images/Unity Mirror.assets/image-20220513092714779.png)
+<img src="/images/Unity Mirror.assets/image-20220513092714779.png" alt="image-20220513092714779"/>	
 
 - 首先，打包一个文件出来，可以用来做 Server，Unity 内的用于 Client
 - 运行 exe 文件，可以看到游戏内有一些按钮
-  ![image-20220513093150529](/images/Unity Mirror.assets/image-20220513093150529.png)
+  
+  <img src="/images/Unity Mirror.assets/image-20220513093150529.png" alt="image-20220513093150529"/>
 - 点击 `Server Only` 将打包出来的应用作为服务器
-  ![image-20220513093323182](/images/Unity Mirror.assets/image-20220513093323182.png)
+  
+  <img src="/images/Unity Mirror.assets/image-20220513093323182.png" alt="image-20220513093323182"/>
 - 运行 Unity 内的游戏，点击 `Client` ，作为客户端
-  ![image-20220513093437885](/images/Unity Mirror.assets/image-20220513093437885.png)
+  
+  <img src="/images/Unity Mirror.assets/image-20220513093437885.png" alt="image-20220513093437885"/>
 - 此时可以看到 Client 里面的画面同步到了 Server 上
 - 你可以按动上下键控制板子移动，可以观察到 Server 中的画面同步
 - 如果在 Server 端点击 `Host(Server + Client)` 事实上，它会既是一个 Server，又是一个 Client，此时运行 Unity 内的 Client 点击 `Client` 加入，就可以开始玩了
@@ -48,7 +52,7 @@ tags: ["Unity"]
 
 Scene 下有如下的 GameObject
 
-![image-20220513094140780](/images/Unity Mirror.assets/image-20220513094140780.png)	
+<img src="/images/Unity Mirror.assets/image-20220513094140780.png" alt="image-20220513094140780" style="zoom:67%;" />
 
 #### NetworkManager
 
@@ -202,7 +206,7 @@ public class Ball : NetworkBehaviour
 
 ## 3. Unity 多人游戏功能介绍
 
-![image-20220515185820672](/images/Unity Mirror1.assets/image-20220515185820672.png)
+<img src="/images/Unity Mirror1.assets/image-20220515185820672.png" alt="image-20220513100853611" style="zoom:67%;" />	
 
 ### 组件
 
@@ -462,6 +466,3 @@ void OnChnage(int oldX, int newX)
 	// 处理改变的回调函数
 }
 ```
-
-### Messages
-

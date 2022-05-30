@@ -2,7 +2,7 @@ baseURL = "https://NYH-Dolphin.github.io"
 defaultContentLanguage = "en"
 languageCode = "en"
 
-title = "小小的大肥的主页"
+title = "Dolphin's Webpage"
 
 theme = "gokarna"
 
@@ -54,17 +54,24 @@ enableRobotsTXT = true
     url = "/about/"
     weight = 5
     
-  [[menu.main]]
-    identifier = "github"
-    url = "https://github.com/NYH-Dolphin"
-    weight = 6
-    
-    # We use feather-icons: https://feathericons.com/
-    pre = "<span data-feather='github'></span>"
+#  [[menu.main]]
+#    identifier = "github"
+#    url = "https://github.com/NYH-Dolphin"
+#    weight = 6   
+#    # We use feather-icons: https://feathericons.com/
+#    pre = "<span data-feather='github'></span>"
 
 [params]
   # URL for the avatar on homepage
   avatarURL = "/images/avatar.jpg"
+
+  socialIcons = [
+      {name = "github", url = "https://github.com/NYH-Dolphin"},
+      {name = "bilibili", url = "https://space.bilibili.com/13993670"},
+      {name = "youtube", url = "https://www.youtube.com/channel/UCLAZemz5uumlX-gcr7HMrAA"},
+      {name = "mail", url = "mailto:1362097989@qq.com"},
+      {name = "love", url = "https://zweb.zone/"},
+  ]
 
   # Choose one of size-xs, size-s, size-m, size-l & size-xl. (Default: size-m)
   avatarSize = "size-l"
@@ -73,7 +80,7 @@ enableRobotsTXT = true
   description = "Imagination Can Change Anything!"
 
   # Accent color is displayed when you hover over <a> tags
-  accentColor = "#4682B4"
+  accentColor = "#00aaff"
 
   # You can use this to inject any HTML in the <head> tag.
   # Ideal usecase for this is to import custom js/css or add your analytics snippet
@@ -88,8 +95,6 @@ enableRobotsTXT = true
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
-
-
 
   '''
 
@@ -106,3 +111,9 @@ enableRobotsTXT = true
 
 [markup.goldmark.renderer]
   unsafe = true # Allow HTML in md files
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 1
+    endLevel = 3
+    ordered = false

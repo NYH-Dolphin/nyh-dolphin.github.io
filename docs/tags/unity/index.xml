@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Unity on 小小的大肥的主页</title>
+    <title>Unity on Dolphin&#39;s Webpage</title>
     <link>https://NYH-Dolphin.github.io/tags/unity/</link>
-    <description>Recent content in Unity on 小小的大肥的主页</description>
+    <description>Recent content in Unity on Dolphin&#39;s Webpage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Fri, 13 May 2022 00:00:00 +0000</lastBuildDate>
@@ -12,19 +12,19 @@
     
     
     <item>
-      <title>Unity Mirror1</title>
-      <link>https://NYH-Dolphin.github.io/games/unity-mirror1/</link>
+      <title>Unity Mirror</title>
+      <link>https://NYH-Dolphin.github.io/games/unity-mirror/</link>
       <pubDate>Fri, 13 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://NYH-Dolphin.github.io/games/unity-mirror1/</guid>
+      <guid>https://NYH-Dolphin.github.io/games/unity-mirror/</guid>
       <description>1. Mirror 介绍   Mirror 是完全免费的，它有很好的文档和说明
   Github Link: https://github.com/vis2k/Mirror
   文档：https://mirror-networking.gitbook.io/docs/
   教程
  https://www.bilibili.com/video/BV1q3411e7QV?spm_id_from=333.337.search-card.all.click https://www.youtube.com/watch?v=77vYKsXC4IE&amp;amp;list=PLXEG2omgKgCapAmGe20XBgd87rmxFdKhK&amp;amp;index=3    SDK：https://mirror-networking.com/docs/api/Mirror.html
   先修
- C# Unity 基础操作 网络相关知识    安装  通过 Assets Store 可以直接下载 Mirror  当安装好后，你会有一个 Mirror 文件夹和一个 ScriptTemplates 文件夹   在 Mirror/Examples 下面有一个 Pong 的文件夹，我们将以它为示例  2. Pong 游戏介绍 介绍 ![image-20220513092714779](/images/Unity Mirror.assets/image-20220513092714779.png)
- 首先，打包一个文件出来，可以用来做 Server，Unity 内的用于 Client 运行 exe 文件，可以看到游戏内有一些按钮 !</description>
+ C# Unity 基础操作 网络相关知识    安装  通过 Assets Store 可以直接下载 Mirror  当安装好后，你会有一个 Mirror 文件夹和一个 ScriptTemplates 文件夹   在 Mirror/Examples 下面有一个 Pong 的文件夹，我们将以它为示例  2. Pong 游戏介绍 介绍   首先，打包一个文件出来，可以用来做 Server，Unity 内的用于 Client
+  运行 exe 文件，可以看到游戏内有一些按钮</description>
     </item>
     
     <item>
