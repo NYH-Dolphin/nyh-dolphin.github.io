@@ -1,172 +1,80 @@
 ---
 type: page
+date: 2023-01-01
+draft: false
+showTableOfContents: true
 ---
 
-# <center>Curriculum Vitae</center>
+# <center>Yuhe NIE</center>
 
-## 😊About Me
+## <center>😊About Me</center>
 
-| <img src="/images/image-20220327210827277.png" alt="image-20220327210827277" style="zoom: 25%;" /> | <img src="/images/image-20220327210848837.png" alt="image-20220327210848837" style="zoom: 44%;" /> |
-| :----------------------------------------------------------: | :----------------------------------------------------------: |
+My name is <u>Yuhe NIE</u>. I was born in <u>Shenzhen, China</u>. 
 
-​	
+I would be happy if you could call me <u>Dolphin</u>🐬!
 
-- My name is Nie Yuhe. I am from ShenZhen, China. You can also call me Dolphin!
-- I like watching animation and painting. What interests me the most is to develop fascinating games! I love game, and I am hoping to become a game developer!
+I love watching <u>Japanese animation and manga</u>🎏. I have watched animations for more than <u>15 years</u>! They support me a lot, and I have a bunch of good animation lists that cover almost any type. I would be  glad if you could chat with me about some interesting animations. I also like <u>design</u>👩‍💻, <u>painting</u>🎨, <u>singing</u>🎤 and <u>playing table tennis</u>🏓.
 
-### Contact Me
+I got my bachelor's degree in <u>Computer Science and Technology</u> from the <u>Southern University of Science and Technology</u>.  I am interested in <u>Game Technology and Intelligence</u>, <u>VR/AR/MR</u>, <u>Human-Computer Interaction</u>, and <u>Computer Graphics</u>.
 
-- QQ: 1362097989
-- Email: 11911839@mail.sustech.edu.cn
-- Github: https://github.com/NYH-Dolphin
+## <center>📧Contact Me</center>
 
-## 🏫Education
+<center>nieyuhe0922@qq.com</center>
 
-|                  University                   |   Education   |      Time       | GPA  |
-| :-------------------------------------------: | :-----------: | :-------------: | ---- |
-| Southern University of Science and Technology | Undergraduate | 2019.9 - 2023.6 | 3.78 |
+## <center>🏫Education Background</center>
 
-## 💻Skills
+|                      University                       |  Education  |              Major              |      Time       | GPA       |
+| :---------------------------------------------------: | :---------: | :-----------------------------: | :-------------: | --------- |
+| Southern University of Science and Technology (China) |     UG      | Computer Science and Technology | 2019.9 - 2023.6 | 3.80/4.00 |
+|     Nanyang Technological University (Singapore)      | Exchange-UG |        Computer Science         | 2022.8-2022.12  | 4.83/5.00 |
 
-- **Languages**: CET-6: 565, TOEFL: 97
-- **Programming**: C\#, Java, C++, Python, SQL, Cg/GLSL, HTML/CSS, Git
-- **Software**: Unity3D, Jet Brain Tools, Visual Studio, VS Code
+## <center>💻Skills</center>
 
-| Software      | Details                                                      |
-| ------------- | ------------------------------------------------------------ |
-| Unity3D       | UGUI, ET Framework, Mixed Reality Development, Hololens2 MRTK, Rhino-X Development Toolkit, NuGet, Socket Programming |
-| Intellij IDEA | Spring Boots, Code Coverage Tools(JaCoCo), JUnit Test, Refactoring, Multi-Thread |
+- **Languages**: Chinese (Native), English, Japanese
+- **Programming Language**: C\#, Python, Java, C++, SQL, HTML/CSS/JS, Cg/GLSL
+- **IDE**: Unity3D, Unreal, JetBrain Toolkit, Visual Studio, VS Code
+- **Design**: Figma, Photoshop, SAI, Blender, Maya3D
+- **Others**: Git, Markdown, LaTeX(Overleaf), Linux
 
-## 🕹️Games
+## <center>✨Good Milestone</center>
 
-### Floating Down the Life (Main Developer)
+### **<u>UG Graduate Research</u>**: Nested Wave Function Collapse Algorithm Enables
+Large-Scale Content Generation
 
-> NUS Soc Summer Workshop (2021)
+> - Southern University of Science and Technology (Under the supervision of Prof. [Xuan SONG](https://www.sustech.edu.cn/en/faculties/songxuan.html))
+> - Dec 2022 - On Going
 
-{{< yt uMPuien2GMc >}}
+- This work is scheduled for submission to IEEE CoG2023.
+- Provided an algorithm optimization strategy improve the time complexity effectively and gave assistance to the large-scale program content generation.
 
-#### Introduction
+### <u>Research</u>: Pilgrimage to Pureland: Art, Perception and the Wutai Mural VR Reconstruct
 
-This is a 2D offline casual game. You act as Jimmy, a boy that jumps from the building due to the memory loss and huge depression. By talking with different characters, you will listen to their stories, and finally, you will understand the past of Jimmy. You can choose different selection when talking to others, which may lead to different ending.
+> - Duke Kunshan University (Under the supervision of Prof. [Xin TONG](https://xintong.ca/))
+> - May 2022 - Feb 2023
 
-#### Game Architecture
+- Our paper has been accepted by IJHCI2023🚩.
+- Conducted a research that focuses on reconstruct the 2D Dunhuang mural into the 3D VR environment and provides immersive narrative to enhance user's learning of the mural.
+- Provided a construction paradigm that can efficiently convert the 2D painting into the 3D environment with maintaining the efficiency and fidelity.
 
-- Dialogue System
-- Collection System
-- Game Control System
+### <u>Internship</u>: VR/AR Software Developer 
 
-----
+> - NetEase Information Technology Co., LTD
+> - Feb 2022 - May 2022
 
-### SUSTech Pokémon (Main Developer)
+- Maintained and deployed two MR FPS games and deployed them into offline physical stores
+- Solved bugs and network performance in MR FPS games, such as UI display and port configuration problems
+- Reconstructed and developed the demo and gameplay of one of the new MR Archer Game
+- Participated in interns recruitment as resume process and interviewer, recommended 10 candidates, interviewed six people and successfully recommended one candidate to our group
 
-> SUSTech CS309 Object Oriented Design and Analysis<br>❗<u>All the art is from the Internet and has no commercial use</u>
+### <u>Experience</u>: Entertainment & Gaming User Research
 
-{{< bilibili BV1R3411Y7TH >}}
+> - Tencent Co., LTD IEG & 99 Consulting
+> - Apr 2020 - Nov 2020
 
-#### Introduction
+- Did research on cutting-edge games and entertainment trends and reporting, wrote more than 100,000 word reports
+- Analyzed competitive games, played internal beta games and gave feedback, participated in an internal test of the game and disassembled competing games on multiple occasions
+- Provided feedback to the production team, did research for data analysis of game and entertainment trends
 
-This is a 2D online Pokémon-Like mobile game. Quickly select your Pokémon and have an interesting adventure! You can also get new Pokémon by using Pokémon ball. Develop your Pokémon and obtain new skills for them. Buy the important items from the shop. Don't forget to have a fierce battle with other player! Let's enjoy the game!
+## <center>🧷More Information</center>
 
-#### Game Architecture
-
-- Draw Card System
-- Pokémon Development System
-- Shop System
-- Adventure System
-- PVP/PVE Battle System
-
-![image-20220320230010660](/images/image-20220320230010660.png)
-
----
-
-### Mind Diary (Main Developer)
-
-> Global Game Jam 2022
-
-#### Introduction
-
-This is a 3D music game.  In order to corporate with the theme, we set the game character to have a duality mind set. One of her mind has a positive attitude, while the other has a negative attitude. Through the game, you will control the character to pass two sides. Listen to different rhythm of one same sound, enjoy the game!
-
-#### Game Architecture
-
-- Music Judgement System
-- Game Control System
-
-| <img src="/images/image-20220324212855698.png" alt="image-20220324212855698" style="zoom:120%;" /> | ![image-20220324212907697](/images/image-20220324212907697.png) |
-| ------------------------------------------------------------ | ------------------------------------------------------------ |
-
-### Holographic Battlefield (Internship)
-
-To Be Continued!
-
-### Dimensional invasion (Internship)
-
-To Be Continued!
-
-## 🧷Patents
-
-| Patent Name                                                  | Application Number | Date      |
-| ------------------------------------------------------------ | ------------------ | --------- |
-| Methods, devices, servers and storage for obtaining the information of the close contacts | 202110077477.X     | May 2021  |
-| Mining methods, devices, computer equipment and storage media based on block chain | 202110368143.8     | July 2021 |
-
-## 🏆 Awards
-
-| Awards Name                                          | Honor                     | Date        |
-| ---------------------------------------------------- | ------------------------- | ----------- |
-| MathorCup University Mathematical Modeling Challenge | First Prize               | Apr 2020    |
-| Interdisciplinary Contest In Modeling                | Honorable Mention         | Feb 2021    |
-| 3rd NVIDIA Sky Hackathon                             | Fifth Place               | Dec 2020    |
-| Global Game Jam 2022                                 | Finished + Recommendation | Jan 2022    |
-| Annual Outstanding Student Scholarship, SUSTech      | Second Place              | 2020 & 2021 |
-
-## 👩‍💻Internships
-
-### Tencent Interactive Entertainment Market and User integrated Research Department
-
-> I-MUR Future Signal station Apr 2020 - Nov 2020
-
-Participate in activities such as researching cutting-edge games and entertainment trends and reporting regularly, researching and dismantling competitive games, playing internal beta games. Regular offering feedback to production team, doing research for data analysis of game and entertainment trends, etc
-
-### NetEase VR/AR Software Development Intern
-
-> FPS shooting game and MR exercise game development Feb 2022 - May 2022
-
-Participate in development of three games. Use Rhino-X to develop FPS game, including PVP and PVE. Players use their control hand to preform shooting and defend their homeland or have a competitive race. Also there are some MR games like archery.
-
-## 🥳 Extracurricular
-
-| Organization                                              | Position                          |
-| --------------------------------------------------------- | --------------------------------- |
-| Department of Computer Science, Shude College, Grade 2019 | Monitor                           |
-| Publicity Centre of Shude College                         | Director of Design Department     |
-| Class 1918, Shude College                                 | Commissary in Charge of Publicity |
-
-## 🎥 Animation that I recommend
-
-As an anime lover for decades. I would like to recommend you some cartoons that are very worth watching!
-
-### From the New World
-
-<img src="https://tva3.sinaimg.cn/large/007nw8bygy1gscse8huf9j30qd0gfju6.jpg"    >
-
-An Utopia World describes thousands years later of human society. A very profound science fiction animation centered on children's education, racial conflicts, and psychological growth.
-
-### Clannad (2nd After story)
-
-<img src="https://assets.nintendo.com/image/upload/ar_16:9,b_auto,c_pad,dpr_3.0,f_auto,q_auto,w_500/b_rgb:ffffff/v1/ncom/en_US/games/switch/c/clannad-switch/hero">
-
-This is a slow story. It describes a story that can be experienced by everyone in this society. A animation about love, family, responsibility and growth. It brought me great inspiration!
-
-### Yojouhan Shinwa Taikei
-
-<img src="https://oss.yuuiki.cn/usr/uploads/2020/01/1282572603.jpg">
-
-An eerie animation. It describes the protagonist, who is about to step into the rosy campus of college life, and who is at a loss and confusion in the face of various associations and life choices. This cartoon is suitable for every college student to see before entering school!
-
-### Attack on Titan
-
-<img src="http://m.niusnews.com/upload/posts/posts_image3_106231_1620041095.jpg">
-
-This anime is very famous, but that doesn't stop everyone from watching it. Its profound plot conflict, superb animation performance, shocking music have left an indelible position in the animation industry.
-
+- Please check out my [Resume](./Resume.pdf), my [Project Portfolio Website](https://nyh-dolphin.itch.io/) and my [Github](https://github.com/NYH-Dolphin).

@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Games on Dolphin</title>
+    <title>Games on Dolphin NIE</title>
     <link>https://NYH-Dolphin.github.io/games/</link>
-    <description>Recent content in Games on Dolphin</description>
+    <description>Recent content in Games on Dolphin NIE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 13 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 01 Aug 2022 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://NYH-Dolphin.github.io/games/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Test</title>
+      <link>https://NYH-Dolphin.github.io/games/test/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/games/test/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unity Oculus SDK</title>
+      <link>https://NYH-Dolphin.github.io/games/unity-oculus-sdk/</link>
+      <pubDate>Fri, 01 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/games/unity-oculus-sdk/</guid>
+      <description>0. Oculus 开发相关资源  开发者社区+SDK：https://developer.oculus.com/  1. 介绍与配置  Unity Asset Store Oculus Integration：https://assetstore.unity.com/packages/tools/integration/oculus-integration-82022
+ Oculus 集成包 OculusIntegration.unitypackage 是核心 VR 功能、组件、脚本和插件的多合一源，可简化和增强 Unity 中的 Oculus 应用程序开发过程。它打包了几个重要的 SDK，为您的应用程序提供高级渲染、社交和社区建设、示例框架、音频和头像开发支持。它包括：VR、Audio Manager、Avatar、Platform、Sample framework、Spatializer 和 LipSync。
+ 搭建环境与配置 https://developer.oculus.com/documentation/unity/unity-conf-settings/  2. 摄像机 Camera  https://developer.oculus.com/documentation/unity/unity-add-camera-rig/
+ Oculus Integration SDK 包括 OVRCameraRig Prefab，只需要把它添加到你需要的 Scene 里即可
+ 在 Scene 中删除预先有的 MainCamera 在 Assets/Oculus/VR/Prefab 文件夹中，拖入 OVRCameraRig 到 Scene 中  该 Prefab 包括下面几个重要的组件
+OVR Camera Rig  Use Per Eye Camera：选择此选项可分别为左眼和右眼使用摄像头 Use Fixed Update For Tracking：选择此选项可以在 FixedUpdate() 方法中更新所有被跟踪的锚点，而不是 Update() 方法，以提高物理保真度。 Disable Eye Anchor Cameras：选择此选项以禁用眼睛锚点上的摄像头，在这种情况下，游戏的主摄像机被用来提供VR渲染，跟踪空间锚被更新来提供参考姿态  OVRmanager  Target Device：你可以通过调用 OVRManager.</description>
+    </item>
     
     <item>
       <title>Unity Mirror</title>

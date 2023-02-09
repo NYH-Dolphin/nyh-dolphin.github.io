@@ -61,6 +61,15 @@
 
     <!-- Analysis -->
     <script async defer data-website-id="website-id" src="https://analytics.example.com/script.js"></script>
+
+    <!-- Support Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
   
     
 </head>
@@ -80,7 +89,7 @@
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="https://NYH-Dolphin.github.io">Dolphin</a>
+            <a class="nav-brand" href="https://NYH-Dolphin.github.io">Dolphin NIE</a>
         </div>
 
         <div class="nav-links">
@@ -108,12 +117,14 @@
 
             <span class="nav-icons-divider"></span>
             <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
                 <a>
                     <span id="theme-toggle-icon" data-feather="moon"></span>
                 </a>
             </div>
 
             <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
                 <a>
                     <span data-feather="menu"></span>
                 </a>
@@ -143,6 +154,7 @@
                 </li>
                 
                 <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
                     <a>
                         <span id="theme-toggle-icon" data-feather="moon"></span>
                     </a>
@@ -386,6 +398,43 @@ data.assetBundle.Unload (<span style="color:#66d9ef">false</span>);
 
         </p>
     </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/games/unity-%E8%A1%8C%E8%B5%B0%E4%B8%8E%E9%BC%A0%E6%A0%87%E8%A7%86%E8%A7%92%E7%A7%BB%E5%8A%A8/">
+            &#8592;
+            Previous:
+            Unity 行走与鼠标视角移动
+        </a>
+    </p>
+    <p class="prev-post-date">
+        April 1, 2022
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/games/unity-%E5%AF%B9%E8%B1%A1%E6%B1%A0/">
+            Next:
+            Unity 对象池
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            April 6, 2022
+        </p>
+</div>
+
+
+            
+        
+    </div>
 </div>
 
 
@@ -393,7 +442,7 @@ data.assetBundle.Unload (<span style="color:#66d9ef">false</span>);
     
 
         </main><footer class="footer">
-    <span>&copy; 2022 NYH-Dolphin</span>
+    <span>&copy; 2023 NYH-Dolphin</span>
     <span>
         Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
     </span>
