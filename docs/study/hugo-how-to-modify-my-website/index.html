@@ -249,23 +249,15 @@
 <h3 id="standard-page-layout">Standard Page Layout</h3>
 <h4 id="footer">Footer</h4>
 <p>Footer define my website footer part <code>themes/gokarna/layouts/partials/footer.html</code></p>
-<p>I simply decorate the footer, and add the <a href="https://gitee.com/qiushaocloud/site-counter#%E5%89%8D%E7%AB%AF%E7%AE%80%E6%98%93%E4%BD%BF%E7%94%A8">site counter</a>.</p>
+<p>I simply decorate the footer, and add the <a href="http://busuanzi.ibruce.info/">site counter</a>.</p>
 <p>Check the revise of bottom corner of the page. Once updating Gokarna submodule from Github, pay attention to update the <code>footer.html</code>.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">footer</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
-	<span style="color:#75715e">&lt;!-- add dashline --&gt;</span>
-    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;margin: 0 auto; width:60%; border:1px dashed #000000e1&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt; 
-    &lt;/<span style="color:#f92672">br</span>&gt;
 
-    &lt;<span style="color:#f92672">span</span>&gt;&amp;copy; {{ now.Year }} {{ .Site.Params.Footer}} |  Made with &amp;#10084;&amp;#65039; using &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/526avijitgupta/gokarna&#34;</span>&gt;Gokarna&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-
-    <span style="color:#75715e">&lt;!-- add website counter --&gt;</span>
-    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//githubcdn.qiushaocloud.top/gh/qiushaocloud/site-counter@master/dist/qiushaocloud_site_counter.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">script</span>&gt;
-        window.<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;qiushaocloud_sitecounter_max_session_duration&#39;</span>, <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>);
-    &lt;/<span style="color:#f92672">script</span>&gt;
-    &lt;<span style="color:#f92672">span</span>&gt;
-        Total visitors: &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;qiushaocloud_sitecounter_value_site_pv&#34;</span>&gt;...&lt;/<span style="color:#f92672">a</span>&gt; | Today&#39;s visitors: &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;qiushaocloud_sitecounter_value_today_site_pv&#34;</span>&gt;...&lt;/<span style="color:#f92672">a</span>&gt;
-    &lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;<span style="color:#f92672">span</span>&gt;.............................................................................................................&lt;/<span style="color:#f92672">span</span>&gt;
+    <span style="color:#75715e">&lt;!-- import counter code --&gt;</span>
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">span</span>&gt;&amp;copy; {{ now.Year }} {{ .Site.Params.Footer}} | Total Visitors: &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_pv&#34;</span>&gt;...&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;<span style="color:#f92672">span</span>&gt;Made with &amp;#10084;&amp;#65039; using &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/526avijitgupta/gokarna&#34;</span>&gt;Gokarna&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
 &lt;/<span style="color:#f92672">footer</span>&gt;
 </code></pre></div>
         </p>
@@ -312,13 +304,10 @@
     
 
         </main><footer class="footer">
-
     <span>.............................................................................................................</span>
-
-    <span>&copy; 2023 NYH-Dolphin |  Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a></span>
+    
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span id="busuanzi_container_site_pv">Total Visitors: <a id="busuanzi_value_site_pv">...</a></span>
-</footer>
-
-</body>
+    <span>&copy; 2023 NYH-Dolphin | Total Visitors: <a id="busuanzi_value_site_pv">...</a></span>
+    <span>Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a></span>
+</footer></body>
 </html>

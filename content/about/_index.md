@@ -1,5 +1,5 @@
 ---
-type: page
+type: "page"
 date: 2023-01-01
 showTableOfContents: true
 ---
