@@ -55,6 +55,25 @@
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
 
+    <!-- Katex is a math typesetting library for the web which lets you write beautiful equations.-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
@@ -95,23 +114,39 @@
         <div class="nav-links">
             
             <div class="nav-link">
-                <a href="https://NYH-Dolphin.github.io/posts/"> Posts </a>
+                <a href="https://NYH-Dolphin.github.io/sharing/"><span data-feather='share-2'></span> Sharing </a>
             </div>
             
             <div class="nav-link">
-                <a href="https://NYH-Dolphin.github.io/notes/"> Notes </a>
+                <a href="https://NYH-Dolphin.github.io/study/"><span data-feather='book-open'></span> Study </a>
             </div>
             
             <div class="nav-link">
-                <a href="https://NYH-Dolphin.github.io/games/"> Games </a>
+                <a href="https://NYH-Dolphin.github.io/project/"><span data-feather='code'></span> Project </a>
             </div>
             
             <div class="nav-link">
-                <a href="https://NYH-Dolphin.github.io/tags/"> Tags </a>
+                <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span> Tag </a>
             </div>
             
             <div class="nav-link">
-                <a href="https://NYH-Dolphin.github.io/about/"> About </a>
+                <a href="https://NYH-Dolphin.github.io/about/"><span data-feather='smile'></span> About </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://zweb.zone/"><span data-feather='heart'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://nyh-dolphin.itch.io/"><span data-feather='gift'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://nyh-dolphin.github.io/"><span data-feather='home'></span>  </a>
             </div>
             
 
@@ -134,23 +169,39 @@
             <ul class="nav-hamburger-list visibility-hidden">
                 
                 <li class="nav-item">
-                    <a href="https://NYH-Dolphin.github.io/posts/"> Posts </a>
+                    <a href="https://NYH-Dolphin.github.io/sharing/"><span data-feather='share-2'></span> Sharing </a>
                 </li>
                 
                 <li class="nav-item">
-                    <a href="https://NYH-Dolphin.github.io/notes/"> Notes </a>
+                    <a href="https://NYH-Dolphin.github.io/study/"><span data-feather='book-open'></span> Study </a>
                 </li>
                 
                 <li class="nav-item">
-                    <a href="https://NYH-Dolphin.github.io/games/"> Games </a>
+                    <a href="https://NYH-Dolphin.github.io/project/"><span data-feather='code'></span> Project </a>
                 </li>
                 
                 <li class="nav-item">
-                    <a href="https://NYH-Dolphin.github.io/tags/"> Tags </a>
+                    <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span> Tag </a>
                 </li>
                 
                 <li class="nav-item">
-                    <a href="https://NYH-Dolphin.github.io/about/"> About </a>
+                    <a href="https://NYH-Dolphin.github.io/about/"><span data-feather='smile'></span> About </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://zweb.zone/"><span data-feather='heart'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://nyh-dolphin.itch.io/"><span data-feather='gift'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://nyh-dolphin.github.io/"><span data-feather='home'></span>  </a>
                 </li>
                 
                 <li class="nav-item dark-theme-toggle">
@@ -232,10 +283,21 @@
     
 
         </main><footer class="footer">
-    <span>&copy; 2023 NYH-Dolphin</span>
+
+    <div style="margin: 0 auto; width:60%; border:1px dashed #000000e1"></div> 
+    </br>
+
+    <span>&copy; 2023 NYH-Dolphin |  Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a></span>
+
+    
+    <script async src="//githubcdn.qiushaocloud.top/gh/qiushaocloud/site-counter@master/dist/qiushaocloud_site_counter.min.js"></script>
+    <script>
+        window.localStorage.setItem('qiushaocloud_sitecounter_max_session_duration', 1 * 60 * 60 * 1000);
+    </script>
     <span>
-        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+        Total visitors: <a id="qiushaocloud_sitecounter_value_site_pv">...</a> | Today's visitors: <a id="qiushaocloud_sitecounter_value_today_site_pv">...</a>
     </span>
 </footer>
+
 </body>
 </html>

@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>Hugo01 How to modify my website</title>
+      <link>https://NYH-Dolphin.github.io/study/hugo-how-to-modify-my-website/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/study/hugo-how-to-modify-my-website/</guid>
+      <description>1. Gokarna Template Introduction My website is based on a beautiful and simple website framework: Gokarna. Developers are Yash Mehrotra and Avijit Gupta.
+Gokarna focuses on ultimate minimalism and simplicity. 😊
+Basic Guide  Gokarna Website Template: https://gokarna-hugo.netlify.app/ Theme Documentation - Basics Theme Documentation - Advanced  Contribution I really love the design style of this website. Thus I will continue reporting issues and providing suggestions. Gokarna&amp;rsquo;s developers are keen on revising, and they accept pull requests (Though is not that fast, they keep doing it 💕).</description>
+    </item>
+    
+    <item>
       <title>Test</title>
       <link>https://NYH-Dolphin.github.io/games/test/</link>
       <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
@@ -197,15 +208,6 @@ public float fRotateSpeed = 200; // 视角移动速度 private float fLastPosX; 
 配置完成后，点击 Generate Font Atlas，由于文字个数很多，可能需要相当长的一段时间才能完成生成
 完成好后，旁边有一个 Save 按钮，将导出的 Font Asset 存放在指定位置即可
 4. 使用 Font Asset 使用时，在创建了 TMP GameObject 的地方，把生成的 Font Asset 拖入到指定位置即可使用</description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://NYH-Dolphin.github.io/posts/first_post/</link>
-      <pubDate>Sat, 04 Dec 2021 20:47:37 +0800</pubDate>
-      
-      <guid>https://NYH-Dolphin.github.io/posts/first_post/</guid>
-      <description>Hello, World! </description>
     </item>
     
   </channel>

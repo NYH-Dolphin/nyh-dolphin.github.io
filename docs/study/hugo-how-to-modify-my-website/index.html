@@ -17,25 +17,25 @@
     
 
     
-    <title>Test</title>
-    <meta name="description" content="Imagination Can Change Anything!">
-    <meta name="keywords" content='Unity'>
+    <title>Hugo01 How to modify my website</title>
+    <meta name="description" content="About my Hugo Website: Gokarna">
+    <meta name="keywords" content='Hugo'>
 
-    <meta property="og:url" content="https://NYH-Dolphin.github.io/games/test/">
+    <meta property="og:url" content="https://NYH-Dolphin.github.io/study/hugo-how-to-modify-my-website/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Test">
-    <meta property="og:description" content="Imagination Can Change Anything!">
+    <meta property="og:title" content="Hugo01 How to modify my website">
+    <meta property="og:description" content="About my Hugo Website: Gokarna">
     <meta property="og:image" content="/images/avatar.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Test">
-    <meta name="twitter:description" content="Imagination Can Change Anything!">
-    <meta property="twitter:domain" content="https://NYH-Dolphin.github.io/games/test/">
-    <meta property="twitter:url" content="https://NYH-Dolphin.github.io/games/test/">
+    <meta name="twitter:title" content="Hugo01 How to modify my website">
+    <meta name="twitter:description" content="About my Hugo Website: Gokarna">
+    <meta property="twitter:domain" content="https://NYH-Dolphin.github.io/study/hugo-how-to-modify-my-website/">
+    <meta property="twitter:url" content="https://NYH-Dolphin.github.io/study/hugo-how-to-modify-my-website/">
     <meta name="twitter:image" content="/images/avatar.jpg">
 
     
-    <link rel="canonical" href="https://NYH-Dolphin.github.io/games/test/" />
+    <link rel="canonical" href="https://NYH-Dolphin.github.io/study/hugo-how-to-modify-my-website/" />
 
     <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/normalize.min.css" media="print" onload="this.media='all'">
     <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/main.css">
@@ -218,52 +218,94 @@
 <main id="content">
     <div class="post container">
     <div class="post-header-section">
-        <h1>Test</h1>
-        <small role="doc-subtitle"></small>
+        <h1>Hugo01 How to modify my website</h1>
+        <small role="doc-subtitle">About my Hugo Website: Gokarna</small>
         <p class="post-date">
-            August 1, 2022
+            January 1, 2023
         </p>
 
         <ul class="post-tags">
         
-            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/tags/unity">Unity</a></li>
+            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/tags/hugo">Hugo</a></li>
         
         </ul>
     </div>
 
     <div class="post-content">
         <p>
-            <div id="myPlayer">
-    <iframe id="player-iframe" data-src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=zcjwcuubdc&t=1661095675" title="GAME Portfolio" width="800px" height="450px" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" allow="clipboard-read; clipboard-write" src="https://cdn.flipsnack.com/widget/v2/widget.html?hash=zcjwcuubdc&amp;t=1661092374"></iframe>
-</div>
+            <h2 id="1-gokarna-template">1. Gokarna Template</h2>
+<h3 id="introduction">Introduction</h3>
+<p>My website is based on a beautiful and simple website framework: <a href="https://github.com/526avijitgupta/gokarna">Gokarna</a>. Developers are <a href="https://yashmehrotra.com/">Yash Mehrotra</a> and <a href="https://twitter.com/526avijit">Avijit Gupta</a>.</p>
+<p>Gokarna focuses on ultimate minimalism and simplicity. 😊</p>
+<h3 id="basic-guide">Basic Guide</h3>
+<ul>
+<li>Gokarna Website Template: <a href="https://gokarna-hugo.netlify.app/">https://gokarna-hugo.netlify.app/</a></li>
+<li><a href="https://main--gokarna-hugo.netlify.app/posts/theme-documentation-basics/">Theme Documentation - Basics</a></li>
+<li><a href="https://main--gokarna-hugo.netlify.app/posts/theme-documentation-advanced/">Theme Documentation - Advanced</a></li>
+</ul>
+<h3 id="contribution">Contribution</h3>
+<p>I really love the design style of this website. Thus I will continue <a href="https://github.com/526avijitgupta/gokarna/issues">reporting issues</a> and providing suggestions. Gokarna&rsquo;s developers are keen on revising, and they accept <a href="https://github.com/526avijitgupta/gokarna/pulls">pull requests</a> (Though is not that fast, they keep doing it 💕).</p>
+<h2 id="2-modify-gokarna">2. Modify Gokarna</h2>
+<h3 id="standard-page-layout">Standard Page Layout</h3>
+<h4 id="footer">Footer</h4>
+<p>Footer define my website footer part <code>themes/gokarna/layouts/partials/footer.html</code></p>
+<p>I simply decorate the footer, and add the <a href="https://gitee.com/qiushaocloud/site-counter#%E5%89%8D%E7%AB%AF%E7%AE%80%E6%98%93%E4%BD%BF%E7%94%A8">site counter</a>.</p>
+<p>Check the revise of bottom corner of the page. Once updating Gokarna submodule from Github, pay attention to update the <code>footer.html</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">footer</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;footer&#34;</span>&gt;
+	<span style="color:#75715e">&lt;!-- add dashline --&gt;</span>
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;margin: 0 auto; width:60%; border:1px dashed #000000e1&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt; 
+    &lt;/<span style="color:#f92672">br</span>&gt;
 
+    &lt;<span style="color:#f92672">span</span>&gt;&amp;copy; {{ now.Year }} {{ .Site.Params.Footer}} |  Made with &amp;#10084;&amp;#65039; using &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/526avijitgupta/gokarna&#34;</span>&gt;Gokarna&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+
+    <span style="color:#75715e">&lt;!-- add website counter --&gt;</span>
+    &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//githubcdn.qiushaocloud.top/gh/qiushaocloud/site-counter@master/dist/qiushaocloud_site_counter.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">script</span>&gt;
+        window.<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;qiushaocloud_sitecounter_max_session_duration&#39;</span>, <span style="color:#ae81ff">1</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">60</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">1000</span>);
+    &lt;/<span style="color:#f92672">script</span>&gt;
+    &lt;<span style="color:#f92672">span</span>&gt;
+        Total visitors: &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;qiushaocloud_sitecounter_value_site_pv&#34;</span>&gt;...&lt;/<span style="color:#f92672">a</span>&gt; | Today&#39;s visitors: &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;qiushaocloud_sitecounter_value_today_site_pv&#34;</span>&gt;...&lt;/<span style="color:#f92672">a</span>&gt;
+    &lt;/<span style="color:#f92672">span</span>&gt;
+&lt;/<span style="color:#f92672">footer</span>&gt;
+</code></pre></div>
         </p>
     </div>
 
     <div class="prev-next">
         
             
-                
-<div class="prev-post">
-    <p>
-        <a href="/games/unity-oculus-sdk/">
-            &#8592;
-            Previous:
-            Unity Oculus SDK
-        </a>
-    </p>
-    <p class="prev-post-date">
-        July 1, 2022
-    </p>
-</div>
-
-
-
-
-            
         
     </div>
 </div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-gokarna-template">1. Gokarna Template</a>
+          <ul>
+            <li><a href="#introduction">Introduction</a></li>
+            <li><a href="#basic-guide">Basic Guide</a></li>
+            <li><a href="#contribution">Contribution</a></li>
+          </ul>
+        </li>
+        <li><a href="#2-modify-gokarna">2. Modify Gokarna</a>
+          <ul>
+            <li><a href="#standard-page-layout">Standard Page Layout</a>
+              <ul>
+                <li><a href="#footer">Footer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
 
 
 

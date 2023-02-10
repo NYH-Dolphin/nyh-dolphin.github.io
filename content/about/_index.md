@@ -1,7 +1,6 @@
 ---
 type: page
 date: 2023-01-01
-draft: false
 showTableOfContents: true
 ---
 
@@ -9,7 +8,7 @@ showTableOfContents: true
 
 ## <center>😊About Me</center>
 
-<img src="/images/about/image-20230210105348323.png" alt="image-20230210105348323" style="zoom:50%;" />
+<img src="/images/about/image-20230210105348323.png" alt="image-20230210105348323" style="zoom:60%;" />
 
 My name is <u>Yuhe NIE</u>. I was born in <u>Shenzhen, China</u>. 
 

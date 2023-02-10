@@ -13,12 +13,27 @@
   </url>
   
   <url>
-    <loc>https://NYH-Dolphin.github.io/games/</loc>
-    <lastmod>2022-08-01T00:00:00+00:00</lastmod>
+    <loc>https://NYH-Dolphin.github.io/tags/hugo/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/study/hugo-how-to-modify-my-website/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/study/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://NYH-Dolphin.github.io/tags/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/games/</loc>
     <lastmod>2022-08-01T00:00:00+00:00</lastmod>
   </url>
   
@@ -125,21 +140,6 @@
   <url>
     <loc>https://NYH-Dolphin.github.io/games/unity-tmp-%E8%AE%BE%E7%BD%AE%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93/</loc>
     <lastmod>2022-03-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://NYH-Dolphin.github.io/tags/blog/</loc>
-    <lastmod>2021-12-04T20:47:37+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://NYH-Dolphin.github.io/posts/first_post/</loc>
-    <lastmod>2021-12-04T20:47:37+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://NYH-Dolphin.github.io/posts/</loc>
-    <lastmod>2021-12-04T20:47:37+08:00</lastmod>
   </url>
   
   <url>

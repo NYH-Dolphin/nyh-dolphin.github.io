@@ -13,39 +13,31 @@ enableRobotsTXT = true
 
 [menu]
   [[menu.main]]
-    # Unique identifer for a menu item
-    identifier = "posts"
-
-    url = "/posts/"
-    
-    # You can add extra information before the name (HTML format is supported), such as icons
-    pre = ""
-
-    # You can add extra information after the name (HTML format is supported), such as icons
-    post = ""
-
-    # Display name
-    name = "Posts"
-
-    # Weights are used to determine the ordering
-    weight = 1
+    identifier = "sharing"
+    name = "Sharing"
+    url = "/sharing/"
+    pre = "<span data-feather='share-2'></span>"
+    weight = 1 
 
   [[menu.main]]
-    identifer = "notes"
-    name = "Notes"
-    url = "/notes/"
+    identifier = "study"
+    name = "Study"
+    url = "/study/"
+    pre = "<span data-feather='book-open'></span>"
     weight = 2
-  
+
   [[menu.main]]
-    identifier = "games"
-    name = "Games"
-    url = "/games/"
+    identifier = "project"
+    name = "Project"
+    url = "/project/"
+    pre = "<span data-feather='code'></span>"
     weight = 3
 
   [[menu.main]]
     identifier = "tags"
-    name = "Tags"
+    name = "Tag"
     url = "/tags/"
+    pre = "<span data-feather='tag'></span>"
     weight = 4
 
   [[menu.main]]
@@ -53,25 +45,46 @@ enableRobotsTXT = true
     name = "About"
     url = "/about/"
     weight = 5
-    
-#  [[menu.main]]
-#    identifier = "github"
-#    url = "https://github.com/NYH-Dolphin"
-#    weight = 6   
-#    # We use feather-icons: https://feathericons.com/
-#    pre = "<span data-feather='github'></span>"
+    pre = "<span data-feather='smile'></span>"
+
+  # the rest of the menu are some other websites
+  [[menu.main]]
+    identifier = "heart"
+    name = ""
+    url = "https://zweb.zone/"
+    weight = 6
+    pre = "<span data-feather='heart'></span>"
+
+  [[menu.main]]
+    identifier = "portfolio"
+    name = ""
+    url = "https://nyh-dolphin.itch.io/"
+    weight = 7
+    pre = "<span data-feather='gift'></span>"
+  
+  [[menu.main]]
+    identifier = "github"
+    name = ""
+    url = "https://github.com/NYH-Dolphin"
+    weight = 8
+    pre = "<span data-feather='github'></span>"
+  
+  [[menu.main]]
+    identifier = "home"
+    name = ""
+    url = "https://nyh-dolphin.github.io/"
+    weight = 9
+    pre = "<span data-feather='home'></span>"
+  
 
 [params]
   # URL for the avatar on homepage
   avatarURL = "/images/avatar.jpg"
 
   socialIcons = [
-      {name = "github", url = "https://github.com/NYH-Dolphin"},
-      {name = "youtubegaming", url = "https://nyh-dolphin.itch.io/"},
       {name = "bilibili", url = "https://space.bilibili.com/13993670"},
       {name = "youtube", url = "https://www.youtube.com/channel/UCLAZemz5uumlX-gcr7HMrAA"},
       {name = "mail", url = "mailto:nieyuhe0922@qq.com"},
-      {name = "love", url = "https://zweb.zone/"},
   ]
 
   # Choose one of size-xs, size-s, size-m, size-l & size-xl. (Default: size-m)
@@ -93,6 +106,25 @@ enableRobotsTXT = true
     <!-- The loading of KaTeX is deferred to speed up page rendering -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
 
+    <!-- Katex is a math typesetting library for the web which lets you write beautiful equations.-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+
     <!-- To automatically render math in text elements, include the auto-render extension: -->
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
         onload="renderMathInElement(document.body);"></script>
@@ -111,7 +143,7 @@ enableRobotsTXT = true
   '''
 
   # Syntax Highlighting
-  pygmentsStyle = "dracula"
+  pygmentsStyle = "github"
 
   # If you want to display posts on the homepage, the options are
   # "popular" (order posts by weight), "recent" (order posts by date)
@@ -133,5 +165,5 @@ enableRobotsTXT = true
 [markup]
   [markup.tableOfContents]
     startLevel = 1
-    endLevel = 3
+    endLevel = 4
     ordered = false
