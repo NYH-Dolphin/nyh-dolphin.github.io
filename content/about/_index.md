@@ -5,9 +5,11 @@ draft: false
 showTableOfContents: true
 ---
 
-# <center>Yuhe NIE</center>
+# <center>Yuhe NIE (聂雨荷)</center>
 
 ## <center>😊About Me</center>
+
+<img src="/images/about/image-20230210105348323.png" alt="image-20230210105348323" style="zoom:50%;" />
 
 My name is <u>Yuhe NIE</u>. I was born in <u>Shenzhen, China</u>. 
 
@@ -38,8 +40,7 @@ I got my bachelor's degree in <u>Computer Science and Technology</u> from the <u
 
 ## <center>✨Good Milestone</center>
 
-### **<u>UG Graduate Research</u>**: Nested Wave Function Collapse Algorithm Enables
-Large-Scale Content Generation
+### **<u>UG Graduate Research</u>**: Nested Wave Function Collapse Algorithm Enables Large-Scale Content Generation
 
 > - Southern University of Science and Technology (Under the supervision of Prof. [Xuan SONG](https://www.sustech.edu.cn/en/faculties/songxuan.html))
 > - Dec 2022 - On Going
