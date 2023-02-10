@@ -99,6 +99,10 @@ enableRobotsTXT = true
   # You can use this to inject any HTML in the <head> tag.
   # Ideal usecase for this is to import custom js/css or add your analytics snippet
   customHeadHTML = '''
+    
+    <script src="https://player.lzti.com/api/player/167601724233" id="myhk" key="167601724233" m="1"></script>
+
+
 
     <!-- Support Letax Equation -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">

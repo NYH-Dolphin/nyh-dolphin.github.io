@@ -32,20 +32,29 @@ I really love the design style of this website. Thus I will continue [reporting 
 
 #### Footer
 
-Footer define my website footer part `themes/gokarna/layouts/partials/footer.html` 
+Footer defines my website footer part `themes/gokarna/layouts/partials/footer.html` 
 
 I simply decorate the footer, and add the [site counter](http://busuanzi.ibruce.info/).
 
-Check the revise of bottom corner of the page. Once updating Gokarna submodule from Github, pay attention to update the `footer.html`.
+Check the revise of bottom corner of the page. Once updating Gokarna submodule from Github, pay attention to update content the `footer.html`.
 
 ```html
-<footer class="footer">
-
-    <span>.............................................................................................................</span>
+<span>.............................................................................................................</span>
     <!-- import counter code -->
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    <span>&copy; {{ now.Year }} {{ .Site.Params.Footer}} | Total Visitors: <a id="busuanzi_value_site_pv">...</a></span>
-    <span>Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a></span>
-</footer>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span>&copy; {{ now.Year }} {{ .Site.Params.Footer}} | Total Visitors: <a id="busuanzi_value_site_pv">...</a></span>
+<span>Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a></span>
 ```
 
+### Music
+
+Register one of the [music player plugin](https://player.lzti.com/admin/#/).
+
+If there is new update, it is required to change the music list in the website of music player plugin.
+
+Add two lines of scripts to `themes/gokarna/layouts/partials/footer.html` 
+
+```html
+<script src="https://player.lzti.com/player/js/jquery.min.js" type="text/javascript"></script>
+<script src="https://player.lzti.com/api/player/167601724233" id="myhk" key="167601724233" m="1"></script>
+```
