@@ -1,5 +1,5 @@
 ---
-title: "Hugo01 How to modify my website"
+title: "Hugo 01 How to modify my website"
 date: 2023-01-01
 draft: false
 description: "About my Hugo Website: Gokarna"
@@ -54,7 +54,12 @@ If there is new update, it is required to change the music list in the website o
 
 Add two lines of scripts to `themes/gokarna/layouts/partials/footer.html` 
 
+Check the revise of bottom corner of the page. Once updating Gokarna submodule from Github, pay attention to update content the `footer.html`.
+
 ```html
 <script src="https://player.lzti.com/player/js/jquery.min.js" type="text/javascript"></script>
 <script src="https://player.lzti.com/api/player/167601724233" id="myhk" key="167601724233" m="1"></script>
 ```
+
+One of the problem is that this music player plugin has high delays overseas. Making it unsuitable for oversea usage. Opps…
+

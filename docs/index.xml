@@ -6,17 +6,29 @@
     <description>Recent content on Dolphin NIE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Feb 2023 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://NYH-Dolphin.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Hugo01 How to modify my website</title>
-      <link>https://NYH-Dolphin.github.io/study/hugo-how-to-modify-my-website/</link>
+      <title>Overleaf 01-Bug Solver</title>
+      <link>https://NYH-Dolphin.github.io/study/overleaf01-bug-solver/</link>
+      <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/study/overleaf01-bug-solver/</guid>
+      <description>Reference How to use .bib file   Create a xxx.bib file in your overleaf project. Place it directly in your root content.
+  Open your main .tex file. Add the following two codes before \end{document}
+... \bibliographystyle{&amp;lt;style&amp;gt;} % eg. ieeetr \bibliography{&amp;lt;bib_name&amp;gt;} % eg. reference  \end{document}  &amp;lt;style&amp;gt;: refer to https://ja.overleaf.com/learn/latex/Bibtex_bibliography_styles &amp;lt;bib_name&amp;gt;: your .bib file&amp;rsquo;s name    Add some reference in your .bib file.
+  Cite one of the article from your .</description>
+    </item>
+    
+    <item>
+      <title>Hugo 01 How to modify my website</title>
+      <link>https://NYH-Dolphin.github.io/study/hugo01-how-to-modify-my-website/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://NYH-Dolphin.github.io/study/hugo-how-to-modify-my-website/</guid>
+      <guid>https://NYH-Dolphin.github.io/study/hugo01-how-to-modify-my-website/</guid>
       <description>1. Gokarna Template Introduction My website is based on a beautiful and simple website framework: Gokarna. Developers are Yash Mehrotra and Avijit Gupta.
 Gokarna focuses on ultimate minimalism and simplicity. 😊
 Basic Guide  Gokarna Website Template: https://gokarna-hugo.netlify.app/ Theme Documentation - Basics Theme Documentation - Advanced  Contribution I really love the design style of this website. Thus I will continue reporting issues and providing suggestions. Gokarna&amp;rsquo;s developers are keen on revising, and they accept pull requests (Though is not that fast, they keep doing it 💕).</description>
