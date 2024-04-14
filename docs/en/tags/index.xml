@@ -6,9 +6,19 @@
     <description>Recent content in Tags on Dolphin NIE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Thu, 04 Apr 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://NYH-Dolphin.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>blog</title>
+      <link>https://NYH-Dolphin.github.io/en/tags/blog/</link>
+      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/tags/blog/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

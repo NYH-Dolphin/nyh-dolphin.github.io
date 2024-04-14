@@ -10,28 +10,28 @@ enableRobotsTXT = true
   [[menu.main]]
     identifier = "sharing"
     name = "Sharing"
-    url = "/sharing/"
+    url = "/en/sharing/"
     pre = "<span data-feather='share-2'></span>"
     weight = 1
 
   [[menu.main]]
     identifier = "study"
     name = "Study"
-    url = "/study/"
+    url = "/en/study/"
     pre = "<span data-feather='book-open'></span>"
     weight = 2
 
   [[menu.main]]
-    identifier = "project"
-    name = "Project"
-    url = "/project/"
+    identifier = "research"
+    name = "Research"
+    url = "/en/research/"
     pre = "<span data-feather='code'></span>"
     weight = 3
   
   [[menu.main]]
-    identifier = "portfolio"
-    name = "Itch"
-    url = "https://nyh-dolphin.itch.io/"
+    identifier = "project"
+    name = "Project"
+    url = "/en/project/"
     pre = "<span data-feather='gift'></span>"
     weight = 4
 
@@ -45,7 +45,7 @@ enableRobotsTXT = true
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
-    url = "/tags/"
+    url = "/en/tags/"
     pre = "<span data-feather='tag'></span>"
     weight = 6
   
@@ -57,28 +57,28 @@ enableRobotsTXT = true
   [[languages.zh.menu.main]]
     identifier = "sharing"
     name = "分享"
-    url = "/sharing/"
+    url = "/zh/sharing/"
     pre = "<span data-feather='share-2'></span>"
     weight = 1
 
   [[languages.zh.menu.main]]
     identifier = "study"
     name = "学习"
-    url = "/study/"
+    url = "/zh/study/"
     pre = "<span data-feather='book-open'></span>"
     weight = 2
 
   [[languages.zh.menu.main]]
-    identifier = "project"
-    name = "项目"
-    url = "/project/"
+    identifier = "research"
+    name = "科研"
+    url = "/zh/research/"
     pre = "<span data-feather='code'></span>"
     weight = 3
   
   [[languages.zh.menu.main]]
-    identifier = "portfolio"
-    name = "作品"
-    url = "https://nyh-dolphin.itch.io/"
+    identifier = "project"
+    name = "项目"
+    url = "/zh/project/"
     pre = "<span data-feather='gift'></span>"
     weight = 4
 
@@ -92,7 +92,7 @@ enableRobotsTXT = true
   [[languages.zh.menu.main]]
     identifier = "tags"
     name = "标签"
-    url = "/tags/"
+    url = "/zh/tags/"
     pre = "<span data-feather='tag'></span>"
     weight = 6
 
@@ -110,9 +110,10 @@ enableRobotsTXT = true
   socialIcons = [
       {name = "email", url = "mailto:yn2273@nyu.edu"},
       {name = "github", url = "https://github.com/NYH-Dolphin"},
+      {name = "itchdotio", url = "https://nyh-dolphin.itch.io/"},
       {name = "bilibili", url = "https://space.bilibili.com/13993670"},
       {name = "linkedin", url = "https://www.linkedin.com/in/yuhe-nie-021032250/"},
-      
+      {name = "googlescholar", url = "https://scholar.google.com/citations?user=UJ6D9WcAAAAJ&hl=en"}
   ]
 
   # Choose one of size-xs, size-s, size-m, size-l & size-xl. (Default: size-m)

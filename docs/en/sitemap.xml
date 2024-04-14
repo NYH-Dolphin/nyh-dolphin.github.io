@@ -3,6 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://NYH-Dolphin.github.io/en/tags/blog/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://NYH-Dolphin.github.io/zh/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://NYH-Dolphin.github.io/en/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/research/n_wfc/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/research/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/tags/</loc>
+    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh"
+                href="https://NYH-Dolphin.github.io/zh/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://NYH-Dolphin.github.io/en/tags/"
+                />
+  </url>
+  
+  <url>
     <loc>https://NYH-Dolphin.github.io/en/about/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -18,21 +63,6 @@
   </url>
   
   <url>
-    <loc>https://NYH-Dolphin.github.io/en/</loc>
-    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://NYH-Dolphin.github.io/zh/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://NYH-Dolphin.github.io/en/"
-                />
-  </url>
-  
-  <url>
     <loc>https://NYH-Dolphin.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
@@ -43,20 +73,6 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://NYH-Dolphin.github.io/en/categories/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://NYH-Dolphin.github.io/en/tags/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh"
-                href="https://NYH-Dolphin.github.io/zh/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://NYH-Dolphin.github.io/en/tags/"
                 />
   </url>
   
