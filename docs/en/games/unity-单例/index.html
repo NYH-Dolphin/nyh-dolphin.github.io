@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #00aaff;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Unity 单例</title>
+    <meta name="description" content="Imagination can change anything!">
+    <meta name="keywords" content='Unity'>
+
+    <meta property="og:url" content="https://NYH-Dolphin.github.io/en/games/unity-%E5%8D%95%E4%BE%8B/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Unity 单例">
+    <meta property="og:description" content="Imagination can change anything!">
+    <meta property="og:image" content="/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Unity 单例">
+    <meta name="twitter:description" content="Imagination can change anything!">
+    <meta property="twitter:domain" content="https://NYH-Dolphin.github.io/en/games/unity-%E5%8D%95%E4%BE%8B/">
+    <meta property="twitter:url" content="https://NYH-Dolphin.github.io/en/games/unity-%E5%8D%95%E4%BE%8B/">
+    <meta name="twitter:image" content="/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://NYH-Dolphin.github.io/en/games/unity-%E5%8D%95%E4%BE%8B/" />
+
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="https://NYH-Dolphin.github.io/css/dark.css">
+
+    <script src="https://NYH-Dolphin.github.io/js/svg-injector.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/feather-icons.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/main.js"></script>
+
+    
+    
+    
+    
+    <script src="https://player.lzti.com/api/player/167601724233" id="myhk" key="167601724233" m="1"></script>
+
+
+
+    <!-- Support Letax Equation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+
+    <!-- Katex is a math typesetting library for the web which lets you write beautiful equations.-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+    <!-- Analysis -->
+    <script async defer data-website-id="website-id" src="https://analytics.example.com/script.js"></script>
+
+    <!-- Support Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://NYH-Dolphin.github.io">
+                <img src="https://NYH-Dolphin.github.io/images/avatar.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://NYH-Dolphin.github.io">Dolphin NIE</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/sharing/"><span data-feather='share-2'></span> Sharing </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/study/"><span data-feather='book-open'></span> Study </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/project/"><span data-feather='code'></span> Project </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://nyh-dolphin.itch.io/"><span data-feather='gift'></span> Itch </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/en/about/"><span data-feather='smile'></span> About </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/../zh"> 中文 </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/sharing/"><span data-feather='share-2'></span> Sharing </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/study/"><span data-feather='book-open'></span> Study </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/project/"><span data-feather='code'></span> Project </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://nyh-dolphin.itch.io/"><span data-feather='gift'></span> Itch </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/en/about/"><span data-feather='smile'></span> About </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/../zh"> 中文 </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Unity 单例</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            April 6, 2022
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/unity">Unity</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h2 id="1-manager">1. Manager</h2>
+<p>很多全局控制的 GameManager 可以采取如下的单例模式以控制全局唯一</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c#" data-lang="c#"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GameManager</span> : MonoBehaviour
+    {
+        <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> GameManager instance;
+
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> GameManager Instance
+        {
+            <span style="color:#66d9ef">get</span>
+            {
+                <span style="color:#66d9ef">if</span> (instance == <span style="color:#66d9ef">null</span>)
+                {
+                    GameObject obj = <span style="color:#66d9ef">new</span> GameObject();
+                    obj.name = <span style="color:#e6db74">&#34;PrefabManager&#34;</span>;
+                    DontDestroyOnLoad(obj);
+                    instance = obj.AddComponent&lt;PrefabManager&gt;();
+                }
+
+                <span style="color:#66d9ef">return</span> instance;
+            }
+        }
+}
+</code></pre></div><ul>
+<li>即，创建一个 GameObject 上面挂在指定的 Manager 的脚本代码，然后使用 DontDestoryOnLoad 控制其始终在 Scene 上</li>
+</ul>
+
+        </p>
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/en/games/unity-%E5%AF%B9%E8%B1%A1%E6%B1%A0/">
+            &#8592;
+            Previous:
+            Unity 对象池
+        </a>
+    </p>
+    <p class="prev-post-date">
+        April 6, 2022
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/en/games/unity-itween-%E5%8A%A8%E7%94%BB%E6%8F%92%E4%BB%B6/">
+            Next:
+            Unity iTween 动画插件
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            May 6, 2022
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2024 NYH-Dolphin</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

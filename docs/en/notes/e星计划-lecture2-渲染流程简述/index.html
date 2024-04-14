@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #00aaff;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>E星计划-Lecture2 渲染流程简述</title>
+    <meta name="description" content="Imagination can change anything!">
+    <meta name="keywords" content='E星计划'>
+
+    <meta property="og:url" content="https://NYH-Dolphin.github.io/en/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture2-%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B%E7%AE%80%E8%BF%B0/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="E星计划-Lecture2 渲染流程简述">
+    <meta property="og:description" content="Imagination can change anything!">
+    <meta property="og:image" content="/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="E星计划-Lecture2 渲染流程简述">
+    <meta name="twitter:description" content="Imagination can change anything!">
+    <meta property="twitter:domain" content="https://NYH-Dolphin.github.io/en/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture2-%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B%E7%AE%80%E8%BF%B0/">
+    <meta property="twitter:url" content="https://NYH-Dolphin.github.io/en/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture2-%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B%E7%AE%80%E8%BF%B0/">
+    <meta name="twitter:image" content="/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://NYH-Dolphin.github.io/en/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture2-%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B%E7%AE%80%E8%BF%B0/" />
+
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="https://NYH-Dolphin.github.io/css/dark.css">
+
+    <script src="https://NYH-Dolphin.github.io/js/svg-injector.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/feather-icons.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/main.js"></script>
+
+    
+    
+    
+    
+    <script src="https://player.lzti.com/api/player/167601724233" id="myhk" key="167601724233" m="1"></script>
+
+
+
+    <!-- Support Letax Equation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+
+    <!-- Katex is a math typesetting library for the web which lets you write beautiful equations.-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+    <!-- Analysis -->
+    <script async defer data-website-id="website-id" src="https://analytics.example.com/script.js"></script>
+
+    <!-- Support Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://NYH-Dolphin.github.io">
+                <img src="https://NYH-Dolphin.github.io/images/avatar.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://NYH-Dolphin.github.io">Dolphin NIE</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/sharing/"><span data-feather='share-2'></span> Sharing </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/study/"><span data-feather='book-open'></span> Study </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/project/"><span data-feather='code'></span> Project </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://nyh-dolphin.itch.io/"><span data-feather='gift'></span> Itch </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/en/about/"><span data-feather='smile'></span> About </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/../zh"> 中文 </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/sharing/"><span data-feather='share-2'></span> Sharing </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/study/"><span data-feather='book-open'></span> Study </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/project/"><span data-feather='code'></span> Project </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://nyh-dolphin.itch.io/"><span data-feather='gift'></span> Itch </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/en/about/"><span data-feather='smile'></span> About </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/../zh"> 中文 </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>E星计划-Lecture2 渲染流程简述</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            April 3, 2022
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/e%E6%98%9F%E8%AE%A1%E5%88%92">E星计划</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h2 id="1-e-星计划大作业">1. E 星计划大作业</h2>
+<h3 id="基本要求">基本要求</h3>
+<ul>
+<li>渲染引擎：BGFX</li>
+<li>编程语言：C++/GLSL</li>
+<li>平台：Windows/Visual Studio 2022</li>
+<li>工程组织：CMake</li>
+</ul>
+<h3 id="level">Level</h3>
+<p>作业分为 5 个 level，每完成一个 level 的所有需求，则可挑战下一个 level</p>
+<p>详见作业包里面的 README.md</p>
+<ul>
+<li><strong>Level1（15%）</strong>
+<ul>
+<li>加载模型，绘制在屏幕上</li>
+<li>添加环绕相机（Orbit Camera），并可以使用鼠标操控（类似 geometryv 的操作方式）
+<ul>
+<li>鼠标左键拖拽旋转镜头</li>
+<li>鼠标滚轮缩放镜头</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Level2（15%）</strong>
+<ul>
+<li>为模型添加基础纹理</li>
+<li>为模型添加基础光照（Blinn-Phong）</li>
+<li>在保留环绕相机功能的情况下，为相机添加键盘控制
+<ul>
+<li>WASD 控制镜头上下左右平移</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Level3（25%）</strong>
+<ul>
+<li>把模型的直接光漫反射光照改为 PBR 模型实现
+<ul>
+<li>模型的金属度能正确影响漫反射光照</li>
+<li>模型的 albedo（反照率）使用纹理控制</li>
+</ul>
+</li>
+<li>把模型的直接光改为 PBR 模型实现
+<ul>
+<li>模型的金属度、粗糙度通过纹理控制</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Level4（25%）</strong>
+<ul>
+<li>使用 IBL（Image-Based Lighting），为模型添加环境光照的漫反射部分</li>
+<li>使用 IBL，为模型添加环境光照的高光反射部分</li>
+<li>添加一个包住场景的天空盒</li>
+<li>天空盒使用 cubemap 纹理，对应 IBL 图中的 mipmap level 0</li>
+</ul>
+</li>
+<li><strong>Level5（20%）</strong>
+<ul>
+<li>使用 ShadowMap 的方式，为模型添加阴影</li>
+</ul>
+</li>
+</ul>
+<h3 id="提交要求">提交要求</h3>
+<ul>
+<li>统一压缩为一个文件，格式为 zip 或 rar，大小在 200mb 以内
+<ul>
+<li>包含编译好的，可正常运行的二进制文件</li>
+<li>包含录制的演示视频</li>
+<li>包含源码文件，可以使用 CMake 生成 VS 工程，可编译运行</li>
+<li>包含程序架构说明文档</li>
+</ul>
+</li>
+</ul>
+<h2 id="2-gpu">2. GPU</h2>
+<ul>
+<li>全称图形处理单元 Graphics Processing Unit</li>
+<li>GPU 是显卡最核心的部件</li>
+<li>显卡除了 GPU 外还有散热器，通讯元件，与显示器连接的各类插槽等</li>
+<li>显卡不能直接工作，必须插在主板上</li>
+</ul>
+<h3 id="gpu-的发展史">GPU 的发展史</h3>
+<h4 id="厂商">厂商</h4>
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220402001118296.png">
+<h4 id="历史">历史</h4>
+<ul>
+<li>1995：NV1</li>
+<li>1997：Riva 128（NV3）</li>
+<li>1998：Riva TNT（NV4）</li>
+<li>1999：GeForce256（NV10）</li>
+<li>2001：GeForce 3</li>
+<li>2003：GeForce FX 系列（NV3x）</li>
+<li>2004：GeForce 6 系列（NV4x）
+<ul>
+<li>孤岛惊魂系列 第一代</li>
+</ul>
+</li>
+<li>2006：GeForce 6 系列（G8x）
+<ul>
+<li>孤岛危机 第一代</li>
+</ul>
+</li>
+<li>2010：GeForce 405（GF119）
+<ul>
+<li>支持 Direct3D</li>
+</ul>
+</li>
+<li>2014：GeForce 710（GK208）</li>
+<li>2016：GeForce GTX 1060 6GB
+<ul>
+<li>支持光追技术</li>
+</ul>
+</li>
+<li>2018：TITAN RTS（TU102）
+<ul>
+<li>支持光追 + AI 技术</li>
+</ul>
+</li>
+</ul>
+<h4 id="性能">性能</h4>
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220402001758650.png">
+<ul>
+<li>GPU 每半年性能可以翻一倍</li>
+</ul>
+<h3 id="gpu-的功能">GPU 的功能</h3>
+<ul>
+<li><strong>图形绘制</strong>
+<ul>
+<li>为大多数 PC 桌面，移动设备等提供图形处理和绘制功能</li>
+</ul>
+</li>
+<li><strong>物理模拟</strong>
+<ul>
+<li>GPU 硬件集成的物理引擎（PhysX、Havok），为游戏、电影、教育、科学模拟等领域提供高性能的物理模拟，使得以前需要长时间计算的物理模拟得以实时呈现</li>
+</ul>
+</li>
+<li><strong>海量运算</strong>
+<ul>
+<li>计算着色器及流输出，实现并行计算的海量需求，例如 CUDA</li>
+</ul>
+</li>
+<li><strong>AI 运算</strong>
+<ul>
+<li>AI 的崛起推动了 GPU 集成 AI Core 运算单元，反哺 AI 运算能力，给各行各业带来了计算能力的提升</li>
+</ul>
+</li>
+<li><strong>其它计算</strong>
+<ul>
+<li>音频编解码，加解密，科学计算，离线渲染等都离不开现代 GPU 的并行计算能力和海量吞吐能力</li>
+</ul>
+</li>
+</ul>
+<h3 id="gpu-的架构">GPU 的架构</h3>
+<h4 id="gpu-vs-cpu">GPU vs CPU</h4>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220402002302959.png" alt="image-20220402002302959" style="zoom:67%;" /></p>
+<ul>
+<li>GPU 将更多的晶体管用于数值计算，取代了缓存 Cache 和控制单元 Control</li>
+<li>GPU 的运算单元 Core 数量远多于 CPU</li>
+<li>图像指令在同一时刻可以由多个单元并行处理，使得 GPU 可以同时执行上千个线程</li>
+<li>CPU 更擅长逻辑的计算，GPU 更擅长并行的程序</li>
+</ul>
+<h4 id="nvidia-fermi-架构">NVIDIA Fermi 架构</h4>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220402002733677.png" alt="image-20220402002733677" style="zoom:50%;" /></p>
+<ul>
+<li>
+<p>拥有 16 个 SM（Stream Multiprocessor）</p>
+</li>
+<li>
+<p>每个 SM</p>
+<ul>
+<li>
+<p>2 个 Warp Scheduler</p>
+</li>
+<li>
+<p>2 个 Dispatch Unit（分发单元）</p>
+</li>
+<li>
+<p>2 个 Warp（线程束）</p>
+</li>
+<li>
+<p>16 组 LD/ST（加载存储单元）</p>
+</li>
+<li>
+<p>4 个 SFU（特殊函数单元）</p>
+</li>
+<li>
+<p>128KB Register File（寄存器）</p>
+</li>
+<li>
+<p>64KB Shared Memory/ L1 Cache</p>
+</li>
+<li>
+<p>Uniform Cache（全局缓存）</p>
+</li>
+<li>
+<p>32 个 Core（计算单元）</p>
+</li>
+</ul>
+</li>
+<li>
+<p>每个 Core：</p>
+<ul>
+<li>1 个 FPU（浮点数单元）</li>
+<li>1 个 ALU（算数逻辑单元）</li>
+</ul>
+</li>
+</ul>
+<h4 id="存储架构">存储架构</h4>
+<ul>
+<li>存储，在 CPU 被称为内存，在 GPU 被称为显存</li>
+<li>分离式
+<ul>
+<li>通过 PCI-E 总线通讯，一般用在 PC 上
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220402003443964.png" alt="image-20220402003443964" style="zoom:50%;" /></li>
+</ul>
+</li>
+<li>耦合式
+<ul>
+<li>由 MMU 进行存储管理，比如 APU、游戏主机、移动设备
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220402003459875.png" alt="image-20220402003459875" style="zoom:50%;" /></li>
+</ul>
+</li>
+</ul>
+<p>存储架构如下</p>
+<ul>
+<li>寄存器（SM 专用）</li>
+<li>共享内存（SM 专用）</li>
+<li>L1 缓存（SM 专用）</li>
+<li>L2 缓存（SM 共享）</li>
+<li>GPU 显存（SM 共享）</li>
+<li>系统内存（SM 共享）</li>
+</ul>
+<p>它们的存取速度从寄存器到显存依次变慢</p>
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220402003728296.png">
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220402003827619.png">
+<h2 id="3-渲染管线">3. 渲染管线</h2>
+<h3 id="渲染管线流程">渲染管线流程</h3>
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220402003916212.png">
+<h4 id="应用程序阶段">应用程序阶段</h4>
+<ol>
+<li><strong>逻辑数据更新</strong>
+<ul>
+<li>通过动画/物理仿真/碰撞检测/几何变换来更新需要渲染的数据</li>
+</ul>
+</li>
+<li><strong>渲染数据准备</strong>
+<ul>
+<li>视锥体裁剪/LOD选择（透明/半透明/不透明物体）/状态排序（着色器/纹理决定排序规则等）</li>
+<li>生存渲染物体列表</li>
+</ul>
+</li>
+<li><strong>发起绘制</strong>
+<ul>
+<li>渲染状态（顶点/纹理/参数/着色器）的设置</li>
+<li>绘制调用（draw call）</li>
+</ul>
+</li>
+</ol>
+<h4 id="几何处理阶段">几何处理阶段</h4>
+<ol>
+<li><strong>顶点着色</strong>
+<ul>
+<li>计算顶点位置信息：模型空间 -&gt; 世界空间 -&gt; 相机空间 -&gt; 正交/透视投影</li>
+<li>计算其它信息：法线、贴图 UV、光照信息</li>
+</ul>
+</li>
+<li><strong>顶点处理（可选）</strong>
+<ul>
+<li>曲面细分/几何着色器/流送输出</li>
+</ul>
+</li>
+<li><strong>裁剪</strong>
+<ul>
+<li>舍弃屏幕外的几何图元，裁剪与屏幕相交的图元
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403221116773.png" alt="image-20220403221116773" style="zoom:50%;" /></li>
+</ul>
+</li>
+<li><strong>屏幕映射</strong>
+<ul>
+<li>裁剪空间坐标 -&gt; 屏幕空间（计算屏幕坐标 (x, y)）
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403221157904.png" alt="image-20220403221157904" style="zoom: 50%;" /></li>
+</ul>
+</li>
+</ol>
+<h4 id="光栅化阶段">光栅化阶段</h4>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403221412242.png" alt="image-20220403221412242" style="zoom: 33%;" /></p>
+<p>真实的屏幕上是由 RGB 三种颜色信号组成，光栅化也就是把计算出来的效果从一个连续的空间，映射到离散的空间（屏幕上）的过程</p>
+<ol>
+<li><strong>三角形装配</strong>
+<ul>
+<li>准备“三角形遍历”阶段需要用到的数据</li>
+</ul>
+</li>
+<li><strong>三角形遍历</strong>
+<ul>
+<li>判断某个像素是否被三角形覆盖</li>
+<li>若被覆盖则生成一个片元（fragment）</li>
+<li>计算每个片元插值后的数据</li>
+</ul>
+</li>
+<li><strong>输出</strong>
+<ul>
+<li>片元</li>
+</ul>
+</li>
+</ol>
+<h4 id="像素处理阶段">像素处理阶段</h4>
+<ol>
+<li>
+<p><strong>像素着色</strong></p>
+<ul>
+<li>计算当前片元的颜色
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403221837544.png" alt="image-20220403221837544" style="zoom:50%;" /></li>
+</ul>
+</li>
+<li>
+<p><strong>合并</strong></p>
+<ul>
+<li>
+<p>深度测试
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403221931220.png" alt="image-20220403221931220" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>模板测试</p>
+<p>计算是否有被遮挡的部分
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403222116274.png" alt="image-20220403222116274" style="zoom: 50%;" /></p>
+</li>
+<li>
+<p>混合
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403222131096.png" alt="image-20220403222131096" style="zoom: 33%;" /></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>输出</strong></p>
+<ul>
+<li>像素的最终颜色，深度，模板信息</li>
+</ul>
+</li>
+</ol>
+<h3 id="着色器原理">着色器原理</h3>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403222247581.png" alt="image-20220403222247581" style="zoom:50%;" /></p>
+<ul>
+<li>GPU 在绘制图形的过程中，有部分是<strong>可编程</strong>的，这部分就被称为<strong>着色器 Shader</strong></li>
+</ul>
+<h4 id="图形-api">图形 API</h4>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403222419244.png" alt="image-20220403222419244" style="zoom: 33%;" /></p>
+<ul>
+<li>OpenGL</li>
+<li>DirectX</li>
+<li>Vulkan</li>
+<li>Metal</li>
+<li>GAM/GNM/GNMX</li>
+</ul>
+<h4 id="着色器语言">着色器语言</h4>
+<ul>
+<li>GLSL/ELSL</li>
+<li>HLSL</li>
+<li>CG</li>
+<li>SPIR-V</li>
+<li>MSL</li>
+</ul>
+<h4 id="交叉编译">交叉编译</h4>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403222621182.png" alt="image-20220403222621182" style="zoom: 33%;" /></p>
+<ul>
+<li>由于有很多种 shader 语言，现在存在着写一份 shader 语言，自动转换成其它 shader 语言</li>
+<li>这种转换过程就叫做交叉编译</li>
+</ul>
+<h3 id="绘制一个三角形">绘制一个三角形</h3>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403225903134.png" alt="image-20220403225903134" style="zoom:50%;" /></p>
+<ul>
+<li>
+<p>准备数据（Vertex Data[]），这个阶段是在 CPU 中进行的</p>
+</li>
+<li>
+<p>程序会通过 Graphics API 发出 Drawcall 指令，然后指令会被推送到驱动程序，驱动程序会检测指令的合法性，然后把指令放到 GPU 可以读取的 Pushbuffer 中
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403224516179.png" alt="image-20220403224516179" style="zoom: 50%;" /></p>
+</li>
+<li>
+<p>经过一段时间或者主动调用 flush 指令（清缓冲区）后，驱动程序把 Pushbuffer 中的内容发送给 GPU，GPU 通过主机接口（Host Interface）接受这些命令，并通过前端（Front End）处理这些命令
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403224657105.png" alt="image-20220403224657105" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>然后图元分配器（Primitive Distributor）开始通过 Index Buffer 中的顶点生成三角形，然后将三角形分批次（batch）发给各个 SM（Stream Multiprocessor）</p>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403224906190.png" alt="image-20220403224906190" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>每个 SM 中的 PolyMorph Engine 负责通过三角形索引（triangle indices）取出三角形数据（vertex data），即途中的 Vertex Fetch 模块</p>
+</li>
+<li>
+<p>获取数据后，在 SM 中以 32 个线程为一组的线程束（Warp）来调度，开始处理顶点数据</p>
+</li>
+<li>
+<p>线程束执行 vertex shader 和 geometry shader 指令（可选）
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403225132923.png" alt="image-20220403225132923" style="zoom: 67%;" /></p>
+</li>
+<li>
+<p>一旦 Warp 完成了所有 vertex shader 和 geometry shader 的指令，运算结果会被视图变换（View Transform）模块处理，三角形会被裁剪然后准备光栅化
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403225337524.png" alt="image-20220403225337524" style="zoom: 33%;" />、</p>
+</li>
+<li>
+<p>通过分析三角形所占用的屏幕面积、区域，由 work distribution crossbar 来分发到一个或者多个 raster engine 中开始进行光栅化处理
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403225503486.png" alt="image-20220403225503486" style="zoom:50%;" /></p>
+</li>
+<li>
+<p>计算插值，并保证是 pixel shader 需要的格式，生成片元
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403225603471.png" alt="image-20220403225603471" style="zoom: 33%;" /></p>
+</li>
+<li>
+<p>使用 2x2 个像素块进行像素着色，2x2 个片元进行处理
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403225717059.png" alt="image-20220403225717059" style="zoom: 33%;" /></p>
+</li>
+<li>
+<p>最后，像素着色器已经完成了渲染目标的颜色和深度信息的计算，将数据传递给 ROP（渲染输出单元），在这里进行深度测试、帧缓存、混合等处理
+<img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403225832096.png" alt="image-20220403225832096" style="zoom:50%;" /></p>
+</li>
+</ul>
+<h2 id="4-拓展">4. 拓展</h2>
+<h3 id="tbdr--tail-based-deferred-rendering">TBDR —— Tail Based Deferred Rendering</h3>
+<h4 id="imr-immediate-mode-rendering">IMR Immediate Mode Rendering</h4>
+<p>传统的渲染流程，一个三角形一个三角形渲染</p>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403230154759.png" alt="image-20220403230154759" style="zoom: 33%;" /></p>
+<h4 id="tbdr">TBDR</h4>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403230544558.png" alt="image-20220403230544558" style="zoom: 33%;" /></p>
+<ul>
+<li>将图片分成一个接着一个小块，使得足够小</li>
+<li>每次都处理一个小块，这样能够大大降低读写速率</li>
+</ul>
+<h3 id="gpu-driven">GPU Driven</h3>
+<ul>
+<li>CPU 的并行能力比较弱</li>
+<li>如果应用程序很复杂，CPU 在准备数据上也会花费很多的时间</li>
+<li>是否能够把 CPU 的部分工作给 GPU 处理呢？</li>
+</ul>
+<h4 id="compute-shader---ue5-nantie">Compute Shader - UE5 Nantie</h4>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403231018627.png" alt="image-20220403231018627" style="zoom:50%;" /></p>
+<ul>
+<li>将裁剪，映射等工作给 GPU</li>
+<li>可以同时显示上亿个面数</li>
+</ul>
+<h4 id="nc-mesh-shader">NC Mesh Shader</h4>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403231139481.png" alt="image-20220403231139481" style="zoom: 50%;" /></p>
+<ul>
+<li>从硬件层面上的优化</li>
+<li>将传统的渲染管线阶段合并，节省开销</li>
+<li>延迟实际的顶点处理阶段</li>
+</ul>
+<h3 id="光线追踪">光线追踪</h3>
+<p><img src="/images/E星计划-Lecture2 渲染流程简述.assets/image-20220403231401272.png" alt="image-20220403231401272" style="zoom:50%;" /></p>
+<ul>
+<li>NVIDIA 发布支持光追的芯片 NV Turing, RT Core</li>
+<li>光追第一个大范围应用的游戏是战地 5</li>
+<li>UE4 引入了结合了光栅化的光线追踪的混合渲染管线</li>
+<li>光追一般用于解决一些光线比较复杂的环境</li>
+</ul>
+
+        </p>
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/en/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture1-%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E%E7%BB%BC%E8%BF%B0/">
+            &#8592;
+            Previous:
+            E星计划-Lecture1 游戏引擎综述
+        </a>
+    </p>
+    <p class="prev-post-date">
+        April 1, 2022
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/en/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture3-%E4%B8%89%E7%BB%B4%E5%9B%BE%E5%BD%A2%E5%AD%A6%E5%9F%BA%E7%A1%80/">
+            Next:
+            E星计划-Lecture3 三维图形学基础
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            April 4, 2022
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2024 NYH-Dolphin</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

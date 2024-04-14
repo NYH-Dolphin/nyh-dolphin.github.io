@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #00aaff;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>E星计划-Lecture1 游戏引擎综述</title>
+    <meta name="description" content="Imagination can change anything!">
+    <meta name="keywords" content='E星计划'>
+
+    <meta property="og:url" content="https://NYH-Dolphin.github.io/en/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture1-%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E%E7%BB%BC%E8%BF%B0/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="E星计划-Lecture1 游戏引擎综述">
+    <meta property="og:description" content="Imagination can change anything!">
+    <meta property="og:image" content="/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="E星计划-Lecture1 游戏引擎综述">
+    <meta name="twitter:description" content="Imagination can change anything!">
+    <meta property="twitter:domain" content="https://NYH-Dolphin.github.io/en/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture1-%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E%E7%BB%BC%E8%BF%B0/">
+    <meta property="twitter:url" content="https://NYH-Dolphin.github.io/en/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture1-%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E%E7%BB%BC%E8%BF%B0/">
+    <meta name="twitter:image" content="/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://NYH-Dolphin.github.io/en/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture1-%E6%B8%B8%E6%88%8F%E5%BC%95%E6%93%8E%E7%BB%BC%E8%BF%B0/" />
+
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="https://NYH-Dolphin.github.io/css/dark.css">
+
+    <script src="https://NYH-Dolphin.github.io/js/svg-injector.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/feather-icons.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/main.js"></script>
+
+    
+    
+    
+    
+    <script src="https://player.lzti.com/api/player/167601724233" id="myhk" key="167601724233" m="1"></script>
+
+
+
+    <!-- Support Letax Equation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+
+    <!-- Katex is a math typesetting library for the web which lets you write beautiful equations.-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+    <!-- Analysis -->
+    <script async defer data-website-id="website-id" src="https://analytics.example.com/script.js"></script>
+
+    <!-- Support Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://NYH-Dolphin.github.io">
+                <img src="https://NYH-Dolphin.github.io/images/avatar.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://NYH-Dolphin.github.io">Dolphin NIE</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/sharing/"><span data-feather='share-2'></span> Sharing </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/study/"><span data-feather='book-open'></span> Study </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/project/"><span data-feather='code'></span> Project </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://nyh-dolphin.itch.io/"><span data-feather='gift'></span> Itch </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/en/about/"><span data-feather='smile'></span> About </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/../zh"> 中文 </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/sharing/"><span data-feather='share-2'></span> Sharing </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/study/"><span data-feather='book-open'></span> Study </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/project/"><span data-feather='code'></span> Project </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://nyh-dolphin.itch.io/"><span data-feather='gift'></span> Itch </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/en/about/"><span data-feather='smile'></span> About </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/../zh"> 中文 </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>E星计划-Lecture1 游戏引擎综述</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            April 1, 2022
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/e%E6%98%9F%E8%AE%A1%E5%88%92">E星计划</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h2 id="1-e-星计划介绍">1. E 星计划介绍</h2>
+<h3 id="排期计划">排期计划</h3>
+<p><img src="/images/E%E6%98%9F%E8%AE%A1%E5%88%92-Lecture1/image-20220401164138702.png" alt="image-20220401164138702"></p>
+<ul>
+<li>Lecture1 开营仪式暨游戏引擎综述</li>
+<li>Lecture2 渲染流程概述</li>
+<li>Lecture3 三维图形学 &amp; 基础数学</li>
+<li>Lecture4 纹理综述</li>
+<li>Lecture5 光照综述</li>
+<li>Lecture6 性能优化综述</li>
+<li>Lecture7 全局光照技术综述</li>
+</ul>
+<h3 id="完课要求">完课要求</h3>
+<p><img src="/images/E星计划-Lecture1/image-20220401164749644.png" alt="image-20220401164749644" style="zoom:67%;" /></p>
+<p><img src="/images/E星计划-Lecture1/image-20220401164917951.png" alt="image-20220401164917951" style="zoom: 33%;" /></p>
+<h2 id="2-游戏引擎及简史">2. 游戏引擎及简史</h2>
+<h3 id="什么是游戏引擎">什么是游戏引擎</h3>
+<p><img src="/images/E星计划-Lecture1/image-20220401183651292.png" alt="image-20220401183651292" style="zoom: 25%;" /></p>
+<ul>
+<li>一种快速开发游戏的工具，将游戏开发中繁琐的组件进行系统化、标准化的处理</li>
+<li>可以延伸到影视作品、工业仿真等</li>
+<li>游戏引擎 = 引擎核心组件 + 工具</li>
+<li>游戏 = 引擎核心组件 + 内容（资源、玩法）</li>
+</ul>
+<h3 id="主流的游戏引擎">主流的游戏引擎</h3>
+<ul>
+<li>UE</li>
+<li>Unity</li>
+<li>自研引擎</li>
+</ul>
+<h3 id="游戏的历史">游戏的历史</h3>
+<ul>
+<li>1993 最早出现游戏引擎的时间，那时候游戏和引擎是一起开发的
+<ul>
+<li>第一个商业授权的引擎</li>
+</ul>
+</li>
+<li>1998 UE 1.0
+<ul>
+<li>到目前已经到 5.0</li>
+</ul>
+</li>
+<li>2005 Unity 1.0</li>
+</ul>
+<h2 id="3-游戏引擎架构">3. 游戏引擎架构</h2>
+<h3 id="架构概述">架构概述</h3>
+<p><img src="/images/E星计划-Lecture1/image-20220401184022495.png" alt="image-20220401184022495" style="zoom:25%;" /></p>
+<ul>
+<li>引擎核心组件
+<ul>
+<li>Core：支撑模块：内存管理、文件管理、对象系统、反射系统、多线程、主循环等</li>
+<li>动画、渲染、物理、声音、脚本、AI、网络</li>
+</ul>
+</li>
+<li>工具</li>
+</ul>
+<h3 id="渲染">渲染</h3>
+<h4 id="什么是渲染">什么是渲染</h4>
+<p><a href="https://www.youtube.com/watch?v=NEzJH-JrAdw">https://www.youtube.com/watch?v=NEzJH-JrAdw</a></p>
+<p>使用  CPU 和 GPU，将 3D 的环境呈现在电子设备屏幕上</p>
+<ul>
+<li>图像平面：包含很多个像素</li>
+<li>3D 模型：多边形的美术素材，由很多三角形组成</li>
+<li>相机：透视变换，将 3D 模型呈现在图像平面上</li>
+</ul>
+<h5 id="什么是光栅化">什么是光栅化</h5>
+<p><a href="https://www.youtube.com/watch?v=t7Ztio8cwqM">https://www.youtube.com/watch?v=t7Ztio8cwqM</a></p>
+<ul>
+<li>通过 3D 模型，计算屏幕上各个像素的颜色</li>
+<li>3D 模型的三角形顶点通过透视变换投影到屏幕上，然后通过插值补充内部像素点的颜色</li>
+</ul>
+<h5 id="什么是光照和着色">什么是光照和着色</h5>
+<p><a href="https://www.youtube.com/watch?v=bsSveswnQik">https://www.youtube.com/watch?v=bsSveswnQik</a></p>
+<ul>
+<li>通过光照，计算阴影</li>
+</ul>
+<h5 id="单帧示例">单帧示例</h5>
+<p><a href="https://www.youtube.com/watch?v=ygndZ5eIFO4">https://www.youtube.com/watch?v=ygndZ5eIFO4</a></p>
+<p><img src="/images/E星计划-Lecture1/image-20220401185342458.png" alt="image-20220401185342458" style="zoom:30%;" /></p>
+<ul>
+<li>数据从 CPU 发送到 GPU -&gt; 逐个物体完成计算，渲染每个物体并提交</li>
+<li>CPU 决定渲染哪些物体</li>
+<li>GPU 负责渲染计算</li>
+</ul>
+<h4 id="渲染特性">渲染特性</h4>
+<ul>
+<li>不同的游戏引擎实现的，用来表达图形在计算机中的数据结构和算法</li>
+</ul>
+<h5 id="网格植被头发水等">网格（植被/头发/水等）</h5>
+<p><a href="https://www.youtube.com/watch?v=wavnKZNSYqU">https://www.youtube.com/watch?v=wavnKZNSYqU</a></p>
+<p><a href="https://www.youtube.com/watch?v=ool2E8SQPGU">https://www.youtube.com/watch?v=ool2E8SQPGU</a></p>
+<p><a href="https://www.youtube.com/watch?v=Gk_mTHvBx1w">https://www.youtube.com/watch?v=Gk_mTHvBx1w</a></p>
+<p><a href="http://advances.realtimerendering.com/s2019/hair_presentation_final.pdf">http://advances.realtimerendering.com/s2019/hair_presentation_final.pdf</a></p>
+<p><img src="/images/E星计划-Lecture1/image-20220401185546171.png" alt="image-20220401185546171" style="zoom: 25%;" /></p>
+<ul>
+<li>三角形的集合，表示不同的物件
+<ul>
+<li>房子 500 个面</li>
+<li>角色 10000 个面</li>
+</ul>
+</li>
+</ul>
+<h5 id="材质pbr卡通皮肤眼睛">材质（PBR/卡通/皮肤/眼睛）</h5>
+<p><a href="https://www.youtube.com/watch?v=j-A0mwsJRmk&amp;t=663s">https://www.youtube.com/watch?v=j-A0mwsJRmk&amp;t=663s</a></p>
+<p><a href="https://www.gdcvault.com/play/1018270/Next-Generation-Character">https://www.gdcvault.com/play/1018270/Next-Generation-Character</a></p>
+<p><a href="https://www.youtube.com/watch?v=-JFyAdI_rO8">https://www.youtube.com/watch?v=-JFyAdI_rO8</a></p>
+<p><img src="/images/E星计划-Lecture1/image-20220401185649065.png" alt="image-20220401185649065" style="zoom: 50%;" /></p>
+<ul>
+<li>光照计算里面的一个概念，表示物体表面如何与光起作用</li>
+</ul>
+<h5 id="环境效果雨雪云大气">环境效果（雨、雪、云、大气）</h5>
+<p><img src="/images/E星计划-Lecture1/image-20220401185925121.png" alt="image-20220401185925121" style="zoom: 33%;" /></p>
+<h5 id="光追和混合渲染">光追和混合渲染</h5>
+<p><a href="https://www.youtube.com/watch?v=CsBHQGN0Q-0">https://www.youtube.com/watch?v=CsBHQGN0Q-0</a></p>
+<p><a href="https://www.youtube.com/watch?v=Qx_AmlZxzVk">https://www.youtube.com/watch?v=Qx_AmlZxzVk</a></p>
+<p><a href="https://www.youtube.com/watch?v=Bk5HOtRwgd8">https://www.youtube.com/watch?v=Bk5HOtRwgd8</a></p>
+<p><a href="https://www.youtube.com/watch?v=VtHCpO88l_w">https://www.youtube.com/watch?v=VtHCpO88l_w</a></p>
+<ul>
+<li>从屏幕像素出发投射到世界空间中，计算光线的效果</li>
+<li>也会根据材质表面进行二次光线追踪</li>
+<li>现在主题走光栅化，辅助光线追踪</li>
+</ul>
+<h5 id="虚拟几何体ue5-nantie">虚拟几何体（UE5 nantie）</h5>
+<p><a href="https://advances.realtimerendering.com/s2015/aaltonenhaar_siggraph2015_combined_final_footer_220dpi.pdf">https://advances.realtimerendering.com/s2015/aaltonenhaar_siggraph2015_combined_final_footer_220dpi.pdf</a></p>
+<p><a href="https://github.com/nvpro-samples/gl_vk_meshlet_cadscene">https://github.com/nvpro-samples/gl_vk_meshlet_cadscene</a></p>
+<p><a href="https://www.notion.so/Brief-Analysis-of-Nanite-94be60f292434ba3ae62fa4bcf7d9379">https://www.notion.so/Brief-Analysis-of-Nanite-94be60f292434ba3ae62fa4bcf7d9379</a></p>
+<p><a href="https://www.youtube.com/watch?v=YCUgI-c9jJ0">https://www.youtube.com/watch?v=YCUgI-c9jJ0</a></p>
+<p><a href="https://www.youtube.com/watch?v=qCs1CU8_TTU">https://www.youtube.com/watch?v=qCs1CU8_TTU</a></p>
+<ul>
+<li>现在的游戏需要渲染的物体特别多，对传统的管线开销很大，CPU 的计算开销随着物体的增加会增大，然而 GPU 性能很好，不太经常存在满载的情况</li>
+<li>想把一部分工作从 CPU 搬到 GPU</li>
+<li>在 15 年刺客信条提出 Mesh Cluster Rendering 的概念，只渲染物体的某些小块</li>
+<li>由 UE 在 Mesh Cluster Rendering 拓展，根据距离进行分块渲染，最大化表现模型细节</li>
+</ul>
+<h3 id="动画">动画</h3>
+<h4 id="动画类型">动画类型</h4>
+<h5 id="骨骼动画">骨骼动画</h5>
+<p><img src="/images/E星计划-Lecture1/image-20220401190934466.png" alt="image-20220401190934466" style="zoom:80%;" /></p>
+<ul>
+<li>驱动角色中间的骨架，带动网格，形成角色动画</li>
+<li>游戏动画师编写动画关键帧，插值补充中间帧</li>
+</ul>
+<h5 id="变形动画">变形动画</h5>
+<p><a href="https://www.youtube.com/watch?v=Hskhx4Kxmrk&amp;list=PL2e4mYbwSTbbHAJT7OdK5mv-idhlLOTl0&amp;index=6">https://www.youtube.com/watch?v=Hskhx4Kxmrk&amp;list=PL2e4mYbwSTbbHAJT7OdK5mv-idhlLOTl0&amp;index=6</a></p>
+<p><img src="/images/E%E6%98%9F%E8%AE%A1%E5%88%92-Lecture1/image-20220401191012155.png" alt="image-20220401191012155"></p>
+<h5 id="顶点动画">顶点动画</h5>
+<p><img src="/images/E星计划-Lecture1/image-20220401191142932.png" alt="image-20220401191142932" style="zoom:50%;" /></p>
+<ul>
+<li>几何体的序列帧</li>
+<li>一般用于很难用上面两种技术完成的动画
+<ul>
+<li>如翻书、云彩等</li>
+</ul>
+</li>
+</ul>
+<h5 id="粒子系统">粒子系统</h5>
+<p><a href="https://www.youtube.com/watch?v=2WbJxLur5Uk">https://www.youtube.com/watch?v=2WbJxLur5Uk</a></p>
+<p><img src="/images/E星计划-Lecture1/image-20220401191216229.png" alt="image-20220401191216229" style="zoom:50%;" /></p>
+<ul>
+<li>通过定义粒子喷射器，模拟粒子的运动，渲染图形或者序列帧</li>
+</ul>
+<h4 id="程序化角色动画">程序化角色动画</h4>
+<p><a href="https://slideplayer.com/slide/12479068/">https://slideplayer.com/slide/12479068/</a></p>
+<p><a href="https://slideplayer.com/slide/15399099/">https://slideplayer.com/slide/15399099/</a></p>
+<h5 id="融合">融合</h5>
+<p><img src="/images/E星计划-Lecture1/image-20220401191420850.png" alt="image-20220401191420850" style="zoom:67%;" /></p>
+<ul>
+<li>不同的融合姿态，通过混合姿态，达到一个近似抓握不同地点的动态</li>
+</ul>
+<h5 id="反向动力学-ik">反向动力学 IK</h5>
+<p><img src="/images/E星计划-Lecture1/image-20220401191449181.png" alt="image-20220401191449181" style="zoom:50%;" /></p>
+<ul>
+<li>固定末端骨骼的位置，反向计算其它骨骼的位置</li>
+</ul>
+<h5 id="布娃娃-ragdoll">布娃娃 Ragdoll</h5>
+<p><img src="/images/E星计划-Lecture1/image-20220401191509684.png" alt="image-20220401191509684" style="zoom:50%;" /></p>
+<ul>
+<li>模拟死亡状态</li>
+</ul>
+<h3 id="物理">物理</h3>
+<p><a href="https://www.sciencedirect.com/science/article/abs/pii/S0029801819307917">https://www.sciencedirect.com/science/article/abs/pii/S0029801819307917</a></p>
+<p><a href="https://www.reddit.com/r/MachineLearning/comments/phvgzb/r_how_machine_learning_will_revolutionise_physics/">https://www.reddit.com/r/MachineLearning/comments/phvgzb/r_how_machine_learning_will_revolutionise_physics/</a></p>
+<p><a href="https://www.youtube.com/watch?v=zTDi7I7oIfY">https://www.youtube.com/watch?v=zTDi7I7oIfY</a></p>
+<ul>
+<li>模拟真实世界的各种物理行为</li>
+</ul>
+<h4 id="刚体碰撞检测与响应">刚体碰撞检测与响应</h4>
+<p><img src="/images/E星计划-Lecture1/image-20220401191915815.png" alt="image-20220401191915815" style="zoom:67%;" /></p>
+<p>主要过程</p>
+<ul>
+<li>检测（检测两个物体是否相交/碰撞）
+<ul>
+<li>先进行粗判 -&gt; 包围盒是否碰撞</li>
+<li>再进行精细的判断</li>
+</ul>
+</li>
+<li>相交碰撞：根据冲量/力的算法进行计算，并基于一些速度</li>
+</ul>
+<h4 id="柔体模拟">柔体模拟</h4>
+<h5 id="弹簧质点模型">弹簧质点模型</h5>
+<p><img src="/images/E%E6%98%9F%E8%AE%A1%E5%88%92-Lecture1/image-20220401191955105.png" alt="image-20220401191955105"></p>
+<ul>
+<li>将物体的质量离散到质点，质点再用弹簧连接</li>
+<li>经常用于模拟布料、头发等</li>
+</ul>
+<h5 id="基于位置的动力学">基于位置的动力学</h5>
+<p><img src="/images/E%E6%98%9F%E8%AE%A1%E5%88%92-Lecture1/image-20220401192035002.png" alt="image-20220401192035002"></p>
+<ul>
+<li>统一支持刚体柔体</li>
+<li>都是粒子 + 约束</li>
+<li>不同的约束表现不同的物理效果</li>
+<li>不是真实的物理模拟，仅是一种视觉模拟</li>
+</ul>
+<h5 id="有限元算法">有限元算法</h5>
+<p><img src="/images/E星计划-Lecture1/image-20220401192114314.png" alt="image-20220401192114314" style="zoom:50%;" /></p>
+<ul>
+<li>在游戏中不太常用</li>
+</ul>
+<h5 id="材料质点算法">材料质点算法</h5>
+<p><img src="/images/E星计划-Lecture1/image-20220401192144346.png" alt="image-20220401192144346" style="zoom:50%;" /></p>
+<ul>
+<li>高精度无网格方法</li>
+<li>但是目前没有办法做到实时</li>
+</ul>
+<h4 id="物理引擎">物理引擎</h4>
+<p><img src="/images/E星计划-Lecture1/image-20220401192321190.png" alt="image-20220401192321190" style="zoom: 25%;" /></p>
+<h3 id="ai">AI</h3>
+<p><a href="https://unity.com/cn/products/machine-learning-agents">https://unity.com/cn/products/machine-learning-agents</a></p>
+<p><a href="https://www.gdcvault.com/play/1026172/Unity-AI-and-Machine-Learning">https://www.gdcvault.com/play/1026172/Unity-AI-and-Machine-Learning</a></p>
+<p><a href="https://www.youtube.com/watch?v=ZdN8dDa0ff4">https://www.youtube.com/watch?v=ZdN8dDa0ff4</a></p>
+<p><a href="https://www.youtube.com/watch?v=o-QLSjSSyVk">https://www.youtube.com/watch?v=o-QLSjSSyVk</a></p>
+<p><a href="https://www.gdcvault.com/play/1014514/AI-Navigation-It-s-Not">https://www.gdcvault.com/play/1014514/AI-Navigation-It-s-Not</a></p>
+<p><img src="/images/E星计划-Lecture1/image-20220401192444322.png" alt="image-20220401192444322" style="zoom:50%;" /></p>
+<ul>
+<li>寻路算法
+<ul>
+<li>A*</li>
+<li>群体训练</li>
+<li>机器学习
+<img src="/images/E星计划-Lecture1/image-20220401192623457.png" alt="image-20220401192623457" style="zoom:33%;" /></li>
+</ul>
+</li>
+<li>战斗</li>
+<li>动画</li>
+</ul>
+<h3 id="声音">声音</h3>
+<p><a href="https://www.youtube.com/watch?v=L4GuM15QOFE">https://www.youtube.com/watch?v=L4GuM15QOFE</a></p>
+<p><a href="https://www.youtube.com/watch?v=BrUQdd96qzk">https://www.youtube.com/watch?v=BrUQdd96qzk</a></p>
+<p><a href="http://kunzhou.net/zjugaps/bst/bst.pdf">http://kunzhou.net/zjugaps/bst/bst.pdf</a></p>
+<p><a href="https://www.audiokinetic.com/library/edge/?source=SDK&amp;id=raytracing_geometry_guide.html">https://www.audiokinetic.com/library/edge/?source=SDK&amp;id=raytracing_geometry_guide.html</a></p>
+<h4 id="音乐">音乐</h4>
+<ul>
+<li>声音混响的效果，反应出空间的大小等</li>
+</ul>
+<h4 id="音效">音效</h4>
+<ul>
+<li>战斗、走路等效果</li>
+</ul>
+<p><img src="/images/E星计划-Lecture1/image-20220401192723608.png" alt="image-20220401192723608" style="zoom: 67%;" /></p>
+<ul>
+<li>空间音效，基于 HTRF 声音定位的算法</li>
+</ul>
+<h3 id="网络">网络</h3>
+<p><a href="https://www.youtube.com/watch?v=zrIY0eIyqmI">https://www.youtube.com/watch?v=zrIY0eIyqmI</a></p>
+<p><a href="https://www.youtube.com/watch?v=7jb0FOcImdg&amp;list=PLSWK4JALZGZNVcTcoXcTjWn8DrUP7TOeR&amp;index=1">https://www.youtube.com/watch?v=7jb0FOcImdg&amp;list=PLSWK4JALZGZNVcTcoXcTjWn8DrUP7TOeR&amp;index=1</a></p>
+<ul>
+<li>解决如何快速可靠通信</li>
+<li>传输层：TCP/UDP/RUDP/KCP</li>
+<li>应用层：Json/ProtoBuf/MsgPack/其它自定义</li>
+<li>不同的游戏引擎有自己的解决方案
+<ul>
+<li>UE ：dedicated servers</li>
+</ul>
+</li>
+<li>常见同步方案
+<ul>
+<li>帧同步</li>
+<li>预表现 + 回滚</li>
+</ul>
+</li>
+</ul>
+<h3 id="脚本">脚本</h3>
+<p><a href="https://www.youtube.com/watch?v=mxs_x5ne9JY">https://www.youtube.com/watch?v=mxs_x5ne9JY</a></p>
+<p><a href="https://www.youtube.com/watch?v=5jP0z7Atww4">https://www.youtube.com/watch?v=5jP0z7Atww4</a></p>
+<ul>
+<li>不同的引擎可能对不同的编译器进行扩展</li>
+<li>主流的脚本
+<ul>
+<li>UE：蓝图，C++</li>
+<li>Unity：C#</li>
+</ul>
+</li>
+</ul>
+<h3 id="工具与编译器">工具与编译器</h3>
+<p><img src="/images/E星计划-Lecture1/image-20220401193547964.png" alt="image-20220401193547964" style="zoom: 33%;" /></p>
+<ul>
+<li>场地编译器</li>
+<li>模型编译器</li>
+<li>动画/物理编译器</li>
+</ul>
+<h2 id="4-网易自研引擎">4. 网易自研引擎</h2>
+<p><img src="/images/E星计划-Lecture1/image-20220401193729824.png" alt="image-20220401193729824" style="zoom: 50%;" /></p>
+<h3 id="neox">NeoX</h3>
+<p><img src="/images/E%E6%98%9F%E8%AE%A1%E5%88%92-Lecture1/image-20220401193858231.png" alt="image-20220401193858231"></p>
+<h3 id="messiah">Messiah</h3>
+<p><img src="/images/E%E6%98%9F%E8%AE%A1%E5%88%92-Lecture1/image-20220401194125418.png" alt="image-20220401194125418"></p>
+<p><img src="/images/E%E6%98%9F%E8%AE%A1%E5%88%92-Lecture1/image-20220401194107129.png" alt="image-20220401194107129"></p>
+<ul>
+<li>原生多线程</li>
+<li>适配全平台</li>
+<li>高效率运行</li>
+<li>快速迭代开发</li>
+<li>完整的工具链</li>
+</ul>
+
+        </p>
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+
+
+<div class="next-post">
+    <p>
+        <a href="/en/notes/e%E6%98%9F%E8%AE%A1%E5%88%92-lecture2-%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B%E7%AE%80%E8%BF%B0/">
+            Next:
+            E星计划-Lecture2 渲染流程简述
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            April 3, 2022
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2024 NYH-Dolphin</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>

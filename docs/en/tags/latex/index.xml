@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LaTeX on Dolphin NIE</title>
+    <link>https://NYH-Dolphin.github.io/en/tags/latex/</link>
+    <description>Recent content in LaTeX on Dolphin NIE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 14 Feb 2023 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://NYH-Dolphin.github.io/en/tags/latex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Overleaf 01-Bug Solver</title>
+      <link>https://NYH-Dolphin.github.io/en/study/overleaf01-bug-solver/</link>
+      <pubDate>Tue, 14 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/study/overleaf01-bug-solver/</guid>
+      <description>Reference How to use .bib file   Create a xxx.bib file in your overleaf project. Place it directly in your root content.
+  Open your main .tex file. Add the following two codes before \end{document}
+... \bibliographystyle{&amp;lt;style&amp;gt;} % eg. ieeetr \bibliography{&amp;lt;bib_name&amp;gt;} % eg. reference  \end{document}  &amp;lt;style&amp;gt;: refer to https://ja.overleaf.com/learn/latex/Bibtex_bibliography_styles &amp;lt;bib_name&amp;gt;: your .bib file&amp;rsquo;s name    Add some reference in your .bib file.
+  Cite one of the article from your .</description>
+    </item>
+    
+  </channel>
+</rss>

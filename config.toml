@@ -1,13 +1,8 @@
 baseURL = "https://NYH-Dolphin.github.io"
 defaultContentLanguage = "en"
-languageCode = "en"
-
-title = "Dolphin NIE"
-
+defaultContentLanguageInSubdir = true
 theme = "gokarna"
-
 publishDir = "docs"
-
 # Automatically generate robots.txt
 enableRobotsTXT = true
 
@@ -17,7 +12,7 @@ enableRobotsTXT = true
     name = "Sharing"
     url = "/sharing/"
     pre = "<span data-feather='share-2'></span>"
-    weight = 1 
+    weight = 1
 
   [[menu.main]]
     identifier = "study"
@@ -32,66 +27,96 @@ enableRobotsTXT = true
     url = "/project/"
     pre = "<span data-feather='code'></span>"
     weight = 3
-
+  
   [[menu.main]]
-    identifier = "tags"
-    name = "Tag"
-    url = "/tags/"
-    pre = "<span data-feather='tag'></span>"
+    identifier = "portfolio"
+    name = "Itch"
+    url = "https://nyh-dolphin.itch.io/"
+    pre = "<span data-feather='gift'></span>"
     weight = 4
 
   [[menu.main]]
     identifier = "about"
     name = "About"
-    url = "/about/"
-    weight = 5
+    url = "/en/about/"
     pre = "<span data-feather='smile'></span>"
+    weight = 5
 
-  # the rest of the menu are some other websites
   [[menu.main]]
-    identifier = "heart"
-    name = ""
-    url = "https://zweb.zone/"
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+    pre = "<span data-feather='tag'></span>"
     weight = 6
-    pre = "<span data-feather='heart'></span>"
-
+  
   [[menu.main]]
-    identifier = "portfolio"
-    name = ""
-    url = "https://nyh-dolphin.itch.io/"
+    name = "中文"
+    url = "../zh"
     weight = 7
+
+  [[languages.zh.menu.main]]
+    identifier = "sharing"
+    name = "分享"
+    url = "/sharing/"
+    pre = "<span data-feather='share-2'></span>"
+    weight = 1
+
+  [[languages.zh.menu.main]]
+    identifier = "study"
+    name = "学习"
+    url = "/study/"
+    pre = "<span data-feather='book-open'></span>"
+    weight = 2
+
+  [[languages.zh.menu.main]]
+    identifier = "project"
+    name = "项目"
+    url = "/project/"
+    pre = "<span data-feather='code'></span>"
+    weight = 3
+  
+  [[languages.zh.menu.main]]
+    identifier = "portfolio"
+    name = "作品"
+    url = "https://nyh-dolphin.itch.io/"
     pre = "<span data-feather='gift'></span>"
+    weight = 4
+
+  [[languages.zh.menu.main]]
+    identifier = "about"
+    name = "关于"
+    url = "/zh/about/"
+    pre = "<span data-feather='smile'></span>"
+    weight = 5
+
+  [[languages.zh.menu.main]]
+    identifier = "tags"
+    name = "标签"
+    url = "/tags/"
+    pre = "<span data-feather='tag'></span>"
+    weight = 6
+
   
-  [[menu.main]]
-    identifier = "github"
-    name = ""
-    url = "https://github.com/NYH-Dolphin"
-    weight = 8
-    pre = "<span data-feather='github'></span>"
-  
-  [[menu.main]]
-    identifier = "home"
-    name = ""
-    url = "https://nyh-dolphin.github.io/"
-    weight = 9
-    pre = "<span data-feather='home'></span>"
-  
+  [[languages.zh.menu.main]]
+    name = "EN"
+    url = "../en"
+    weight = 7
+
 
 [params]
   # URL for the avatar on homepage
   avatarURL = "/images/avatar.jpg"
 
   socialIcons = [
+      {name = "email", url = "mailto:yn2273@nyu.edu"},
+      {name = "github", url = "https://github.com/NYH-Dolphin"},
       {name = "bilibili", url = "https://space.bilibili.com/13993670"},
-      {name = "youtube", url = "https://www.youtube.com/channel/UCLAZemz5uumlX-gcr7HMrAA"},
-      {name = "mail", url = "mailto:nieyuhe0922@qq.com"},
+      {name = "linkedin", url = "https://www.linkedin.com/in/yuhe-nie-021032250/"},
+      
   ]
 
   # Choose one of size-xs, size-s, size-m, size-l & size-xl. (Default: size-m)
   avatarSize = "size-l"
-
-  # Description to display on homepage
-  description = "Imagination Can Change Anything!"
 
   # Accent color is displayed when you hover over <a> tags
   accentColor = "#00aaff"
@@ -163,12 +188,24 @@ enableRobotsTXT = true
   # Footer text
   footer = "NYH-Dolphin"
 
-[markup.goldmark.renderer]
-  unsafe = true # Allow HTML in md files
-
 [markup]
   [markup.tableOfContents]
     startLevel = 1
     endLevel = 4
     ordered = false
+  [markup.goldmark.renderer]
+  unsafe = true # Allow HTML in md files
+
+[languages]
+  [languages.en]
+    languageCode = "en-us"
+    title = "Dolphin NIE"
+    contentDir = 'content/en'
+    description = "Imagination can change anything!"
+
+  [languages.zh]
+    languageCode = "zh-cn"
+    title = "聂雨荷"
+    contentDir = 'content/zh'
+    description = "愿想象力改变一切！"
 

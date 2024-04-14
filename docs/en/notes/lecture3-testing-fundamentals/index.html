@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #00aaff;
+        }
+    </style>
+
+    
+    
+    
+    
+    
+    
+
+    
+    <title>Lecture3 Testing Fundamentals</title>
+    <meta name="description" content="Imagination can change anything!">
+    <meta name="keywords" content='Game Testing'>
+
+    <meta property="og:url" content="https://NYH-Dolphin.github.io/en/notes/lecture3-testing-fundamentals/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lecture3 Testing Fundamentals">
+    <meta property="og:description" content="Imagination can change anything!">
+    <meta property="og:image" content="/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Lecture3 Testing Fundamentals">
+    <meta name="twitter:description" content="Imagination can change anything!">
+    <meta property="twitter:domain" content="https://NYH-Dolphin.github.io/en/notes/lecture3-testing-fundamentals/">
+    <meta property="twitter:url" content="https://NYH-Dolphin.github.io/en/notes/lecture3-testing-fundamentals/">
+    <meta name="twitter:image" content="/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="https://NYH-Dolphin.github.io/en/notes/lecture3-testing-fundamentals/" />
+
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="https://NYH-Dolphin.github.io/css/dark.css">
+
+    <script src="https://NYH-Dolphin.github.io/js/svg-injector.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/feather-icons.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/main.js"></script>
+
+    
+    
+    
+    
+    <script src="https://player.lzti.com/api/player/167601724233" id="myhk" key="167601724233" m="1"></script>
+
+
+
+    <!-- Support Letax Equation -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.css" integrity="sha384-KiWOvVjnN8qwAZbuQyWDIbfCLFhLXNETzBQjA/92pIowpC0d2O3nppDGQVgwd2nB" crossorigin="anonymous">
+
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.min.js" integrity="sha384-0fdwu/T/EQMsQlrHCCHoH10pkPLlKA1jL5dFyUOvB3lfeT2540/2g6YgSi2BL14p" crossorigin="anonymous"></script>
+
+    <!-- Katex is a math typesetting library for the web which lets you write beautiful equations.-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // â€¢ auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // â€¢ rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+
+    <!-- To automatically render math in text elements, include the auto-render extension: -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+    <!-- Analysis -->
+    <script async defer data-website-id="website-id" src="https://analytics.example.com/script.js"></script>
+
+    <!-- Support Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  
+    
+</head>
+<body>
+        <script type="text/javascript">
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+        
+        <div class="avatar">
+            <a href="https://NYH-Dolphin.github.io">
+                <img src="https://NYH-Dolphin.github.io/images/avatar.jpg" alt="avatar" />
+            </a>
+        </div>
+        
+
+        <div class="nav-title">
+            <a class="nav-brand" href="https://NYH-Dolphin.github.io">Dolphin NIE</a>
+        </div>
+
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/sharing/"><span data-feather='share-2'></span> Sharing </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/study/"><span data-feather='book-open'></span> Study </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/project/"><span data-feather='code'></span> Project </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://nyh-dolphin.itch.io/"><span data-feather='gift'></span> Itch </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/en/about/"><span data-feather='smile'></span> About </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="https://NYH-Dolphin.github.io/../zh"> ä¸­æ–‡ </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span id="dark-theme-toggle-screen-reader-target" class="sr-only"></span>
+                <a>
+                    <span id="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span id="hamburger-menu-toggle-screen-reader-target" class="sr-only">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/sharing/"><span data-feather='share-2'></span> Sharing </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/study/"><span data-feather='book-open'></span> Study </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/project/"><span data-feather='code'></span> Project </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://nyh-dolphin.itch.io/"><span data-feather='gift'></span> Itch </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/en/about/"><span data-feather='smile'></span> About </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://github.com/NYH-Dolphin"><span data-feather='github'></span>  </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="https://NYH-Dolphin.github.io/../zh"> ä¸­æ–‡ </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
+                    <a>
+                        <span id="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Lecture3 Testing Fundamentals</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">
+            April 15, 2022
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/game-testing">Game Testing</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <p>
+            <h1 id="lecture3-testing-fundamentals">Lecture3 Testing Fundamentals</h1>
+<h2 id="1-software-quality">1. Software Quality</h2>
+<h3 id="game-quality-measurement">Game Quality Measurement</h3>
+<h4 id="six-sigma">Six Sigma</h4>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220409182623622.png" alt="image-20220409182623622" style="zoom:50%;" /></p>
+<ul>
+<li>sigma level: defects per million lines of code, excluding comments</li>
+</ul>
+<h4 id="phase-containment">Phase Containment</h4>
+<p>Phase containment is the ability to detect faults in the project phase in which they were introduced.</p>
+<p><strong>Phase Containment Effectiveness (PCE)</strong> is a measure of how well that is being done.</p>
+<ul>
+<li>If this practice is useful for understanding how well the team is capturing defects in the game code, it should also be applied to the work produced by the testers.</li>
+</ul>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220409183416440.png" alt="image-20220409183416440" style="zoom:50%;" /></p>
+<ul>
+<li><strong>in-phase fault/errors</strong>: faults that are found in the phase in which they are introduced
+<ul>
+<li>typically found by reviews, walkthroughs, or inspections</li>
+</ul>
+</li>
+<li><strong>defects</strong>: faults that donâ€™t get caught in the same phase in which they are introduced are said to escape
+<ul>
+<li>most noticeably found by testing and unhappy customers, but they can also be found in reviews of downstream work products</li>
+</ul>
+</li>
+</ul>
+<p>In both cases, some basic strategies to address low PCE areas are:</p>
+<ul>
+<li>Improve knowledge of the subject matter and provide relevant training.</li>
+<li>Have successful team members provide mentoring to less-successful members.</li>
+<li>Document methods used by successful individuals and deploy them throughout the team.</li>
+<li>Increase compliance with existing methods and standards.</li>
+<li>Add standards which, by design, help prevent faults.</li>
+<li>Add checking tools that run during the creation process, such as color-coded and syntax-aware editors.</li>
+<li>Add checking tools that run after the creation process, such as stronger compilers and memory leak checkers.</li>
+</ul>
+<h3 id="quality-plans">Quality Plans</h3>
+<p>Each game project should establish its own plan for how quality will be monitored and tracked during the project. This is typically documented in the <strong>Software Quality Assurance Plan (SQAP)</strong>.</p>
+<p>The SQAP contains <strong>no information about testing the game</strong>. That is covered in the gameâ€™s Software Test Plan.</p>
+<p>An SQAP is strictly concerned with the <strong>independent monitoring and correction of product and process quality issues</strong>.</p>
+<h4 id="qa-personnel">QA Personnel</h4>
+<ul>
+<li>Organizational structure of the QA team</li>
+<li>Describe the primary role of each person on the QA team for this project</li>
+</ul>
+<h4 id="standards">Standards</h4>
+<ul>
+<li><strong>product standards</strong>
+<ul>
+<li>Product standards apply to the function of things that are produced as part of the game project.</li>
+<li>This includes code, graphics, printed materials, and so on.</li>
+</ul>
+</li>
+<li><strong>process standards</strong>
+<ul>
+<li>Process standards apply to the way things are produced.</li>
+<li>This includes file naming standards, code formatting standards, and maintenance of evolving project documents</li>
+</ul>
+</li>
+</ul>
+<h4 id="reviews-and-audits">Reviews and Audits</h4>
+<ul>
+<li>A QA review is usually done by a single QA engineer who evaluates a work product or ongoing process against <strong>some kind of reference such as a checklist or standard</strong>.
+<ul>
+<li>Project documents, project plans, code, tests, test results, designs, and user documentation</li>
+<li>Code inspection process, file backup procedures, and the use of tools to measure game performance over a network</li>
+<li>Checking that all required fields in a form are filled in with the right type of data and that required signatures have been obtained</li>
+</ul>
+</li>
+</ul>
+<h4 id="feedback-and-reports">Feedback and Reports</h4>
+<ul>
+<li>The SQAP should document what kinds of reports will be generated by SQA activities and how they will be communicated.</li>
+</ul>
+<h4 id="problem-reporting-and-corrective-action">Problem Reporting and Corrective Action</h4>
+<ul>
+<li>Problem reports can be very similar to the bug reports you write when testing finds a defect in the software</li>
+<li>Identify which organization or individual will be responsible and describe a timeframe for resolving the issue.</li>
+<li>Look for the causes of negative trends or patterns and suggest ways to reverse them</li>
+</ul>
+<h4 id="tools-techniques-and-methods">Tools, Techniques, and Methods</h4>
+<ul>
+<li>Statistic
+<ul>
+<li>Pareto Chart</li>
+<li>Control Charts</li>
+</ul>
+</li>
+</ul>
+<h4 id="supplier-control">Supplier Control</h4>
+<ul>
+<li>The advertisements in the store, the game packaging, the user’s manual, and the game media are all part of that experience.</li>
+<li>In many cases these items come from sources outside the game team, These are some of your “suppliers.”</li>
+<li>QA should play a role in determining that the supplied items are “fit for use.”</li>
+</ul>
+<h4 id="training">Training</h4>
+<ul>
+<li>The QA training should be planned and delivered in time for QA to conduct any activities related to work products or processes using the new technology</li>
+</ul>
+<h4 id="risk-management">Risk Management</h4>
+<p>Some typical SQA risks are</p>
+<ul>
+<li>Project deliverables go out of sync with planned audits</li>
+<li>QA personnel diverted to other activities such as testing</li>
+<li>Lack of independent QA reporting structure</li>
+<li>Lack of organization commitment to take corrective actions and/or close out issues raised by QA</li>
+<li>Insufficient funding for new QA technologies</li>
+<li>Insufficient funding for training in new development and/or QA technologies</li>
+</ul>
+<h2 id="2-test-phases">2. Test Phases</h2>
+<h3 id="production-schedule">Production Schedule</h3>
+<p>No matter what size the game and how long the production schedule, the testing of the game should always follow the same basic structure</p>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220411171246813.png" alt="image-20220411171246813" style="zoom: 80%;" /></p>
+<ul>
+<li>Pre-production</li>
+<li>Kickoff</li>
+<li>Alpha</li>
+<li>Beta</li>
+<li>Gold</li>
+<li>Release</li>
+<li>Post-release</li>
+</ul>
+<h3 id="pre-production">Pre-production</h3>
+<p>Project scope, design, and assets are being produced from the start that need to be evaluated, critiqued, and corrected.</p>
+<p>Both the development and test teams can go home earlier at night if <strong>more effort and skill is applied to testing activities at the beginning of the project</strong> rather than trying to fix things later on by throwing more testers (and more overtime work) at it.</p>
+<h4 id="planning-tasks">Planning Tasks</h4>
+<ul>
+<li><strong>Determine the Scope of Testing the Project Will Require</strong>
+<ul>
+<li>Design Document</li>
+<li>TDD</li>
+<li>Project Schedule</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220411171837247.png" alt="image-20220411171837247" style="zoom:80%;" /></p>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220411171850212.png" alt="image-20220411171850212" style="zoom:80%;" /></p>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220411171901142.png" alt="image-20220411171901142" style="zoom:80%;" /></p>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220411171923180.png" alt="image-20220411171923180" style="zoom:80%;" /></p>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220411171932848.png" alt="image-20220411171932848" style="zoom:80%;" /></p>
+<hr>
+<ul>
+<li><strong>Assign a Lead Tester</strong></li>
+<li><strong>Determine Phase Acceptance Criteria</strong>
+<ul>
+<li>Establishing clear and unambiguous entry acceptance criteria for each phase of testing</li>
+<li>Three elements are required in the certification planning for each test phase:
+<ul>
+<li><strong>Entry criteria</strong>: The set of tests that a build must pass before entering a given test phase. The game won’t be considered “at Alpha” until the code passes the Alpha Entry test, for example</li>
+<li><strong>Exit criteria</strong>: The set of tests that a build must pass before completing a test phase.</li>
+<li><strong>Target date</strong>: The date both the development and test teams are working toward for a specific phase to launch.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Participate in Game Design Reviews</strong>
+<ul>
+<li>stay abreast of the latest design changes</li>
+<li>advice the project manager of any technical challenges or testing complication that may arise from any anticipated feature</li>
+</ul>
+</li>
+<li><strong>Set Up the Defect Tracking Database</strong>
+<img src="/images/Lecture3 Testing Fundamentals.assets/image-20220411172945456.png" alt="image-20220411172945456" style="zoom:67%;" /></li>
+<li><strong>Draft Test Plan and Design Tests</strong>
+<ul>
+<li><strong>Test Plan</strong>
+<ul>
+<li>time</li>
+<li>scope</li>
+<li>dependencies on other groups</li>
+<li>goals and milestones</li>
+<li>risks</li>
+</ul>
+</li>
+<li><strong>Test Case</strong>
+<ul>
+<li>an individual test that is to be performed by a tester or testers</li>
+<li>each test case has a distinct objective</li>
+</ul>
+</li>
+<li><strong>Test Suite</strong>
+<ul>
+<li>a collection of related test cases that are described in further detail</li>
+<li>gives step-by-step instructions about what operations to perform on the game and what details to check for as a result of each step</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Testing Before Testing Begins</strong>
+<ul>
+<li><strong>Modular Testing</strong>
+<ul>
+<li>do very directed testing of certain narrow features in order to help them build the code</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="kickoff">Kickoff</h3>
+<p>The test kickoff illustrates the principle that increasing an organization’s speed results from an iterative process of identifying obstacles, designing a new process that eliminates them, and ensuring that the new way is implemented.</p>
+<h4 id="tester-preparation">Tester Preparation</h4>
+<ul>
+<li>Reads the requirements and/or documentation for the game feature being tested</li>
+<li>Gathers equipment, files, and programs needed for the test</li>
+<li>Reads through the tests</li>
+</ul>
+<h4 id="kickoff-meeting">Kickoff Meeting</h4>
+<ul>
+<li>Giving a feature overview</li>
+<li>Addressing feature questions</li>
+<li>Bringing up any special test instructions</li>
+<li>Bringing up and soliciting any relevant test improvement suggestions</li>
+<li>Addressing any test execution questions or issues</li>
+<li>Recording important issues on the kickoff form and providing a copy to the tester after the meeting is completed</li>
+</ul>
+<h3 id="alpha">Alpha</h3>
+<p>Full-bore testing can begin.</p>
+<p>Over the course of Alpha testing, <strong>all modules of the game should be tested at least once</strong>, and performance baselines should be established (frame rate, load times, and so on).</p>
+<h4 id="alpha-phase-entry-criteria">Alpha Phase Entry Criteria</h4>
+<ul>
+<li>All major game features exist and can be tested</li>
+<li>A tester can navigate the game along some path from start to finish</li>
+<li>The code passes at least 50% of platform TRC</li>
+<li>Basic interface is complete and preliminary documentation is available to QA</li>
+<li>The game is compatible with most specified hardware and software  configurations</li>
+<li>Level scripting is implemented</li>
+<li>First-party controllers and memory cards work</li>
+<li>Final or placeholder art is in for all areas of the game</li>
+<li>Online multiplayer can be tested</li>
+<li>Placeholder audio is implemented</li>
+</ul>
+<h3 id="beta">Beta</h3>
+<p>The development team has, for the most part, stopped creating new code and new artwork, and will now shift their focus to perfecting what they’ve already created.</p>
+<p>The majority of testing done by outside Beta testers during true Beta is <strong>bug reporting and load testing</strong></p>
+<h4 id="beta-phase-entry-criteria">Beta Phase Entry Criteria</h4>
+<ul>
+<li>All features and options are implemented</li>
+<li>The code passes at least 100% of platform TRC</li>
+<li>The game can be navigated on all paths</li>
+<li>The entire user interface is final</li>
+<li>The game is compatible with all specified hardware and software configurations</li>
+<li>The game logic and AI is final</li>
+<li>All controllers work</li>
+<li>Final artwork is implemented</li>
+<li>Final audio is implemented</li>
+<li>All online modes are complete and testable</li>
+<li>All language version text is implemented and ready for simultaneous release</li>
+</ul>
+<h4 id="design-lock">Design Lock</h4>
+<p>The focus of the test team at this point should be to continue to run the test cases against the builds in an iterative manner, because each defect fixed at this point may have introduced another defect elsewhere in the game</p>
+<p>Toward the end of Beta, many tough decisions must be made. The teams are tired, tempers are on edge, and time is running out. In this charged atmosphere, with very little sleep themselves, the project team leaders have to make such <strong>critical choices</strong> as the following:</p>
+<ul>
+<li>Whether or not to implement that last-minute feature enhancement</li>
+<li>Whether to cut that level that just doesn’t seem to be much fun</li>
+<li>Which bugs to ship with</li>
+</ul>
+<h4 id="letting-bugs-go">Letting Bugs Go</h4>
+<p>There will be times, especially later in the project, when the development team determines that they can’t (or won’t) fix a bug.</p>
+<p>In some cases, where a post-release software update, or patch, is anticipated, a number of bugs will be designated for fixing after the game has been shipped.</p>
+<p>Once a bug has been waived, it’s important to remind both the bug author and the test team as a whole that merely because the bug was waived doesn’t mean that it wasn’t a legitimate bug.</p>
+<h3 id="gold">Gold</h3>
+<p>It’s up to the testers to serve as the last line of protection for both the player and the project team by sniffing out any remaining hidden defects that would have a significant impact on player satisfaction</p>
+<h4 id="release-guidelines">Release Guidelines</h4>
+<ul>
+<li>All known Severity 1 bugs (crashes, hangs, major function failures) are fixed</li>
+<li>Greater than 90% of all known Severity 2 bugs are fixed</li>
+<li>Greater than 85% of all known Severity 3 bugs are fixed</li>
+<li>Any known open issues have a workaround that has been communicated  to Technical Support (or documented in the README.TXT file, in the case of PC games)</li>
+<li>Release-level performance has been achieved (60-fps frame rate)</li>
+</ul>
+<h4 id="last-minute-defects">Last-Minute Defects</h4>
+<ul>
+<li>There is seldom enough time in any project to find every bug.</li>
+<li>Every time a programmer touches the code, bugs may be introduced.</li>
+<li>Code changes accumulate over time, so that several iterative changes to  different parts of the game may result in a bug showing up downstream from those changes.</li>
+<li>Programmers are much more tired and prone to mistakes toward the end  of the project.</li>
+<li>Testers are much more tired and prone to miss things toward the end of the project.</li>
+<li>Bugs happen.</li>
+</ul>
+<h3 id="release">Release</h3>
+<ul>
+<li>The development team is well advised to fix only those bugs on the “must fix” list, and to avoid fixing each and every minor bug on the list in an effort to please the platform manufacturer.</li>
+<li>Once the game has been re-submitted and certified by the platform manufacturer, it is “Gold.” The champagne should flow. But the project is not over yet.</li>
+</ul>
+<h3 id="post-release">Post-release</h3>
+<ul>
+<li>The upside of developing and testing a patch is that it allows the development team to revisit the entire list of waived bugs and last-minute design tweaks and incorporate some additional polish into the game</li>
+</ul>
+<h2 id="3-test-process">3. Test Process</h2>
+<h3 id="black-box-testing">Black Box Testing</h3>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220409191111726.png" alt="image-20220409191111726" style="zoom: 67%;" /></p>
+<p>Almost all game testing is black box testing; testing done from outside the application.</p>
+<p>No knowledge of, or access to, the source code is granted to the tester.</p>
+<h3 id="white-box-testing">White Box Testing</h3>
+<p>In contrast to black box testing, white box testing gives the tester an opportunity to exercise the source code directly in ways no end user ever could.</p>
+<ul>
+<li>Tests performed by developers <strong>prior to submitting new code for integration</strong> with the rest of the game</li>
+<li>Testing code modules that will become part of a <strong>reusable library</strong> across multiple games and/or platforms</li>
+<li>Testing code methods or functions that are <strong>essential parts of a game engine or middleware product</strong></li>
+<li>Testing code modules within your game that <strong>might be used by third-party developers</strong> or “modders” who, by design, could expand or modify the behavior of your game to their own liking</li>
+<li><strong>Testing low-level routines that your game uses to support specific functions</strong> in the newest hardware devices such as graphic cards or audio processors</li>
+</ul>
+<h3 id="life-cycle-of-a-build">Life Cycle of a Build</h3>
+<p>A basic game testing process consists of the following steps</p>
+<ul>
+<li>Plan and design the test</li>
+<li>Prepare for testing</li>
+<li>Perform the test</li>
+<li>Report the results</li>
+<li>Repair the bug</li>
+<li>Return to step 1 and re-test</li>
+</ul>
+<p>The testing process itself is a feedback loop between the tester and the developer</p>
+<ul>
+<li>The tester plans and executes tests on the code, then reports the bugs to the developer</li>
+<li>Developer fixes them and compiles a new build</li>
+<li>Tester plans and executes tests on</li>
+</ul>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220411193138964.png" alt="image-20220411193138964" style="zoom:67%;" /></p>
+<h4 id="test-entry-criteria">Test Entry Criteria</h4>
+<p>It’s advisable to require that any code release meets some criteria for being fit to test before you do any testing on it</p>
+<ul>
+<li>The game code should be built without compiler errors. Any new compiler warnings that occur are analyzed and discussed with the test team</li>
+<li>The code release notes should be complete and provide the detail that testers need to plan which tests to run or re-run for this build</li>
+<li>Defect records for any bugs closed in the new release should be updated so they can be used by testers to make decisions about how much to test in the new build</li>
+<li>Tests and builds should be properly version controlled</li>
+<li>When you are sufficiently close to the end of the project, you also want to receive the game on the media that it will ship on. Check that the media  provided contains all of the files that would be provided to your customer</li>
+</ul>
+<h4 id="version-control">Version Control</h4>
+<p>Proper version control for the test team includes the following steps</p>
+<ul>
+<li>Collect all prior versions from the test team before distributing the new build. The prior  versions should be stacked together and archived until the project is complete.</li>
+<li>Archive all paperwork. This includes not only any build notes you received from the development team, but also any completed test suites, old test plans, screen shots, saved games, notes, .AVIs, and any other material generated during the course of testing a build. It is sometimes important to retrace steps along the paper trail, whether to assist in isolating a new defect or determining in what version an old bug was introduced.</li>
+<li>Verify the build number with the developer prior to duplicating it.</li>
+<li>In cases where builds are transmitted electronically, verify the byte count, file dates, and directory structure before building it. It’s vital in situations where builds are sent via FTP or email that the test team makes certain they are testing a version identical to the version the developers uploaded. Confirm the integrity of the transmitted build before giving it to the testers.</li>
+<li>Renumber all test suites and any other build-specific paperwork with the current version  number.</li>
+<li>Distribute the new build for smoke testing.</li>
+</ul>
+<h4 id="configuration-preparation">Configuration Preparation</h4>
+<p>The test lead must communicate the appropriate hardware configuration to each tester for this build</p>
+<p>The cleanest possible testing configuration for a PC game is</p>
+<ul>
+<li>A fresh installation of the latest version of the operating system, including any patches or security updates</li>
+<li>The latest drivers for all components of the computer. This not only includes the obvious video card and sound card drivers, but also chipset drivers, motherboard drivers, ethernet card drivers, and so on</li>
+<li>The latest versions of any “helper apps” or middleware the game requires  to run. These can range from Microsoft’s DirectX multimedia libraries to multiplayer matchmaking software such as GameSpy Arcade</li>
+</ul>
+<h4 id="smoke-testing">Smoke Testing</h4>
+<p>Certify that the build is worthwhile to formally test —— smoke test</p>
+<ul>
+<li>the lead or primary tester should <strong>launch the game, enter each module from the main menu, and spend a minute or two playing each module</strong></li>
+<li>If the game launches with no <strong>obvious performance problems</strong> and each module implemented so far loads with no obvious problems, it is safe to certify the build, log it, and duplicate it for the test team.</li>
+</ul>
+<h4 id="regression-testing">Regression Testing</h4>
+<p>Verify that the bugs the development team claims to have fixed in this build are indeed fixed</p>
+<ul>
+<li>By flagging the defect as verify fix, <strong>the bug can remain in the regression set for the next build (or two)</strong>, but out of the open set that the development team is still working on.</li>
+<li>Once the bug has been verified as fixed in two or three builds, the lead tester can then close the bug with more confidence.</li>
+</ul>
+<h4 id="test-around-the-bug">Test Around the Bug</h4>
+<p>Before you begin to write a defect report, ask yourself questions such as the following</p>
+<ul>
+<li>Is this the only location or level where the bug occurs?</li>
+<li>Does the bug occur while using other characters?</li>
+<li>Does the bug occur in other game modes (for example, multiplayer as well as single player, skirmish as well as campaign)?</li>
+<li>Can I eliminate any steps along the path to reproducing the bug?</li>
+<li>Does the bug occur across all platforms (for example, PlayStation2 and Xbox)?</li>
+<li>Is the bug machine-specific (for example, does it occur only on PCs with a certain hardware configuration)?</li>
+</ul>
+<h4 id="report-the-results">Report the Results</h4>
+<p>Good bug report writing gets programmers to “see the light”of the bug. But programmers are by no means the only people who will read your bug. The audience may include</p>
+<ul>
+<li>lead tester</li>
+<li>project manager</li>
+<li>marketing or business executives</li>
+<li>third parties</li>
+<li>customer service representatives</li>
+<li>other testers</li>
+</ul>
+<p>But before you begin to write a bug report, you have to be certain that you have all your facts</p>
+<ul>
+<li><strong>Brief Description</strong>
+<ul>
+<li>The brief description must be brief enough to be read easily and quickly, but long enough to describe the bug</li>
+</ul>
+</li>
+<li><strong>Full Description</strong>
+<ul>
+<li>Full Description field provides the gory details</li>
+<li>Should be written as <strong>a series of brief instructions</strong> so that anyone can follow the steps and reproduce the bug</li>
+<li>The fewer steps, the better, and the fewer words, the better</li>
+</ul>
+</li>
+<li><strong>Great Expectations</strong>
+<ul>
+<li><strong>Expected Result</strong>: describes the behavior that a normal player would reasonably expect from the game if the steps in the bug were followed</li>
+<li><strong>Actual Result</strong>: describes the defective behavior</li>
+</ul>
+</li>
+<li><strong>Things to Avoid</strong>
+<ul>
+<li>humor and jargon</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-testing-by-the-numbers">4. Testing by the Numbers</h2>
+<p><strong>Test metrics</strong> can tell you about the effectiveness and efficiency of your testing activities and results.</p>
+<h3 id="testing-progress">Testing Progress</h3>
+<p>In order to estimate the duration of the test execution for any portion of the game project, estimate total number of tests to be performed</p>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220411200857733.png" alt="image-20220411200857733" style="zoom:50%;" /></p>
+<ul>
+<li>how many tests can be completed per staff-day of effort</li>
+<li>how much of a tester’s calendar time is actually spent on testing activities</li>
+<li>how many tests you expect to be redone</li>
+</ul>
+<h3 id="testing-effectiveness">Testing Effectiveness</h3>
+<p>Measure your Test Effectiveness (TE) by adding up defects and dividing by the number of tests completed</p>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220411201116678.png" alt="image-20220411201116678" style="zoom:67%;" /></p>
+<p>The severity of defects introduced with each release</p>
+<p><img src="/images/Lecture3 Testing Fundamentals.assets/image-20220411201214386.png" alt="image-20220411201214386" style="zoom:67%;" /></p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><strong>Test Progress Chart</strong> (# of tests completed by team each day, # of tests required each day)</li>
+<li><strong>Test Completed/Days of Effort</strong> (# of tests completed, # days of test effort for each tester)</li>
+<li><strong>Test Participation</strong> (# of days of effort for each tester, # of days each tester assigned to test)</li>
+<li><strong>Test Effectiveness</strong> (# of defects, # of tests: for each release and/or tester)</li>
+<li><strong>Defect Severity Profile</strong> (# of defects of each severity for each release)</li>
+<li><strong>Star Chart</strong> (# of defects of each severity for each tester)</li>
+<li><strong>Testing Star</strong> (# of defects of each severity for each tester, point value of each severity)</li>
+<li><strong>Best Tester</strong> (# of tests per tester, # of total tests, # of defects per tester, # of total defects)</li>
+</ul>
+
+        </p>
+    </div>
+
+    <div class="prev-next">
+        
+            
+                
+<div class="prev-post">
+    <p>
+        <a href="/en/notes/lecture4-testing-techniques/">
+            &#8592;
+            Previous:
+            Lecture4 Testing Techniques
+        </a>
+    </p>
+    <p class="prev-post-date">
+        April 15, 2022
+    </p>
+</div>
+
+
+
+<div class="next-post">
+    <p>
+        <a href="/en/notes/lecture2-making-games/">
+            Next:
+            Lecture2 Making Games
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            April 15, 2022
+        </p>
+</div>
+
+
+            
+        
+    </div>
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    <span>&copy; 2024 NYH-Dolphin</span>
+    <span>
+        Made with &#10084;&#65039; using <a target="_blank" href="https://github.com/526avijitgupta/gokarna">Gokarna</a>
+    </span>
+</footer>
+</body>
+</html>
