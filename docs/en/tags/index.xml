@@ -6,17 +6,89 @@
     <description>Recent content in Tags on Dolphin NIE</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 04 Apr 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Mar 2024 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://NYH-Dolphin.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>blog</title>
-      <link>https://NYH-Dolphin.github.io/en/tags/blog/</link>
-      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      <title>algorithm</title>
+      <link>https://NYH-Dolphin.github.io/en/tags/algorithm/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://NYH-Dolphin.github.io/en/tags/blog/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>game</title>
+      <link>https://NYH-Dolphin.github.io/en/tags/game/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/tags/game/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nyu</title>
+      <link>https://NYH-Dolphin.github.io/en/tags/nyu/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/tags/nyu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pcg</title>
+      <link>https://NYH-Dolphin.github.io/en/tags/pcg/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/tags/pcg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>project</title>
+      <link>https://NYH-Dolphin.github.io/en/tags/project/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/tags/project/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>research</title>
+      <link>https://NYH-Dolphin.github.io/en/tags/research/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/tags/research/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>visual novel</title>
+      <link>https://NYH-Dolphin.github.io/en/tags/visual-novel/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/tags/visual-novel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>wfc</title>
+      <link>https://NYH-Dolphin.github.io/en/tags/wfc/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/tags/wfc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://NYH-Dolphin.github.io/en/tags/hugo/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/tags/hugo/</guid>
       <description></description>
     </item>
     

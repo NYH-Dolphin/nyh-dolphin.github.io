@@ -3,13 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://NYH-Dolphin.github.io/en/tags/blog/</loc>
-    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+    <loc>https://NYH-Dolphin.github.io/en/tags/algorithm/</loc>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://NYH-Dolphin.github.io/en/</loc>
-    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -23,18 +23,53 @@
   </url>
   
   <url>
+    <loc>https://NYH-Dolphin.github.io/en/tags/game/</loc>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://NYH-Dolphin.github.io/en/research/n_wfc/</loc>
-    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/tags/nyu/</loc>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/tags/pcg/</loc>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/project/pov/</loc>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/tags/project/</loc>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/project/</loc>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/tags/research/</loc>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://NYH-Dolphin.github.io/en/research/</loc>
-    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://NYH-Dolphin.github.io/en/tags/</loc>
-    <lastmod>2024-04-04T00:00:00+00:00</lastmod>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh"
@@ -45,6 +80,16 @@
                 hreflang="en"
                 href="https://NYH-Dolphin.github.io/en/tags/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/tags/visual-novel/</loc>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/tags/wfc/</loc>
+    <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -60,6 +105,21 @@
                 hreflang="en"
                 href="https://NYH-Dolphin.github.io/en/about/"
                 />
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/tags/hugo/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/study/hugo01-how-to-modify-my-website/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://NYH-Dolphin.github.io/en/study/</loc>
+    <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url>
   
   <url>

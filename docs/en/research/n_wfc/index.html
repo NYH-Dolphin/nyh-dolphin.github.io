@@ -18,18 +18,18 @@
 
     
     <title>Nested Wave Function Collapse Enables Large-Scale Content Generation</title>
-    <meta name="description" content="research">
-    <meta name="keywords" content='blog'>
+    <meta name="description" content="An wave function collapse algorithm framework that supports deterministic, aperiodic, infinite content generation that is suitable for level design.">
+    <meta name="keywords" content='research, algorithm, pcg, wfc'>
 
     <meta property="og:url" content="https://NYH-Dolphin.github.io/en/research/n_wfc/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Nested Wave Function Collapse Enables Large-Scale Content Generation">
-    <meta property="og:description" content="research">
+    <meta property="og:description" content="An wave function collapse algorithm framework that supports deterministic, aperiodic, infinite content generation that is suitable for level design.">
     <meta property="og:image" content="/path/to/image.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Nested Wave Function Collapse Enables Large-Scale Content Generation">
-    <meta name="twitter:description" content="research">
+    <meta name="twitter:description" content="An wave function collapse algorithm framework that supports deterministic, aperiodic, infinite content generation that is suitable for level design.">
     <meta property="twitter:domain" content="https://NYH-Dolphin.github.io/en/research/n_wfc/">
     <meta property="twitter:url" content="https://NYH-Dolphin.github.io/en/research/n_wfc/">
     <meta name="twitter:image" content="/path/to/image.png">
@@ -138,7 +138,7 @@
             </div>
             
             <div class="nav-link">
-                <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+                <a href="https://NYH-Dolphin.github.io/en/tags/"><span data-feather='tag'></span> Tags </a>
             </div>
             
             <div class="nav-link">
@@ -185,7 +185,7 @@
                 </li>
                 
                 <li class="nav-item">
-                    <a href="https://NYH-Dolphin.github.io/tags/"><span data-feather='tag'></span> Tags </a>
+                    <a href="https://NYH-Dolphin.github.io/en/tags/"><span data-feather='tag'></span> Tags </a>
                 </li>
                 
                 <li class="nav-item">
@@ -207,23 +207,60 @@
     <div class="post container">
     <div class="post-header-section">
         <h1>Nested Wave Function Collapse Enables Large-Scale Content Generation</h1>
-        <small role="doc-subtitle">research</small>
+        <small role="doc-subtitle">An wave function collapse algorithm framework that supports deterministic, aperiodic, infinite content generation that is suitable for level design.</small>
         <p class="post-date">
-            April 4, 2024
+            March 18, 2024
         </p>
 
         <ul class="post-tags">
         
-            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/blog">blog</a></li>
+            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/research">research</a></li>
+        
+            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/algorithm">algorithm</a></li>
+        
+            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/pcg">pcg</a></li>
+        
+            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/wfc">wfc</a></li>
         
         </ul>
     </div>
 
     <div class="post-content">
         <p>
-            <h1 id="hello-world">Hello World!</h1>
-<p>This is my blog.</p>
-
+            <blockquote>
+<p>This research was <a href="https://ieeexplore.ieee.org/abstract/document/10333214">first accepted by IEEE Conference on Games 2023</a> and was extended to <a href="https://ieeexplore.ieee.org/abstract/document/10473141">journal paper for IEEE Transactions on Games 2024</a>. We won the <strong>Best Paper Award</strong>🏆 for IEEE Conference on Games! Congratulations to all the authors and their contributions to this paper! Thanks to NYU Tandon Game Innovation Lab for supporting the publication of this paper!</p>
+</blockquote>
+<h2 id="1-what-is-wave-function-collapse-wfc">1. What is Wave Function Collapse (WFC)?</h2>
+<p><img src="/images/research/n_wfc.assets/image-20240414125416245.png" alt="image-20240414125416245" style="zoom:80%;" /></p>
+<p><strong>Wave Function Collapse (WFC)</strong> algorithm has been introduced by <a href="https://github.com/mxgmn">Maxim Gumin</a> for Texture Synthesis. However, it quickly gained a lot of attention in <strong>Procedural Content Generation</strong> (especially scene/level generation). It can be used not only for 2D scene generation, but also for more complex game scene generation in 3D.</p>
+<p>If you&rsquo;re wondering how exactly this algorithm works, Gumin&rsquo;s <a href="https://github.com/mxgmn/WaveFunctionCollapse/tree/master?tab=readme-ov-file">Github repository</a> has a lot of examples explaining it. In addition, you can also check this <a href="https://oskarstalberg.com/game/wave/wave.html">Demo</a> to see their visualization of WFC.</p>
+<h2 id="2-what-is-this-paper-about">2. What is this paper about?</h2>
+<p>This paper optimizes the <strong>Time Complexity</strong> of the WFC from exponential level $O(C^n)$ to <strong>polynomial level</strong> $O(n)$.  We propose an optimized algorithm: <strong>Nested Wave Function Collapse (N-WFC)</strong> to address the limitations of WFC&rsquo;s current ability to produce only small-scale content. We provide the <strong>pseudo-code of the algorithm framework</strong> and the <strong>tileset norms (complete and sub-complete tileset)</strong> required to realize the algorithm.</p>
+<p><img src="/images/research/n_wfc.assets/image-20240414115559547.png" alt="image-20240414115559547"  /></p>
+<p>We also further prove that our optimized algorithm has good <strong>characteristics</strong> of:</p>
+<ul>
+<li><strong>Infinity</strong>: theoretically it can generate infinite content</li>
+<li><strong>Aperiodicity</strong>: under a large-scale generation, the generated content of the algorithm will not be repeated</li>
+<li><strong>Determinacy</strong>: it will not backtrack due to conflicts</li>
+</ul>
+<p>For more information on this paper, please read the <a href="https://ieeexplore.ieee.org/abstract/document/10473141">paper</a>!</p>
+<h2 id="3-awesome-experiments">3. Awesome Experiments</h2>
+<p>We experimented the feasibility of our algorithm in two classic games, <strong>Super Mario Bros</strong> and <strong>Carcassonne</strong>. The results of the algorithm are amazing. 😮</p>
+<p>The advantage for WFC is that it <strong>decouples the design and art of the tileset from the generative logic</strong>. Neither need be restricted by the other. In other words, tiles of different artistic designs are equivalent for the algorithm!</p>
+<h3 id="super-mario-bros">Super Mario Bros</h3>
+<p><img src="/images/research/n_wfc.assets/image-20240414120316058.png" alt="image-20240414120316058"></p>
+<h3 id="carcassonne">Carcassonne</h3>
+<p><img src="/images/research/n_wfc.assets/image-20240414124435782.png" alt="image-20240414124435782"></p>
+<h2 id="4-cite-the-paper">4. Cite the Paper</h2>
+<p>Nie, Y., Zheng, S., Zhuang, Z., &amp; Togelius, J. (2024). Nested Wave Function Collapse Enables Large-Scale Content Generation. <em>IEEE Transactions on Games</em>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bibtex" data-lang="bibtex"><span style="color:#a6e22e">@article</span>{nie2024nested,
+  <span style="color:#a6e22e">title</span>=<span style="color:#e6db74">{Nested Wave Function Collapse Enables Large-Scale Content Generation}</span>,
+  <span style="color:#a6e22e">author</span>=<span style="color:#e6db74">{Nie, Yuhe and Zheng, Shaoming and Zhuang, Zhan and Togelius, Julian}</span>,
+  <span style="color:#a6e22e">journal</span>=<span style="color:#e6db74">{IEEE Transactions on Games}</span>,
+  <span style="color:#a6e22e">year</span>=<span style="color:#e6db74">{2024}</span>,
+  <span style="color:#a6e22e">publisher</span>=<span style="color:#e6db74">{IEEE}</span>
+}
+</code></pre></div>
         </p>
     </div>
 
@@ -233,6 +270,28 @@
         
     </div>
 </div>
+
+<aside class="post-toc">
+    <nav id="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1-what-is-wave-function-collapse-wfc">1. What is Wave Function Collapse (WFC)?</a></li>
+        <li><a href="#2-what-is-this-paper-about">2. What is this paper about?</a></li>
+        <li><a href="#3-awesome-experiments">3. Awesome Experiments</a>
+          <ul>
+            <li><a href="#super-mario-bros">Super Mario Bros</a></li>
+            <li><a href="#carcassonne">Carcassonne</a></li>
+          </ul>
+        </li>
+        <li><a href="#4-cite-the-paper">4. Cite the Paper</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </nav>
+</aside>
 
 
 
