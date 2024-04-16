@@ -48,11 +48,6 @@ enableRobotsTXT = true
     url = "/en/tags/"
     pre = "<span data-feather='tag'></span>"
     weight = 6
-  
-  [[menu.main]]
-    name = "中文"
-    url = "../zh"
-    weight = 7
 
   [[languages.zh.menu.main]]
     identifier = "sharing"
@@ -96,11 +91,6 @@ enableRobotsTXT = true
     pre = "<span data-feather='tag'></span>"
     weight = 6
 
-  
-  [[languages.zh.menu.main]]
-    name = "EN"
-    url = "../en"
-    weight = 7
 
 
 [params]
@@ -120,7 +110,7 @@ enableRobotsTXT = true
   avatarSize = "size-l"
 
   # Accent color is displayed when you hover over <a> tags
-  accentColor = "#00aaff"
+  accentColor = "#57068c"
 
   # You can use this to inject any HTML in the <head> tag.
   # Ideal usecase for this is to import custom js/css or add your analytics snippet
@@ -200,13 +190,18 @@ enableRobotsTXT = true
 [languages]
   [languages.en]
     languageCode = "en-us"
+    disabled = false
+    languageName = 'English'
     title = "Dolphin NIE"
     contentDir = 'content/en'
     description = "Imagination can change anything!"
+    weight = 1
 
   [languages.zh]
     languageCode = "zh-cn"
+    disabled = false
+    languageName = '中文'
     title = "聂雨荷"
     contentDir = 'content/zh'
     description = "愿想象力改变一切！"
-
+    weight = 2

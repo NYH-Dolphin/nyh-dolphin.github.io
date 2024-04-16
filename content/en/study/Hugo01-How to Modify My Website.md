@@ -1,11 +1,11 @@
 ---
-title: "Hugo 01 How to modify my website"
+title: "Hugo and Gokarna: How to modify my website"
 date: 2023-01-01
 draft: false
 description: "About my Hugo Website: Gokarna"
 type: "post"
 showTableOfContents: true
-tags: ["Hugo"]
+tags: ["Hugo", "Personal Website", "Gokarna"]
 ---
 
 ## 1. Gokarna Template
@@ -27,6 +27,31 @@ Gokarna focuses on ultimate minimalism and simplicity. 😊
 I really love the design style of this website. Thus I will continue [reporting issues](https://github.com/526avijitgupta/gokarna/issues) and providing suggestions. Gokarna's developers are keen on revising, and they accept [pull requests](https://github.com/526avijitgupta/gokarna/pulls) (Though is not that fast, they keep doing it 💕).
 
 ## 2. Modify Gokarna
+
+### Multilanguage
+
+Under the `themes/gokarna/layouts/partials/header.html`
+
+add the language switching code snap to the proper position, after `.Site.Menus.main` block.
+
+```html
+<span class="nav-language-divider"></span>
+{{ with .Translations }}
+    {{ range . }}
+        {{ if eq .Language.Lang $.Language.Lang }}
+            <a class="active" aria-current="page" href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
+        {{ else }}
+            <a href="{{ .RelPermalink }}">{{ .Language.LanguageName }}</a>
+        {{ end }}
+    {{ end }}
+{{ end }}
+```
+
+### Add Social Icon
+
+Add the standard `.svg` icon to the `themes/gokarna/static/svg/icons`
+Then under then `config.toml`, you can use the new social icon
+
 
 ### Standard Page Layout
 
