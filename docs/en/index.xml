@@ -32,10 +32,10 @@
     
     <item>
       <title>Hugo and Gokarna: How to modify my website</title>
-      <link>https://NYH-Dolphin.github.io/en/study/hugo01-how-to-modify-my-website/</link>
+      <link>https://NYH-Dolphin.github.io/en/study/hugo-and-gokarna-how-to-modify-my-website/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://NYH-Dolphin.github.io/en/study/hugo01-how-to-modify-my-website/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/study/hugo-and-gokarna-how-to-modify-my-website/</guid>
       <description>1. Gokarna Template Introduction My website is based on a beautiful and simple website framework: Gokarna. Developers are Yash Mehrotra and Avijit Gupta.
 Gokarna focuses on ultimate minimalism and simplicity. 😊
 Basic Guide  Gokarna Website Template: https://gokarna-hugo.netlify.app/ Theme Documentation - Basics Theme Documentation - Advanced  Contribution I really love the design style of this website. Thus I will continue reporting issues and providing suggestions. Gokarna&amp;rsquo;s developers are keen on revising, and they accept pull requests (Though is not that fast, they keep doing it 💕).</description>
