@@ -17,18 +17,18 @@
     
 
     
-    <title>Hugo 01 How to modify my website</title>
+    <title>Hugo and Gokarna: How to modify my website</title>
     <meta name="description" content="About my Hugo Website: Gokarna">
-    <meta name="keywords" content='Hugo'>
+    <meta name="keywords" content='Hugo, Personal Website, Gokarna'>
 
     <meta property="og:url" content="https://NYH-Dolphin.github.io/en/study/hugo01-how-to-modify-my-website/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Hugo 01 How to modify my website">
+    <meta property="og:title" content="Hugo and Gokarna: How to modify my website">
     <meta property="og:description" content="About my Hugo Website: Gokarna">
     <meta property="og:image" content="/images/avatar.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hugo 01 How to modify my website">
+    <meta name="twitter:title" content="Hugo and Gokarna: How to modify my website">
     <meta name="twitter:description" content="About my Hugo Website: Gokarna">
     <meta property="twitter:domain" content="https://NYH-Dolphin.github.io/en/study/hugo01-how-to-modify-my-website/">
     <meta property="twitter:url" content="https://NYH-Dolphin.github.io/en/study/hugo01-how-to-modify-my-website/">
@@ -102,7 +102,7 @@
             setThemeByUserPref();
         </script><header class="header">
     <nav class="header-nav">
-
+        
         
         <div class="avatar">
             <a href="https://NYH-Dolphin.github.io">
@@ -119,31 +119,31 @@
             
             <div class="nav-link">
                 <a href="https://NYH-Dolphin.github.io/en/sharing/"><span data-feather='share-2'></span> Sharing </a>
-            </div>
+            </div>            
             
             <div class="nav-link">
                 <a href="https://NYH-Dolphin.github.io/en/study/"><span data-feather='book-open'></span> Study </a>
-            </div>
+            </div>            
             
             <div class="nav-link">
                 <a href="https://NYH-Dolphin.github.io/en/research/"><span data-feather='code'></span> Research </a>
-            </div>
+            </div>            
             
             <div class="nav-link">
                 <a href="https://NYH-Dolphin.github.io/en/project/"><span data-feather='gift'></span> Project </a>
-            </div>
+            </div>            
             
             <div class="nav-link">
                 <a href="https://NYH-Dolphin.github.io/en/about/"><span data-feather='smile'></span> About </a>
-            </div>
+            </div>            
             
             <div class="nav-link">
                 <a href="https://NYH-Dolphin.github.io/en/tags/"><span data-feather='tag'></span> Tags </a>
-            </div>
+            </div>            
             
-            <div class="nav-link">
-                <a href="https://NYH-Dolphin.github.io/../zh"> 中文 </a>
-            </div>
+
+            
+            <span class="nav-language-divider"></span>
             
 
             <span class="nav-icons-divider"></span>
@@ -188,10 +188,6 @@
                     <a href="https://NYH-Dolphin.github.io/en/tags/"><span data-feather='tag'></span> Tags </a>
                 </li>
                 
-                <li class="nav-item">
-                    <a href="https://NYH-Dolphin.github.io/../zh"> 中文 </a>
-                </li>
-                
                 <li class="nav-item dark-theme-toggle">
                     <span id="dark-theme-toggle-screen-reader-target" class="sr-only">theme</span>
                     <a>
@@ -206,7 +202,7 @@
 <main id="content">
     <div class="post container">
     <div class="post-header-section">
-        <h1>Hugo 01 How to modify my website</h1>
+        <h1>Hugo and Gokarna: How to modify my website</h1>
         <small role="doc-subtitle">About my Hugo Website: Gokarna</small>
         <p class="post-date">
             January 1, 2023
@@ -215,6 +211,10 @@
         <ul class="post-tags">
         
             <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/hugo">Hugo</a></li>
+        
+            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/personal-website">Personal Website</a></li>
+        
+            <li class="post-tag"><a href="https://NYH-Dolphin.github.io/en/tags/gokarna">Gokarna</a></li>
         
         </ul>
     </div>
@@ -234,6 +234,22 @@
 <h3 id="contribution">Contribution</h3>
 <p>I really love the design style of this website. Thus I will continue <a href="https://github.com/526avijitgupta/gokarna/issues">reporting issues</a> and providing suggestions. Gokarna&rsquo;s developers are keen on revising, and they accept <a href="https://github.com/526avijitgupta/gokarna/pulls">pull requests</a> (Though is not that fast, they keep doing it 💕).</p>
 <h2 id="2-modify-gokarna">2. Modify Gokarna</h2>
+<h3 id="multilanguage">Multilanguage</h3>
+<p>Under the <code>themes/gokarna/layouts/partials/header.html</code></p>
+<p>add the language switching code snap to the proper position, after <code>.Site.Menus.main</code> block.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-language-divider&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+{{ with .Translations }}
+    {{ range . }}
+        {{ if eq .Language.Lang $.Language.Lang }}
+            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span> <span style="color:#a6e22e">aria-current</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .RelPermalink }}&#34;</span>&gt;{{ .Language.LanguageName }}&lt;/<span style="color:#f92672">a</span>&gt;
+        {{ else }}
+            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .RelPermalink }}&#34;</span>&gt;{{ .Language.LanguageName }}&lt;/<span style="color:#f92672">a</span>&gt;
+        {{ end }}
+    {{ end }}
+{{ end }}
+</code></pre></div><h3 id="add-social-icon">Add Social Icon</h3>
+<p>Add the standard <code>.svg</code> icon to the <code>themes/gokarna/static/svg/icons</code>
+Then under then <code>config.toml</code>, you can use the new social icon</p>
 <h3 id="standard-page-layout">Standard Page Layout</h3>
 <h4 id="footer">Footer</h4>
 <p>Footer defines my website footer part <code>themes/gokarna/layouts/partials/footer.html</code></p>
@@ -278,6 +294,8 @@
         </li>
         <li><a href="#2-modify-gokarna">2. Modify Gokarna</a>
           <ul>
+            <li><a href="#multilanguage">Multilanguage</a></li>
+            <li><a href="#add-social-icon">Add Social Icon</a></li>
             <li><a href="#standard-page-layout">Standard Page Layout</a>
               <ul>
                 <li><a href="#footer">Footer</a></li>
