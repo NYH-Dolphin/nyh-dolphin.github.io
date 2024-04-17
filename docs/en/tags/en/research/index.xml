@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>En/Research on Dolphin NIE</title>
+    <link>http://localhost:1313/en/tags/en/research/</link>
+    <description>Recent content in En/Research on Dolphin NIE</description>
+    <generator>Hugo 0.125.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Mar 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/en/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nested Wave Function Collapse Enables Large-Scale Content Generation</title>
+      <link>http://localhost:1313/en/research/n_wfc/</link>
+      <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/research/n_wfc/</guid>
+      <description>This research was first accepted by IEEE Conference on Games 2023 and was extended to journal paper for IEEE Transactions on Games 2024. We won the Best Paper Award🏆 for IEEE Conference on Games! Congratulations to all the authors and their contributions to this paper! Thanks to NYU Tandon Game Innovation Lab for supporting the publication of this paper!&#xA;1. What is Wave Function Collapse (WFC)? Wave Function Collapse (WFC) algorithm has been introduced by Maxim Gumin for Texture Synthesis.</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,12 @@
+[Recent]
+  other = '最近'
+[error404]
+  other = '这个页面不存在，前往：'
+[home]
+  other = '主页'
+[nothing]
+  other = '这里没有什么东西！ 😉'
+[previous]
+  other = '上一页'
+[next]
+  other = '下一页'

@@ -1,0 +1,51 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: {{ .Site.Params.AccentColor | default "#FF4D4D" }};
+        }
+    </style>
+
+    {{ $title := .Title | default .Site.Title }}
+    {{ $description := .Description | default .Site.Params.Description }}
+    {{ $image := .Params.image | default .Site.Params.AvatarURL }}
+    {{ $siteKeywords := .Site.Params.MetaKeywords | default (slice) }}
+    {{ $postKeywords := .Params.tags | default (slice) }}
+    {{ $keywords := union $siteKeywords $postKeywords }}
+
+    <!-- SEO titles & descriptions -->
+    <title>{{ $title }}</title>
+    <meta name="description" content="{{ $description }}">
+    <meta name="keywords" content='{{ delimit $keywords ", "}}'>
+
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:image" content="{{ $image }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta property="twitter:domain" content="{{ .Permalink }}">
+    <meta property="twitter:url" content="{{ .Permalink }}">
+    <meta name="twitter:image" content="{{ $image }}">
+
+    <!-- SEO canonicals: helps Google understand your site better when using marketing campaign tagging etc -->
+    <link rel="canonical" href="{{ .Permalink }}" />
+
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="{{ .Site.BaseURL }}/css/dark.css">
+
+    <script src="{{ .Site.BaseURL }}/js/svg-injector.min.js"></script>
+    <script src="{{ .Site.BaseURL }}/js/feather-icons.min.js"></script>
+    <script src="{{ .Site.BaseURL }}/js/main.js"></script>
+
+    <!-- Option for user to inject custom html -->
+    {{ if .Site.Params.CustomHeadHTML }}
+    {{ .Site.Params.CustomHeadHTML | safeHTML }}
+    {{ end }}
+</head>

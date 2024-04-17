@@ -8,31 +8,29 @@ showTableOfContents: true
 tags: ["Hugo", "Personal Website", "Gokarna"]
 ---
 
-## 1. Gokarna Template
+## 0. Get My Website
 
-### Introduction
+### Clone the Website From Github
 
-My website is based on a beautiful and simple website framework: [Gokarna](https://github.com/526avijitgupta/gokarna). Developers are [Yash Mehrotra](https://yashmehrotra.com/) and [Avijit Gupta](https://twitter.com/526avijit).
+```cmd
+git clone --recurse-submodules https://github.com/NYH-Dolphin/nyh-dolphin.github.io.git
+```
+This will both clone the website repo, and the gonkarna submodule.
 
-Gokarna focuses on ultimate minimalism and simplicity. 😊
+### Bind BaseURL
+Under the root folder, open cmd.
+```commandline
+hugo server --bind=127.0.0.1 --baseURL=https://NYH-Dolphin.github.io
+```
 
-### Basic Guide
-
-- Gokarna Website Template: https://gokarna-hugo.netlify.app/
-- [Theme Documentation - Basics](https://main--gokarna-hugo.netlify.app/posts/theme-documentation-basics/)
-- [Theme Documentation - Advanced](https://main--gokarna-hugo.netlify.app/posts/theme-documentation-advanced/)
-
-### Contribution
-
-I really love the design style of this website. Thus I will continue [reporting issues](https://github.com/526avijitgupta/gokarna/issues) and providing suggestions. Gokarna's developers are keen on revising, and they accept [pull requests](https://github.com/526avijitgupta/gokarna/pulls) (Though is not that fast, they keep doing it 💕).
-
-## 2. Modify Gokarna
+## 1. Modify Gokarna
 
 ### Multilanguage
 
-Under the `themes/gokarna/layouts/partials/header.html`
+Copy the files from `i18n/` to `themes/gokarna/i18n/`
+Copy the files from `layout` to `themes/gokarna/layout/`
 
-add the language switching code snap to the proper position, after `.Site.Menus.main` block.
+Under the `themes/gokarna/layouts/partials/header.html`, which includes modification of how to switch the languages
 
 ```html
 <span class="nav-language-divider"></span>
@@ -49,7 +47,8 @@ add the language switching code snap to the proper position, after `.Site.Menus.
 
 ### Add Social Icon
 
-Add the standard `.svg` icon to the `themes/gokarna/static/svg/icons`
+Paste the standard `.svg` icon from `static/icons/`to the `themes/gokarna/static/svg/icons`
+
 Then under then `config.toml`, you can use the new social icon
 
 
@@ -88,3 +87,21 @@ Check the revise of bottom corner of the page. Once updating Gokarna submodule f
 
 One of the problem is that this music player plugin has high delays overseas. Making it unsuitable for oversea usage. Opps…
 
+
+## 2. What is Gokarna?
+
+### Introduction
+
+My website is based on a beautiful and simple website framework: [Gokarna](https://github.com/526avijitgupta/gokarna). Developers are [Yash Mehrotra](https://yashmehrotra.com/) and [Avijit Gupta](https://twitter.com/526avijit).
+
+Gokarna focuses on ultimate minimalism and simplicity. 😊
+
+### Basic Guide
+
+- Gokarna Website Template: https://gokarna-hugo.netlify.app/
+- [Theme Documentation - Basics](https://main--gokarna-hugo.netlify.app/posts/theme-documentation-basics/)
+- [Theme Documentation - Advanced](https://main--gokarna-hugo.netlify.app/posts/theme-documentation-advanced/)
+
+### Contribution
+
+I really love the design style of this website. Thus I will continue [reporting issues](https://github.com/526avijitgupta/gokarna/issues) and providing suggestions. Gokarna's developers are keen on revising, and they accept [pull requests](https://github.com/526avijitgupta/gokarna/pulls) (Though is not that fast, they keep doing it 💕).
