@@ -2,87 +2,87 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dolphin NIE</title>
-    <link>http://localhost:1313/en/tags/</link>
+    <link>https://NYH-Dolphin.github.io/en/tags/</link>
     <description>Recent content on Dolphin NIE</description>
     <generator>Hugo 0.125.0</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 18 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://NYH-Dolphin.github.io/en/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Algorithm</title>
-      <link>http://localhost:1313/en/tags/algorithm/</link>
+      <link>https://NYH-Dolphin.github.io/en/tags/algorithm/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/algorithm/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/algorithm/</guid>
       <description></description>
     </item>
     <item>
       <title>Game</title>
-      <link>http://localhost:1313/en/tags/game/</link>
+      <link>https://NYH-Dolphin.github.io/en/tags/game/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/game/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/game/</guid>
       <description></description>
     </item>
     <item>
       <title>Nyu</title>
-      <link>http://localhost:1313/en/tags/nyu/</link>
+      <link>https://NYH-Dolphin.github.io/en/tags/nyu/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/nyu/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/nyu/</guid>
       <description></description>
     </item>
     <item>
       <title>Pcg</title>
-      <link>http://localhost:1313/en/tags/pcg/</link>
+      <link>https://NYH-Dolphin.github.io/en/tags/pcg/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/pcg/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/pcg/</guid>
       <description></description>
     </item>
     <item>
       <title>Project</title>
-      <link>http://localhost:1313/en/tags/project/</link>
+      <link>https://NYH-Dolphin.github.io/en/tags/project/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/project/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/project/</guid>
       <description></description>
     </item>
     <item>
       <title>Research</title>
-      <link>http://localhost:1313/en/tags/research/</link>
+      <link>https://NYH-Dolphin.github.io/en/tags/research/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/research/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/research/</guid>
       <description></description>
     </item>
     <item>
       <title>Visual Novel</title>
-      <link>http://localhost:1313/en/tags/visual-novel/</link>
+      <link>https://NYH-Dolphin.github.io/en/tags/visual-novel/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/visual-novel/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/visual-novel/</guid>
       <description></description>
     </item>
     <item>
       <title>Wfc</title>
-      <link>http://localhost:1313/en/tags/wfc/</link>
+      <link>https://NYH-Dolphin.github.io/en/tags/wfc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/wfc/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/wfc/</guid>
       <description></description>
     </item>
     <item>
       <title>Gokarna</title>
-      <link>http://localhost:1313/en/tags/gokarna/</link>
+      <link>https://NYH-Dolphin.github.io/en/tags/gokarna/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/gokarna/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/gokarna/</guid>
       <description></description>
     </item>
     <item>
       <title>Hugo</title>
-      <link>http://localhost:1313/en/tags/hugo/</link>
+      <link>https://NYH-Dolphin.github.io/en/tags/hugo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/hugo/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Personal Website</title>
-      <link>http://localhost:1313/en/tags/personal-website/</link>
+      <link>https://NYH-Dolphin.github.io/en/tags/personal-website/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/en/tags/personal-website/</guid>
+      <guid>https://NYH-Dolphin.github.io/en/tags/personal-website/</guid>
       <description></description>
     </item>
   </channel>

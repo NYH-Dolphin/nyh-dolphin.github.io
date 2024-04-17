@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>聂雨荷</title>
-    <link>http://localhost:1313/zh/about/</link>
+    <link>https://NYH-Dolphin.github.io/zh/about/</link>
     <description>Recent content on 聂雨荷</description>
     <generator>Hugo 0.125.0</generator>
     <language>zh-cn</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/zh/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://NYH-Dolphin.github.io/zh/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

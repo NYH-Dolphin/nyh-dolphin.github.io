@@ -2,148 +2,148 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/en/tags/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh/tags/"
+                href="https://NYH-Dolphin.github.io/zh/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/tags/"
+                href="https://NYH-Dolphin.github.io/en/tags/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/algorithm/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/algorithm/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh/"
+                href="https://NYH-Dolphin.github.io/zh/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/"
+                href="https://NYH-Dolphin.github.io/en/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/game/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/game/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/research/n_wfc/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/research/n_wfc/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/nyu/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/nyu/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/pcg/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/pcg/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/project/pov/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/project/pov/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/project/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/project/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/project/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/project/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh/project/"
+                href="https://NYH-Dolphin.github.io/zh/project/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/project/"
+                href="https://NYH-Dolphin.github.io/en/project/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/research/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/research/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/research/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/research/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh/research/"
+                href="https://NYH-Dolphin.github.io/zh/research/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/research/"
+                href="https://NYH-Dolphin.github.io/en/research/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/visual-novel/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/visual-novel/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/wfc/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/wfc/</loc>
     <lastmod>2024-03-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/about/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/about/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh/about/"
+                href="https://NYH-Dolphin.github.io/zh/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/about/"
+                href="https://NYH-Dolphin.github.io/en/about/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/tags/gokarna/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/gokarna/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/hugo/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/hugo/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/study/hugo-and-gokarna-how-to-modify-my-website/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/study/hugo-and-gokarna-how-to-modify-my-website/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/tags/personal-website/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/tags/personal-website/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/en/study/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/study/</loc>
     <lastmod>2023-01-01T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh/study/"
+                href="https://NYH-Dolphin.github.io/zh/study/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/study/"
+                href="https://NYH-Dolphin.github.io/en/study/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/sharing/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/sharing/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh/sharing/"
+                href="https://NYH-Dolphin.github.io/zh/sharing/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/sharing/"
+                href="https://NYH-Dolphin.github.io/en/sharing/"
                 />
   </url><url>
-    <loc>http://localhost:1313/en/categories/</loc>
+    <loc>https://NYH-Dolphin.github.io/en/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="http://localhost:1313/zh/categories/"
+                href="https://NYH-Dolphin.github.io/zh/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="http://localhost:1313/en/categories/"
+                href="https://NYH-Dolphin.github.io/en/categories/"
                 />
   </url>
 </urlset>

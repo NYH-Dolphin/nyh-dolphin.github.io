@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dolphin NIE</title>
-    <link>http://localhost:1313/en/about/</link>
+    <link>https://NYH-Dolphin.github.io/en/about/</link>
     <description>Recent content on Dolphin NIE</description>
     <generator>Hugo 0.125.0</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/en/about/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://NYH-Dolphin.github.io/en/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

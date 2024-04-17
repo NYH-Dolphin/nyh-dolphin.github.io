@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>聂雨荷</title>
-    <link>http://localhost:1313/zh/tags/</link>
+    <link>https://NYH-Dolphin.github.io/zh/tags/</link>
     <description>Recent content on 聂雨荷</description>
     <generator>Hugo 0.125.0</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 15 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/zh/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://NYH-Dolphin.github.io/zh/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>分享</title>
-      <link>http://localhost:1313/zh/tags/%E5%88%86%E4%BA%AB/</link>
+      <link>https://NYH-Dolphin.github.io/zh/tags/%E5%88%86%E4%BA%AB/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/zh/tags/%E5%88%86%E4%BA%AB/</guid>
+      <guid>https://NYH-Dolphin.github.io/zh/tags/%E5%88%86%E4%BA%AB/</guid>
       <description></description>
     </item>
     <item>
       <title>心得体会</title>
-      <link>http://localhost:1313/zh/tags/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/</link>
+      <link>https://NYH-Dolphin.github.io/zh/tags/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/zh/tags/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/</guid>
+      <guid>https://NYH-Dolphin.github.io/zh/tags/%E5%BF%83%E5%BE%97%E4%BD%93%E4%BC%9A/</guid>
       <description></description>
     </item>
   </channel>
