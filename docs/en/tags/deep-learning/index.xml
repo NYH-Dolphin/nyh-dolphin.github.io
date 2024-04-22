@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>deep learning on Dolphin NIE</title>
+    <link>https://NYH-Dolphin.github.io/en/tags/deep-learning/</link>
+    <description>Recent content in deep learning on Dolphin NIE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 21 Apr 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://NYH-Dolphin.github.io/en/tags/deep-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Text2Map: Multi-modal Procedural Content Generation based On Synthetic Dataset</title>
+      <link>https://NYH-Dolphin.github.io/en/research/text2map/</link>
+      <pubDate>Sun, 21 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/research/text2map/</guid>
+      <description>1. Why not traditional PCG? Traditional PCG algorithms are based on specific heuristic algorithms. Although it can be modified and designed specifically for the requirements of the development team, it still relies on the heuristic experience of a large number of programmers and designers (fine-tune parameters, design fitness functions, human-algorithm interactions,etc).
+Multi-modal PCG (MMPCG), leverage the similar ability as Generative AI to allow designer generates the map by simply typing prompt.</description>
+    </item>
+    
+  </channel>
+</rss>

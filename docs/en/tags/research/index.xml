@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Research on Dolphin NIE</title>
+    <title>research on Dolphin NIE</title>
     <link>https://NYH-Dolphin.github.io/en/tags/research/</link>
-    <description>Recent content in Research on Dolphin NIE</description>
-    <generator>Hugo 0.125.0</generator>
+    <description>Recent content in research on Dolphin NIE</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://NYH-Dolphin.github.io/en/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Apr 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://NYH-Dolphin.github.io/en/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Text2Map: Multi-modal Procedural Content Generation based On Synthetic Dataset</title>
+      <link>https://NYH-Dolphin.github.io/en/research/text2map/</link>
+      <pubDate>Sun, 21 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/research/text2map/</guid>
+      <description>1. Why not traditional PCG? Traditional PCG algorithms are based on specific heuristic algorithms. Although it can be modified and designed specifically for the requirements of the development team, it still relies on the heuristic experience of a large number of programmers and designers (fine-tune parameters, design fitness functions, human-algorithm interactions,etc).
+Multi-modal PCG (MMPCG), leverage the similar ability as Generative AI to allow designer generates the map by simply typing prompt.</description>
+    </item>
+    
     <item>
       <title>Nested Wave Function Collapse Enables Large-Scale Content Generation</title>
       <link>https://NYH-Dolphin.github.io/en/research/n_wfc/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://NYH-Dolphin.github.io/en/research/n_wfc/</guid>
-      <description>This research was first accepted by IEEE Conference on Games 2023 and was extended to journal paper for IEEE Transactions on Games 2024. We won the Best Paper Award🏆 for IEEE Conference on Games! Congratulations to all the authors and their contributions to this paper! Thanks to NYU Tandon Game Innovation Lab for supporting the publication of this paper!&#xA;1. What is Wave Function Collapse (WFC)? Wave Function Collapse (WFC) algorithm has been introduced by Maxim Gumin for Texture Synthesis.</description>
+      <description>This research was first accepted by IEEE Conference on Games 2023 and was extended to journal paper for IEEE Transactions on Games 2024. We won the Best Paper Award🏆 for IEEE Conference on Games! Congratulations to all the authors and their contributions to this paper! Thanks to NYU Tandon Game Innovation Lab for supporting the publication of this paper!
+ 1. What is Wave Function Collapse (WFC)? Wave Function Collapse (WFC) algorithm has been introduced by Maxim Gumin for Texture Synthesis.</description>
     </item>
+    
   </channel>
 </rss>

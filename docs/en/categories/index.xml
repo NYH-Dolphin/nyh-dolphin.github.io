@@ -4,8 +4,11 @@
     <title>Categories on Dolphin NIE</title>
     <link>https://NYH-Dolphin.github.io/en/categories/</link>
     <description>Recent content in Categories on Dolphin NIE</description>
-    <generator>Hugo 0.125.0</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="https://NYH-Dolphin.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://NYH-Dolphin.github.io/en/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>

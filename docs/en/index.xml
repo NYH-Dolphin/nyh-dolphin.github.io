@@ -4,30 +4,54 @@
     <title>Dolphin NIE</title>
     <link>https://NYH-Dolphin.github.io/en/</link>
     <description>Recent content on Dolphin NIE</description>
-    <generator>Hugo 0.125.0</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Mar 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://NYH-Dolphin.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Apr 2024 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://NYH-Dolphin.github.io/en/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Text2Map: Multi-modal Procedural Content Generation based On Synthetic Dataset</title>
+      <link>https://NYH-Dolphin.github.io/en/research/text2map/</link>
+      <pubDate>Sun, 21 Apr 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://NYH-Dolphin.github.io/en/research/text2map/</guid>
+      <description>1. Why not traditional PCG? Traditional PCG algorithms are based on specific heuristic algorithms. Although it can be modified and designed specifically for the requirements of the development team, it still relies on the heuristic experience of a large number of programmers and designers (fine-tune parameters, design fitness functions, human-algorithm interactions,etc).
+Multi-modal PCG (MMPCG), leverage the similar ability as Generative AI to allow designer generates the map by simply typing prompt.</description>
+    </item>
+    
     <item>
       <title>Nested Wave Function Collapse Enables Large-Scale Content Generation</title>
       <link>https://NYH-Dolphin.github.io/en/research/n_wfc/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://NYH-Dolphin.github.io/en/research/n_wfc/</guid>
-      <description>This research was first accepted by IEEE Conference on Games 2023 and was extended to journal paper for IEEE Transactions on Games 2024. We won the Best Paper Award🏆 for IEEE Conference on Games! Congratulations to all the authors and their contributions to this paper! Thanks to NYU Tandon Game Innovation Lab for supporting the publication of this paper!&#xA;1. What is Wave Function Collapse (WFC)? Wave Function Collapse (WFC) algorithm has been introduced by Maxim Gumin for Texture Synthesis.</description>
+      <description>This research was first accepted by IEEE Conference on Games 2023 and was extended to journal paper for IEEE Transactions on Games 2024. We won the Best Paper Award🏆 for IEEE Conference on Games! Congratulations to all the authors and their contributions to this paper! Thanks to NYU Tandon Game Innovation Lab for supporting the publication of this paper!
+ 1. What is Wave Function Collapse (WFC)? Wave Function Collapse (WFC) algorithm has been introduced by Maxim Gumin for Texture Synthesis.</description>
     </item>
+    
     <item>
       <title>Point(s) of View(ing)</title>
       <link>https://NYH-Dolphin.github.io/en/project/pov/</link>
       <pubDate>Mon, 18 Mar 2024 00:00:00 +0000</pubDate>
+      
       <guid>https://NYH-Dolphin.github.io/en/project/pov/</guid>
       <description></description>
     </item>
+    
     <item>
       <title>Hugo and Gokarna: How to modify my website</title>
       <link>https://NYH-Dolphin.github.io/en/study/hugo-and-gokarna-how-to-modify-my-website/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
       <guid>https://NYH-Dolphin.github.io/en/study/hugo-and-gokarna-how-to-modify-my-website/</guid>
-      <description>0. Get My Website Clone the Website From Github git clone --recurse-submodules https://github.com/NYH-Dolphin/nyh-dolphin.github.io.git This will both clone the website repo, and the gonkarna submodule.&#xA;Bind BaseURL Under the root folder, open cmd.&#xA;hugo server --bind=127.0.0.1 --baseURL=https://NYH-Dolphin.github.io 1. Modify Gokarna Multilanguage Copy the files from i18n/ to themes/gokarna/i18n/ Copy the files from layout to themes/gokarna/layout/&#xA;Under the themes/gokarna/layouts/partials/header.html, which includes modification of how to switch the languages&#xA;&amp;lt;span class=&amp;#34;nav-language-divider&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; {{ with .</description>
+      <description>0. Get My Website Clone the Website From Github git clone --recurse-submodules https://github.com/NYH-Dolphin/nyh-dolphin.github.io.git This will both clone the website repo, and the gonkarna submodule.
+Bind BaseURL Under the root folder, open cmd.
+hugo server --bind=127.0.0.1 --baseURL=https://NYH-Dolphin.github.io1. Modify Gokarna Multilanguage Copy the files from i18n/ to themes/gokarna/i18n/ Copy the files from layout to themes/gokarna/layout/
+Under the themes/gokarna/layouts/partials/header.html, which includes modification of how to switch the languages
+&amp;lt;span class=&amp;#34;nav-language-divider&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; {{ with .</description>
     </item>
+    
   </channel>
 </rss>

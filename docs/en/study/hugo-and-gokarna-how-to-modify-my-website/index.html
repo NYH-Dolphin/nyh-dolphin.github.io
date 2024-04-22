@@ -37,17 +37,18 @@
     
     <link rel="canonical" href="https://NYH-Dolphin.github.io/en/study/hugo-and-gokarna-how-to-modify-my-website/" />
 
-    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io//css/normalize.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io//css/main.css">
-    <link disabled id="dark-theme" rel="stylesheet" href="https://NYH-Dolphin.github.io//css/dark.css">
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="https://NYH-Dolphin.github.io/css/dark.css">
 
-    <script src="https://NYH-Dolphin.github.io//js/svg-injector.min.js"></script>
-    <script src="https://NYH-Dolphin.github.io//js/feather-icons.min.js"></script>
-    <script src="https://NYH-Dolphin.github.io//js/main.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/svg-injector.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/feather-icons.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/main.js"></script>
 
     
     
-        
+    
+    
     <script src="https://player.lzti.com/api/player/167601724233" id="myhk" key="167601724233" m="1"></script>
 
 
@@ -104,14 +105,14 @@
 
         
         <div class="avatar">
-            <a href="https://NYH-Dolphin.github.io/">
-                <img src="https://NYH-Dolphin.github.io//images/avatar.jpg" alt="avatar" />
+            <a href="https://NYH-Dolphin.github.io">
+                <img src="https://NYH-Dolphin.github.io/images/avatar.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="https://NYH-Dolphin.github.io/">Dolphin NIE</a>
+            <a class="nav-brand" href="https://NYH-Dolphin.github.io">Dolphin NIE</a>
         </div>
 
         <div class="nav-links">
@@ -221,27 +222,27 @@
         <p>
             <h2 id="0-get-my-website">0. Get My Website</h2>
 <h3 id="clone-the-website-from-github">Clone the Website From Github</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cmd" data-lang="cmd"><span style="display:flex;"><span>git clone --recurse-submodules https://github.com/NYH-Dolphin/nyh-dolphin.github.io.git
-</span></span></code></pre></div><p>This will both clone the website repo, and the gonkarna submodule.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">git clone --recurse-submodules https://github.com/NYH-Dolphin/nyh-dolphin.github.io.git
+</code></pre></div><p>This will both clone the website repo, and the gonkarna submodule.</p>
 <h3 id="bind-baseurl">Bind BaseURL</h3>
 <p>Under the root folder, open cmd.</p>
-<pre tabindex="0"><code class="language-commandline" data-lang="commandline">hugo server --bind=127.0.0.1 --baseURL=https://NYH-Dolphin.github.io
+<pre><code class="language-commandline" data-lang="commandline">hugo server --bind=127.0.0.1 --baseURL=https://NYH-Dolphin.github.io
 </code></pre><h2 id="1-modify-gokarna">1. Modify Gokarna</h2>
 <h3 id="multilanguage">Multilanguage</h3>
 <p>Copy the files from <code>i18n/</code> to <code>themes/gokarna/i18n/</code>
 Copy the files from <code>layout</code> to <code>themes/gokarna/layout/</code></p>
 <p>Under the <code>themes/gokarna/layouts/partials/header.html</code>, which includes modification of how to switch the languages</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-language-divider&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>{{ with .Translations }}
-</span></span><span style="display:flex;"><span>    {{ range . }}
-</span></span><span style="display:flex;"><span>        {{ if eq .Language.Lang $.Language.Lang }}
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span> <span style="color:#a6e22e">aria-current</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .RelPermalink }}&#34;</span>&gt;{{ .Language.LanguageName }}&lt;/<span style="color:#f92672">a</span>&gt;
-</span></span><span style="display:flex;"><span>        {{ else }}
-</span></span><span style="display:flex;"><span>            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .RelPermalink }}&#34;</span>&gt;{{ .Language.LanguageName }}&lt;/<span style="color:#f92672">a</span>&gt;
-</span></span><span style="display:flex;"><span>        {{ end }}
-</span></span><span style="display:flex;"><span>    {{ end }}
-</span></span><span style="display:flex;"><span>{{ end }}
-</span></span></code></pre></div><h3 id="add-social-icon">Add Social Icon</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;nav-language-divider&#34;</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+{{ with .Translations }}
+    {{ range . }}
+        {{ if eq .Language.Lang $.Language.Lang }}
+            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;active&#34;</span> <span style="color:#a6e22e">aria-current</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;page&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .RelPermalink }}&#34;</span>&gt;{{ .Language.LanguageName }}&lt;/<span style="color:#f92672">a</span>&gt;
+        {{ else }}
+            &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ .RelPermalink }}&#34;</span>&gt;{{ .Language.LanguageName }}&lt;/<span style="color:#f92672">a</span>&gt;
+        {{ end }}
+    {{ end }}
+{{ end }}
+</code></pre></div><h3 id="add-social-icon">Add Social Icon</h3>
 <p>Paste the standard <code>.svg</code> icon from <code>static/icons/</code>to the <code>themes/gokarna/static/svg/icons</code></p>
 <p>Then under then <code>config.toml</code>, you can use the new social icon</p>
 <h3 id="standard-page-layout">Standard Page Layout</h3>
@@ -249,19 +250,19 @@ Copy the files from <code>layout</code> to <code>themes/gokarna/layout/</code></
 <p>Footer defines my website footer part <code>themes/gokarna/layouts/partials/footer.html</code></p>
 <p>I simply decorate the footer, and add the <a href="http://busuanzi.ibruce.info/">site counter</a>.</p>
 <p>Check the revise of bottom corner of the page. Once updating Gokarna submodule from Github, pay attention to update content the <code>footer.html</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">span</span>&gt;.............................................................................................................&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- import counter code --&gt;</span>
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">span</span>&gt;&amp;copy; {{ now.Year }} {{ .Site.Params.Footer}} | Total Visitors: &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_pv&#34;</span>&gt;...&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">span</span>&gt;Made with &amp;#10084;&amp;#65039; using &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/526avijitgupta/gokarna&#34;</span>&gt;Gokarna&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</span></span></code></pre></div><h3 id="music">Music</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span>&gt;.............................................................................................................&lt;/<span style="color:#f92672">span</span>&gt;
+    <span style="color:#75715e">&lt;!-- import counter code --&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">async</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">span</span>&gt;&amp;copy; {{ now.Year }} {{ .Site.Params.Footer}} | Total Visitors: &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;busuanzi_value_site_pv&#34;</span>&gt;...&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+&lt;<span style="color:#f92672">span</span>&gt;Made with &amp;#10084;&amp;#65039; using &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">target</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;_blank&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://github.com/526avijitgupta/gokarna&#34;</span>&gt;Gokarna&lt;/<span style="color:#f92672">a</span>&gt;&lt;/<span style="color:#f92672">span</span>&gt;
+</code></pre></div><h3 id="music">Music</h3>
 <p>Register one of the <a href="https://player.lzti.com/admin/#/">music player plugin</a>.</p>
 <p>If there is new update, it is required to change the music list in the website of music player plugin.</p>
 <p>Add two lines of scripts to <code>themes/gokarna/layouts/partials/footer.html</code></p>
 <p>Check the revise of bottom corner of the page. Once updating Gokarna submodule from Github, pay attention to update content the <code>footer.html</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://player.lzti.com/player/js/jquery.min.js&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://player.lzti.com/api/player/167601724233&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myhk&#34;</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;167601724233&#34;</span> <span style="color:#a6e22e">m</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><p>One of the problem is that this music player plugin has high delays overseas. Making it unsuitable for oversea usage. Opps…</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://player.lzti.com/player/js/jquery.min.js&#34;</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://player.lzti.com/api/player/167601724233&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;myhk&#34;</span> <span style="color:#a6e22e">key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;167601724233&#34;</span> <span style="color:#a6e22e">m</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;1&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><p>One of the problem is that this music player plugin has high delays overseas. Making it unsuitable for oversea usage. Opps…</p>
 <h2 id="2-what-is-gokarna">2. What is Gokarna?</h2>
 <h3 id="introduction">Introduction</h3>
 <p>My website is based on a beautiful and simple website framework: <a href="https://github.com/526avijitgupta/gokarna">Gokarna</a>. Developers are <a href="https://yashmehrotra.com/">Yash Mehrotra</a> and <a href="https://twitter.com/526avijit">Avijit Gupta</a>.</p>

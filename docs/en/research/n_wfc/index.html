@@ -37,17 +37,18 @@
     
     <link rel="canonical" href="https://NYH-Dolphin.github.io/en/research/n_wfc/" />
 
-    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io//css/normalize.min.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io//css/main.css">
-    <link disabled id="dark-theme" rel="stylesheet" href="https://NYH-Dolphin.github.io//css/dark.css">
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/normalize.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" type="text/css" href="https://NYH-Dolphin.github.io/css/main.css">
+    <link disabled id="dark-theme" rel="stylesheet" href="https://NYH-Dolphin.github.io/css/dark.css">
 
-    <script src="https://NYH-Dolphin.github.io//js/svg-injector.min.js"></script>
-    <script src="https://NYH-Dolphin.github.io//js/feather-icons.min.js"></script>
-    <script src="https://NYH-Dolphin.github.io//js/main.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/svg-injector.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/feather-icons.min.js"></script>
+    <script src="https://NYH-Dolphin.github.io/js/main.js"></script>
 
     
     
-        
+    
+    
     <script src="https://player.lzti.com/api/player/167601724233" id="myhk" key="167601724233" m="1"></script>
 
 
@@ -104,14 +105,14 @@
 
         
         <div class="avatar">
-            <a href="https://NYH-Dolphin.github.io/">
-                <img src="https://NYH-Dolphin.github.io//images/avatar.jpg" alt="avatar" />
+            <a href="https://NYH-Dolphin.github.io">
+                <img src="https://NYH-Dolphin.github.io/images/avatar.jpg" alt="avatar" />
             </a>
         </div>
         
 
         <div class="nav-title">
-            <a class="nav-brand" href="https://NYH-Dolphin.github.io/">Dolphin NIE</a>
+            <a class="nav-brand" href="https://NYH-Dolphin.github.io">Dolphin NIE</a>
         </div>
 
         <div class="nav-links">
@@ -225,12 +226,12 @@
 <p>This research was <a href="https://ieeexplore.ieee.org/abstract/document/10333214">first accepted by IEEE Conference on Games 2023</a> and was extended to <a href="https://ieeexplore.ieee.org/abstract/document/10473141">journal paper for IEEE Transactions on Games 2024</a>. We won the <strong>Best Paper Award</strong>🏆 for IEEE Conference on Games! Congratulations to all the authors and their contributions to this paper! Thanks to NYU Tandon Game Innovation Lab for supporting the publication of this paper!</p>
 </blockquote>
 <h2 id="1-what-is-wave-function-collapse-wfc">1. What is Wave Function Collapse (WFC)?</h2>
-<img src="/images/research/n_wfc.assets/image-20240414125416245.png" alt="image-20240414125416245" style="zoom:80%;" />
+<p><img src="/images/research/n_wfc.assets/image-20240414125416245.png" alt="image-20240414125416245" style="zoom:80%;" /></p>
 <p><strong>Wave Function Collapse (WFC)</strong> algorithm has been introduced by <a href="https://github.com/mxgmn">Maxim Gumin</a> for Texture Synthesis. However, it quickly gained a lot of attention in <strong>Procedural Content Generation</strong> (especially scene/level generation). It can be used not only for 2D scene generation, but also for more complex game scene generation in 3D.</p>
 <p>If you&rsquo;re wondering how exactly this algorithm works, Gumin&rsquo;s <a href="https://github.com/mxgmn/WaveFunctionCollapse/tree/master?tab=readme-ov-file">Github repository</a> has a lot of examples explaining it. In addition, you can also check this <a href="https://oskarstalberg.com/game/wave/wave.html">Demo</a> to see their visualization of WFC.</p>
 <h2 id="2-what-is-this-paper-about">2. What is this paper about?</h2>
 <p>This paper optimizes the <strong>Time Complexity</strong> of the WFC from exponential level $O(C^n)$ to <strong>polynomial level</strong> $O(n)$.  We propose an optimized algorithm: <strong>Nested Wave Function Collapse (N-WFC)</strong> to address the limitations of WFC&rsquo;s current ability to produce only small-scale content. We provide the <strong>pseudo-code of the algorithm framework</strong> and the <strong>tileset norms (complete and sub-complete tileset)</strong> required to realize the algorithm.</p>
-<img src="/images/research/n_wfc.assets/image-20240414115559547.png" alt="image-20240414115559547"  />
+<p><img src="/images/research/n_wfc.assets/image-20240414115559547.png" alt="image-20240414115559547"  /></p>
 <p>We also further prove that our optimized algorithm has good <strong>characteristics</strong> of:</p>
 <ul>
 <li><strong>Infinity</strong>: theoretically it can generate infinite content</li>
@@ -242,24 +243,42 @@
 <p>We experimented the feasibility of our algorithm in two classic games, <strong>Super Mario Bros</strong> and <strong>Carcassonne</strong>. The results of the algorithm are amazing. 😮</p>
 <p>The advantage for WFC is that it <strong>decouples the design and art of the tileset from the generative logic</strong>. Neither need be restricted by the other. In other words, tiles of different artistic designs are equivalent for the algorithm!</p>
 <h3 id="super-mario-bros">Super Mario Bros</h3>
-<p><img alt="image-20240414120316058" src="/images/research/n_wfc.assets/image-20240414120316058.png"></p>
+<p><img src="/images/research/n_wfc.assets/image-20240414120316058.png" alt="image-20240414120316058"></p>
 <h3 id="carcassonne">Carcassonne</h3>
-<p><img alt="image-20240414124435782" src="/images/research/n_wfc.assets/image-20240414124435782.png"></p>
+<p><img src="/images/research/n_wfc.assets/image-20240414124435782.png" alt="image-20240414124435782"></p>
 <h2 id="4-cite-the-paper">4. Cite the Paper</h2>
 <p>Nie, Y., Zheng, S., Zhuang, Z., &amp; Togelius, J. (2024). Nested Wave Function Collapse Enables Large-Scale Content Generation. <em>IEEE Transactions on Games</em>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bibtex" data-lang="bibtex"><span style="display:flex;"><span><span style="color:#a6e22e">@article</span>{nie2024nested,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">title</span>=<span style="color:#e6db74">{Nested Wave Function Collapse Enables Large-Scale Content Generation}</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">author</span>=<span style="color:#e6db74">{Nie, Yuhe and Zheng, Shaoming and Zhuang, Zhan and Togelius, Julian}</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">journal</span>=<span style="color:#e6db74">{IEEE Transactions on Games}</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">year</span>=<span style="color:#e6db74">{2024}</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">publisher</span>=<span style="color:#e6db74">{IEEE}</span>
-</span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bibtex" data-lang="bibtex"><span style="color:#a6e22e">@article</span>{nie2024nested,
+  <span style="color:#a6e22e">title</span>=<span style="color:#e6db74">{Nested Wave Function Collapse Enables Large-Scale Content Generation}</span>,
+  <span style="color:#a6e22e">author</span>=<span style="color:#e6db74">{Nie, Yuhe and Zheng, Shaoming and Zhuang, Zhan and Togelius, Julian}</span>,
+  <span style="color:#a6e22e">journal</span>=<span style="color:#e6db74">{IEEE Transactions on Games}</span>,
+  <span style="color:#a6e22e">year</span>=<span style="color:#e6db74">{2024}</span>,
+  <span style="color:#a6e22e">publisher</span>=<span style="color:#e6db74">{IEEE}</span>
+}
+</code></pre></div>
         </p>
     </div>
 
     <div class="prev-next">
         
+            
+                
+
+
+<div class="next-post">
+    <p>
+        <a href="/en/research/text2map/">
+            Next:
+            Text2Map: Multi-modal Procedural Content Generation based On Synthetic Dataset
+            &#8594;
+        </a>
+    </p>
+        <p class="next-post-date">
+            April 21, 2024
+        </p>
+</div>
+
+
             
         
     </div>

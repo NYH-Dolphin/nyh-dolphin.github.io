@@ -4,16 +4,25 @@
     <title>Gokarna on Dolphin NIE</title>
     <link>https://NYH-Dolphin.github.io/en/tags/gokarna/</link>
     <description>Recent content in Gokarna on Dolphin NIE</description>
-    <generator>Hugo 0.125.0</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Jan 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://NYH-Dolphin.github.io/en/tags/gokarna/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://NYH-Dolphin.github.io/en/tags/gokarna/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Hugo and Gokarna: How to modify my website</title>
       <link>https://NYH-Dolphin.github.io/en/study/hugo-and-gokarna-how-to-modify-my-website/</link>
       <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      
       <guid>https://NYH-Dolphin.github.io/en/study/hugo-and-gokarna-how-to-modify-my-website/</guid>
-      <description>0. Get My Website Clone the Website From Github git clone --recurse-submodules https://github.com/NYH-Dolphin/nyh-dolphin.github.io.git This will both clone the website repo, and the gonkarna submodule.&#xA;Bind BaseURL Under the root folder, open cmd.&#xA;hugo server --bind=127.0.0.1 --baseURL=https://NYH-Dolphin.github.io 1. Modify Gokarna Multilanguage Copy the files from i18n/ to themes/gokarna/i18n/ Copy the files from layout to themes/gokarna/layout/&#xA;Under the themes/gokarna/layouts/partials/header.html, which includes modification of how to switch the languages&#xA;&amp;lt;span class=&amp;#34;nav-language-divider&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; {{ with .</description>
+      <description>0. Get My Website Clone the Website From Github git clone --recurse-submodules https://github.com/NYH-Dolphin/nyh-dolphin.github.io.git This will both clone the website repo, and the gonkarna submodule.
+Bind BaseURL Under the root folder, open cmd.
+hugo server --bind=127.0.0.1 --baseURL=https://NYH-Dolphin.github.io1. Modify Gokarna Multilanguage Copy the files from i18n/ to themes/gokarna/i18n/ Copy the files from layout to themes/gokarna/layout/
+Under the themes/gokarna/layouts/partials/header.html, which includes modification of how to switch the languages
+&amp;lt;span class=&amp;#34;nav-language-divider&amp;#34;&amp;gt;&amp;lt;/span&amp;gt; {{ with .</description>
     </item>
+    
   </channel>
 </rss>

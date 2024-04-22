@@ -4,8 +4,11 @@
     <title>聂雨荷</title>
     <link>https://NYH-Dolphin.github.io/zh/research/</link>
     <description>Recent content on 聂雨荷</description>
-    <generator>Hugo 0.125.0</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <atom:link href="https://NYH-Dolphin.github.io/zh/research/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://NYH-Dolphin.github.io/zh/research/index.xml" rel="self" type="application/rss+xml" />
+    
+    
   </channel>
 </rss>
